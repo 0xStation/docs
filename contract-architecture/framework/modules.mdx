@@ -8,12 +8,12 @@ While some core operations are exposed externally and therefore have a predefine
 
 Modules are a design pattern that takes the logic that wraps a core operation, like minting a token, out of the primitive’s contract and into another contract that has permission to call the core primitive. For example, GroupOS deploys a module called `GasCoinPurchaseModule` that factiliates the purchase of an ERC-721 NFT with the network’s native gas coin, e.g. ETH. This module is responsible for guaranteeing that the NFT collection creator gets paid, the minter gets an NFT, and Station receives a reward for facilitating the transaction.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fe6f830f-4cf6-4faf-9b32-6f56a7d66bcb/Untitled.png)
+![Diagram 1](https://station-images.nyc3.digitaloceanspaces.com/72c5411d-acd2-4253-aced-7ae0ff29d620.png)
 
 Taking the idea of externalizing logic to its maximum, the ERC-721 NFT actually does not have any opinions about when or how NFTs should be minted, burned, or transfered and delegates that responsibility *entirely* to Modules. Modules connect fluidly to primitives, serving many simultaneously and each primitive can equivalently have many modules controlling it at once.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/46627ac6-cd60-4fba-baeb-e4920dd75a9a/Untitled.png)
+![Diagram 2](https://station-images.nyc3.digitaloceanspaces.com/fe64194d-02ca-4885-9587-def13891708d.png)
 
 Modules are also great for creating multi-contract integrations that need to make related, protected operations atomically without trust. For example, we want to configure a loyalty system where we reward users by minting an NFT Badge and fungible Points in a known ratio that we can change over time. In a normal contract system, it is not obvious if this logic should live on the Badge contract, Points contract, or force merging them together to one. However with Modules, it is intuitive to externalize this logic to a new loyalty system manager that configures Badge token ids to points values and has the permission on both contracts to control their minting operation behavior.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/89008235-8b06-4b59-9c8e-b4f624bd64bf/Untitled.png)
+![Diagram 3](https://station-images.nyc3.digitaloceanspaces.com/2f1e787d-fc33-4b38-9963-a7b7d5fe0d4f.png)
