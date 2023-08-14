@@ -1,5 +1,28 @@
 ---
-title: "Framework Overview"
-sidebarTitle: "🚧 Framework"
+title: "Modular Framework"
 ---
 
+GroupOS contracts are designed to be maximally flexible and easily programmable through a no-code interface. We accomplish this through novel approaches to contract upgradeability and deriving a universal modular pattern for contract management.
+
+## Upgradeability
+
+All GroupOS contracts come out of the box with a UUPS proxy design adhering to [ERC-1967](https://eips.ethereum.org/EIPS/eip-1967). This proxy design supports rotating the implementation for your contracts with minimal risk of slot clashes on the stored implementation address.
+
+The permission to upgrade a contract is restricted to just the `owner` of a contract and ownership can only be transferred with a 2-step process to guarantee that a new owner is capable of managing the contract.
+
+All implementation logic of GroupOS primitives also leverage a new standard for namespacing storage layouts ([ERC-7201](https://eips.ethereum.org/EIPS/eip-7201)). When you use GroupOS primitives, you can rest assured that your contracts are resistant to slot collisions without the need for anti-patterns to maintain append-only changes in typical linear slot patterns. This makes the upgrade process dramatically easier by removing the single largest headache with managing proxy storage.
+
+## Modularity
+
+Upgrades to the core proxy implementation require intimate knowledge of Solidity to reach high confidence in avoiding bugs, which make them not ideal in most situations if they can be avoided. We seek to design a second system to support logic upgrading that does not rely on this deep uprooting of a contracts logic through modularizing.
+
+In our experimental research, we have found four core patterns that together create a robust modular contract framework. The four layers are:
+
+1. Modules: bundle custom logic around core operations
+2. Access: manage permitted operation executors and permitters
+3. Guards: uniformly enforce constraints on an operation
+4. Extensions: add new state and operations to a core primitive
+
+Together, these layers form an abstract contract that can be inherited for any kind of smart contract product. Right now, GroupOS is working on wrapping this framework around Token and Account core primitives.
+
+Read more about our framework [here](https://github.com/0xStation/mage).
