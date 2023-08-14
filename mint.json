@@ -125,75 +125,75 @@
     {
       "group": "Getting Started",
       "pages": [
-        "api/v1/intro",
-        "api/v1/getting-started/auth",
-        "api/v1/getting-started/networks"
+        "api-reference/v1/intro",
+        "api-reference/v1/getting-started/auth",
+        "api-reference/v1/getting-started/networks"
       ]
     },
     {
       "group": "NFT Metadata",
       "pages": [
-        "api/v1/nft/overview",
-        "api/v1/nft/post/uploadMedia",
-        "api/v1/nft/put/collectionMetadata",
-        "api/v1/nft/put/tokenMetadata",
-        "api/v1/nft/get/metadata"
+        "api-reference/v1/nft/overview",
+        "api-reference/v1/nft/post/uploadMedia",
+        "api-reference/v1/nft/put/collectionMetadata",
+        "api-reference/v1/nft/put/tokenMetadata",
+        "api-reference/v1/nft/get/metadata"
       ]
     },
     {
       "group": "Memberships (ERC-721)",
       "pages": [
-        "api/v1/erc721/post/mint",
-        "api/v1/erc721/post/permit",
-        "api/v1/erc721/get/tokens"
+        "api-reference/v1/erc721/post/mint",
+        "api-reference/v1/erc721/post/permit",
+        "api-reference/v1/erc721/get/tokens"
       ]
     },
     {
       "group": "Badges (ERC-1155)",
       "pages": [
-        "api/v1/erc1155/post/mint",
-        "api/v1/erc1155/post/permit",
-        "api/v1/erc1155/get/tokens"
+        "api-reference/v1/erc1155/post/mint",
+        "api-reference/v1/erc1155/post/permit",
+        "api-reference/v1/erc1155/get/tokens"
       ]
     },
     {
       "group": "Points (ERC-20)",
       "pages": [
-        "api/v1/erc20/post/mint",
-        "api/v1/erc20/post/permit",
-        "api/v1/erc20/get/tokens"
+        "api-reference/v1/erc20/post/mint",
+        "api-reference/v1/erc20/post/permit",
+        "api-reference/v1/erc20/get/tokens"
       ]
     },
     {
       "group": "Overview",
       "pages": [
-        "contracts/overview/framework",
-        "contracts/overview/networks"
+        "contract-architecture/overview/framework",
+        "contract-architecture/overview/networks"
       ]
     },
     {
       "group": "Framework",
       "pages": [
-        "contracts/framework/modules",
-        "contracts/framework/access",
-        "contracts/framework/guards",
-        "contracts/framework/extensions"
+        "contract-architecture/framework/modules",
+        "contract-architecture/framework/access",
+        "contract-architecture/framework/guards",
+        "contract-architecture/framework/extensions"
       ]
     },
     {
       "group": "Tokens",
       "pages": [
-        "contracts/tokens/erc721",
-        "contracts/tokens/erc1155",
-        "contracts/tokens/erc20"
+        "contract-architecture/tokens/erc721",
+        "contract-architecture/tokens/erc1155",
+        "contract-architecture/tokens/erc20"
       ]
     },
     {
       "group": "Accounts",
       "pages": [
-        "contracts/accounts/members",
-        "contracts/accounts/groups",
-        "contracts/accounts/vaults"
+        "contract-architecture/accounts/members",
+        "contract-architecture/accounts/groups",
+        "contract-architecture/accounts/vaults"
       ]
     }
   ],
