@@ -1,82 +1,206 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Station",
   "logo": {
     "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "light": "/logo/light.svg",
+    "href": "https://www.station.express/"
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#9563FF",
-    "light": "#AE87FF",
-    "dark": "#0D001D",
+    "primary": "#AD72FF",
+    "light": "#B889FA",
+    "dark": "#8B38FF",
     "background": {
-      "dark": "#090014"
+      "dark": "#000"
     },
     "anchors": {
-      "from": "#FF7F57",
-      "to": "#9563FF"
+      "from": "#8B38FF",
+      "to": "#AD72FF"
     }
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
-  ],
+  "modeToggle": {
+    "default": "dark",
+    "isHidden": true
+  },
+  "hideFeedbackButtons": true,
+  "topbarLinks": [],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Get started",
+    "url": "https://6vdcjqzyfj3.typeform.com/to/x3xer1Rs"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "name": "Create your own membership",
+      "url": "https://6vdcjqzyfj3.typeform.com/to/x3xer1Rs",
+      "icon": "album-collection"
     },
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "name": "Schedule a call",
+      "url": "https://calendly.com/symmtry/chat",
+      "icon": "face-smile",
+      "iconType": "solid"
     },
     {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "Join Discord",
+      "url": "https://discord.gg/wxDm3gXmZz",
+      "icon": "discord"
+    },
+    {
+      "name": "Follow Station",
+      "url": "https://twitter.com/0xstation",
+      "icon": "twitter"
+    }
+  ],
+  "tabs": [
+    {
+      "name": "Contract Architecture",
+      "url": "contracts"
+    },
+    {
+      "name": "API Reference",
+      "url": "api"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
-    },
-    {
-      "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
-    },
-    {
-      "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
-    },
-    {
-      "group": "Endpoint Examples",
+      "group": "Overview",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "home/overview/use-cases"
       ]
+    },
+    {
+      "group": "Activate",
+      "pages": [
+        {
+          "group": "Create Accounts",
+          "pages": [
+            "home/activate/create/nft-accounts",
+            "home/activate/create/smart-accounts",
+            "home/activate/create/group-accounts"
+          ]
+        },
+        {
+          "group": "Configure Accounts",
+          "pages": [
+            "home/activate/configure/trusted-controller",
+            "home/activate/configure/update-metadata",
+            "home/activate/configure/gas-subsidization"
+          ]
+        },
+        {
+          "group": "Customize Sign-up",
+          "pages": [
+            "home/activate/sign-up/entry-form",
+            "home/activate/sign-up/walletless-onboarding",
+            "home/activate/sign-up/accounts-sdk"
+          ]
+        },
+        {
+          "group": "Export information",
+          "pages": [
+            "home/activate/export/account-information"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Reward",
+      "pages": [
+        "home/reward/badges",
+        "home/reward/points",
+        "home/reward/collectibles",
+        "home/reward/attestations",
+        "home/reward/automation"
+      ]
+    },
+    {
+      "group": "Measure",
+      "pages": [
+        "home/measure/accounts",
+        "home/measure/gas",
+        "home/measure/api"
+      ]
+    },
+    {
+      "group": "Overview",
+      "pages": [
+        "contracts/overview/framework",
+        "contracts/overview/networks"
+      ]
+    },
+    {
+      "group": "Framework",
+      "pages": [
+        "contracts/framework/modules",
+        "contracts/framework/access",
+        "contracts/framework/guards",
+        "contracts/framework/extensions"
+      ]
+    },
+    {
+      "group": "Tokens",
+      "pages": [
+        "contracts/tokens/erc721",
+        "contracts/tokens/erc1155",
+        "contracts/tokens/erc20"
+      ]
+    },
+    {
+      "group": "Accounts",
+      "pages": [
+        "contracts/accounts/members",
+        "contracts/accounts/groups",
+        "contracts/accounts/vaults"
+      ]
+    },
+    {
+      "group": "Getting Started",
+      "pages": [
+        "api/v1/intro",
+        "api/v1/getting-started/auth",
+        "api/v1/getting-started/networks"
+      ]
+    },
+    {
+      "group": "NFT Metadata",
+      "pages": [
+        "api/v1/metadata/post/uploadMedia",
+        "api/v1/metadata/put/individual"
+      ]
+    },
+    {
+      "group": "Memberships (ERC-721)",
+      "pages": [
+        "api/v1/erc721/post/mint",
+        "api/v1/erc721/post/grant",
+        "api/v1/erc721/get/tokens"
+      ]
+    },
+    {
+      "group": "Badges (ERC-1155)",
+      "pages": [
+        "api/v1/erc1155/post/mint",
+        "api/v1/erc1155/post/grant",
+        "api/v1/erc1155/get/tokens"
+      ]
+    },
+    {
+      "group": "Points (ERC-20)",
+      "pages": ["api/v1/erc20/post/mint"]
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "twitter": "https://twitter.com/0xstation"
+  },
+  "api": {
+    "playground": {
+      "mode": "simple"
+    }
+  },
+  "analytics": {
+    "mixpanel": {
+      "projectToken": "6fb3f02c104d573cbe7d8245168cb7d4"
+    }
   }
 }
