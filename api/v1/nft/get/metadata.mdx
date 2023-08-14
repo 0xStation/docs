@@ -1,13 +1,13 @@
 ---
 title: "Query an NFT's Metadata"
 sidebarTitle: "Query Metadata"
-api: "GET https://members.station.express/api/v1/nft/metadata"
+api: "GET https://groupos.xyz/api/v1/nft/metadata"
 ---
 
 ### How NFT metadata querying works
 
 The combination of an NFT collection's default metadata and overriden token-specific metadata are combined together when fetching the metadata of a specific token.
-This API route follows the informal specification standardized by Opensea which is compatible with most marketplaces, indexers, and wallets.
+This API route follows the informal specification [standardized by Opensea](https://docs.opensea.io/docs/metadata-standards) which is compatible with most marketplaces, indexers, and wallets.
 
 ### Query Parameters
 
@@ -58,7 +58,7 @@ This API route follows the informal specification standardized by Opensea which 
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://members.station.express/api/v1/nft/metadata' \
+curl --location --request GET 'https://groupos.xyz/api/v1/nft/metadata' \
 --header 'Content-Type: application/json' \
 ```
 

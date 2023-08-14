@@ -54,18 +54,19 @@
   ],
   "tabs": [
     {
-      "name": "Contract Architecture",
-      "url": "contracts"
-    },
-    {
       "name": "API Reference",
       "url": "api"
+    },
+    {
+      "name": "Contract Architecture",
+      "url": "contracts"
     }
   ],
   "navigation": [
     {
       "group": "Overview",
       "pages": [
+        "home/overview/why",
         "home/overview/use-cases"
       ]
     },
@@ -83,8 +84,7 @@
         {
           "group": "Configure Accounts",
           "pages": [
-            "home/activate/configure/trusted-controller",
-            "home/activate/configure/update-metadata",
+            "home/activate/configure/trusted-executor",
             "home/activate/configure/gas-subsidization"
           ]
         },
@@ -123,6 +123,48 @@
       ]
     },
     {
+      "group": "Getting Started",
+      "pages": [
+        "api/v1/intro",
+        "api/v1/getting-started/auth",
+        "api/v1/getting-started/networks"
+      ]
+    },
+    {
+      "group": "NFT Metadata",
+      "pages": [
+        "api/v1/nft/overview",
+        "api/v1/nft/post/uploadMedia",
+        "api/v1/nft/put/collectionMetadata",
+        "api/v1/nft/put/tokenMetadata",
+        "api/v1/nft/get/metadata"
+      ]
+    },
+    {
+      "group": "Memberships (ERC-721)",
+      "pages": [
+        "api/v1/erc721/post/mint",
+        "api/v1/erc721/post/permit",
+        "api/v1/erc721/get/tokens"
+      ]
+    },
+    {
+      "group": "Badges (ERC-1155)",
+      "pages": [
+        "api/v1/erc1155/post/mint",
+        "api/v1/erc1155/post/permit",
+        "api/v1/erc1155/get/tokens"
+      ]
+    },
+    {
+      "group": "Points (ERC-20)",
+      "pages": [
+        "api/v1/erc20/post/mint",
+        "api/v1/erc20/post/permit",
+        "api/v1/erc20/get/tokens"
+      ]
+    },
+    {
       "group": "Overview",
       "pages": [
         "contracts/overview/framework",
@@ -153,44 +195,6 @@
         "contracts/accounts/groups",
         "contracts/accounts/vaults"
       ]
-    },
-    {
-      "group": "Getting Started",
-      "pages": [
-        "api/v1/intro",
-        "api/v1/getting-started/auth",
-        "api/v1/getting-started/networks"
-      ]
-    },
-    {
-      "group": "NFT Metadata",
-      "pages": [
-        "api/v1/nft/overview",
-        "api/v1/nft/post/uploadMedia",
-        "api/v1/nft/put/tokenMetadata",
-        "api/v1/nft/put/collectionMetadata",
-        "api/v1/nft/get/metadata"
-      ]
-    },
-    {
-      "group": "Memberships (ERC-721)",
-      "pages": [
-        "api/v1/erc721/post/mint",
-        "api/v1/erc721/post/grant",
-        "api/v1/erc721/get/tokens"
-      ]
-    },
-    {
-      "group": "Badges (ERC-1155)",
-      "pages": [
-        "api/v1/erc1155/post/mint",
-        "api/v1/erc1155/post/grant",
-        "api/v1/erc1155/get/tokens"
-      ]
-    },
-    {
-      "group": "Points (ERC-20)",
-      "pages": ["api/v1/erc20/post/mint"]
     }
   ],
   "footerSocials": {

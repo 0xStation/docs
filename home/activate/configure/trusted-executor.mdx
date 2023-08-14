@@ -1,0 +1,18 @@
+---
+title: "Add an Account Trusted Executor"
+sidebarTitle: "Trusted Executor"
+---
+
+<Info>
+Trusted Executors have the ability to execute transactions on behalf of your account with customizable restrictions.
+</Info>
+
+When creating an Account, you retain root-level ownership and control of it. With this authority, you can configure the rules and logic by which your Account operates in addition to executing typical transactions like transferring assets or minting NFTs.
+
+By default, to make any of these executions, your ownership keys need to be signing transactions to get the Account to do anything. Always signing transactions on your own can lead to a subpar product experience which is why we created Trusted Executors, a means for other entities to sign transactions on behalf of your account for an enhanced user experience.
+
+Trusted Executors are identified by an address which can be a smart contract, personal EOA wallet, or cloud system like Station’s API. Trusted Executors have the ability to execute transactions on behalf of your account with customizable restrictions.
+
+Importantly, they cannot overwrite the root-level ownership system, whether that be an ERC-721 token for Member Accounts, an ERC-1155 token for Group Accounts, or another address for Bot Accounts. In order to enforce this constraint, custom delegatecall executions are not enabled on Accounts.
+
+Additional constraints on executions can be applied with our Guards primitive which are expanded on in the Contract Architecture section.

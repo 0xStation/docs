@@ -16,7 +16,7 @@ to groups via a [Token API](/api/v1/intro) that standardizes the
 common needs of controlling token behavior from offchain events.
 
 The most popular patterns for API-control are in the production of new tokens, which can be done
-through two methods: (1) **Minting** tokens directly to individuals and (2) **Granting** tokens for
+through two methods: (1) **Minting** tokens directly to individuals and (2) **Permiting** tokens for
 individuals to mint themselves.
 
 ### 1. Minting Tokens
@@ -39,7 +39,7 @@ identity the token, and a `recipientAddress` to locate where to mint to:
 <CodeGroup>
 
 ```bash Request
-curl 'https://members.station.express/api/v1/erc721/mint' \
+curl 'https://groupos.xyz/api/v1/erc721/mint' \
 --request POST \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <token>' \
@@ -64,28 +64,28 @@ cost is paid this cloud-wallet and our systems automatically replenish the balan
 At the end of the month, transaction fees are rolled up into an invoice that can be paid in the same coin
 or in fiat.
 
-### 2. Granting Tokens
+### 2. Permiting Tokens
 
-Compared to minting, granting does not produce a blockchain transaction and instead creates the permission
+Compared to minting, permiting does not produce a blockchain transaction and instead creates the permission
 for someone else to do the “minting”. This offloads the burden of transacting from our infrastructure and
 your application onto your users, which can take place on your own interface or on a Station-powered
 experience.
 
-Granting works by signing an [EIP-712](https://eips.ethereum.org/EIPS/eip-712) object that encodes the
+Permiting works by signing an [EIP-712](https://eips.ethereum.org/EIPS/eip-712) object that encodes the
 necessary parameters to prove permission to a smart contract, often one of our modules. Like when minting,
 we need to know the `chainId`, `contractAddress`, and `recipientAddress` in addition to two new fields: a
 `nonce` and an `expiration`. Nonces are a common solution to the [Signature Replay](https://solidity-by-example.org/hacks/signature-replay/)
-attack by ensuring a grant signature can only be used once. Expiration is used to indicate when a grant
+attack by ensuring a permit signature can only be used once. Expiration is used to indicate when a permit
 is no longer considered valid and can be set to `0` to indicate no expiration.
 
-In the Station Membership mint experience, we use granting patterns to support offchain gating conditions
+In the Station Membership mint experience, we use permiting patterns to support offchain gating conditions
 like passing a KYC check, or entering form information. We extend this ability to define your own conditions
 and ping our systems when someone is eligible to mint.
 
 <CodeGroup>
 
 ```bash Request
-curl 'https://members.station.express/api/v1/erc721/grant' \
+curl 'https://groupos.xyz/api/v1/erc721/permit' \
 --request POST \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <token>' \
@@ -98,7 +98,7 @@ curl 'https://members.station.express/api/v1/erc721/grant' \
 
 ```bash Response
 {
-	"grantId": "5f2e491c-6fec-4324-a539-d9ba72ef261f",
+	"permitId": "5f2e491c-6fec-4324-a539-d9ba72ef261f",
 	"signature": "0x58c789b7a59312ec0a659e165700db54af896d3e8b46e4aeecb33b32b88157c9"
 	"nonce": 420,
 	"expiration": null
