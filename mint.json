@@ -165,8 +165,11 @@
     {
       "group": "NFT Metadata",
       "pages": [
-        "api/v1/metadata/post/uploadMedia",
-        "api/v1/metadata/put/individual"
+        "api/v1/nft/overview",
+        "api/v1/nft/post/uploadMedia",
+        "api/v1/nft/put/tokenMetadata",
+        "api/v1/nft/put/collectionMetadata",
+        "api/v1/nft/get/metadata"
       ]
     },
     {

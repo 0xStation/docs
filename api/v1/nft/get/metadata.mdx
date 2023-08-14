@@ -1,0 +1,93 @@
+---
+title: "Query an NFT's Metadata"
+sidebarTitle: "Query Metadata"
+api: "GET https://members.station.express/api/v1/nft/metadata"
+---
+
+### How NFT metadata querying works
+
+The combination of an NFT collection's default metadata and overriden token-specific metadata are combined together when fetching the metadata of a specific token.
+This API route follows the informal specification standardized by Opensea which is compatible with most marketplaces, indexers, and wallets.
+
+### Query Parameters
+
+### Query Params
+
+<ParamField body="chainId" type="number" required>
+  The id of the chain supporting the NFT. This cannot be changed after creation.
+</ParamField>
+
+<ParamField query="contractAddress" type="string" required>
+  The NFT smart contract address.
+</ParamField>
+
+<ParamField query="tokenId" type="string" required>
+  An NFT tokenId within the collection.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="name" type="string">
+  Name of the token.
+</ResponseField>
+
+<ResponseField name="description" type="string">
+  Description of the token.
+</ResponseField>
+
+<ResponseField name="image" type="string">
+  URL of the hosted image asset.
+</ResponseField>
+
+<ResponseField name="attributes" type="Attribute[]">
+  Array of Attribute objects.
+    <Expandable title="Attribute">
+        <ParamField body="trait_type" type="string" required>
+            Name for the trait.
+        </ParamField>
+        <ParamField body="value" type="string | number" required>
+            Value for the trait.
+        </ParamField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://members.station.express/api/v1/nft/metadata' \
+--header 'Content-Type: application/json' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+  ```json Success
+  {
+    "success": true,
+    "name": "Zed Horse",
+    "description": "...",
+    "image": "https://...",
+    "attributes": [
+        {
+            "trait_type": "Points",
+            "value": 100
+        },
+        {
+            "trait_type": "Guild",
+            "value": "Racers"
+        },
+        ...
+    ]
+  }
+  ```
+  ```json Failure
+  {
+    "success": false,
+    "error": "[message]"
+  }
+  ```
+</ResponseExample>
