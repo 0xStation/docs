@@ -55,11 +55,11 @@
   "tabs": [
     {
       "name": "API Reference",
-      "url": "api"
+      "url": "api-reference"
     },
     {
       "name": "Contract Architecture",
-      "url": "contracts"
+      "url": "contract-architecture"
     }
   ],
   "navigation": [
