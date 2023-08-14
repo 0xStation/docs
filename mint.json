@@ -191,9 +191,9 @@
     {
       "group": "Accounts",
       "pages": [
-        "contract-architecture/accounts/members",
-        "contract-architecture/accounts/groups",
-        "contract-architecture/accounts/vaults"
+        "contract-architecture/accounts/member",
+        "contract-architecture/accounts/group",
+        "contract-architecture/accounts/bot"
       ]
     }
   ],
