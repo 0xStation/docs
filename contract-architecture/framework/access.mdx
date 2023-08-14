@@ -1,3 +1,27 @@
 ---
-title: "🚧 Access"
+title: "Access"
 ---
+
+The Access layer is responsible for establishing intuitive patterns to regulate permissions. These permissions range from expanding use of core operations, intertwining with the Module layer, to authorizing who can make swaps to the proxy implementation or modular contracts.
+
+Our experience has landed us on a 3-tier pattern for access control:
+
+1. Permissions: flexible granting of operation control to any account
+2. Admins: a special permission that grants all other permissions automatically
+3. Owner: a singularly-held control that can do anything and administers itself
+
+## Permissions
+
+Permissions enable flexible granting of operation control to any account. A permission is uniquely identifed by the combination of an account address and an operation, which is the first 8 bytes of the hash of its unique string (e.g. `bytes8(keccak256("MINT"))`). Accounts can hold many permissions and an operation can be permitted to many accounts simultaneously. In our earlier example with a loyalty program, both the Badges and Points contracts will permit the Loyalty Module the mint operation. When these contracts are called to execute an operation, they will check that the `msg.sender` owns the appropriate permission.
+
+## Admins
+
+Admins receive a special permission that grant all other permissions automatically. As a cost and time savings for contract managers, the ability to create a role that inherits all permissions proves empirically convenient. Given the high authority of such a permission, it should be granted with intention.
+
+Admins are allowed to set and remove all of the modular components of the framework in addition to whatever operations are native to the wrapped primitive (e.g. mint/burn/transfer token). Note that this also includes the ability to add or remove other admins.
+
+## Owner
+
+At the top of the tiers is a singular `owner` which do everything an admin can except it cannot be changed by admins. This is highest permission possible in the framework and accordingly is meant to be seldom used or transferred and should be owned by a secure smart contract like a Safe.
+
+Ownership can be transfered only in a two-step process that provides higher confidence that the receiving address has the ability to execute the required calls and reduces the risk of getting locked out with an incorrect destination address.
