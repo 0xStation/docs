@@ -31,7 +31,7 @@
   },
   "anchors": [
     {
-      "name": "Create your own membership",
+      "name": "Create membership",
       "url": "https://6vdcjqzyfj3.typeform.com/to/x3xer1Rs",
       "icon": "album-collection"
     },
@@ -74,7 +74,7 @@
       "group": "Activate",
       "pages": [
         {
-          "group": "Create Accounts",
+          "group": "Create membership accounts",
           "pages": [
             "home/activate/create/nft-accounts",
             "home/activate/create/smart-accounts",
@@ -82,14 +82,14 @@
           ]
         },
         {
-          "group": "Configure Accounts",
+          "group": "Configure accounts",
           "pages": [
             "home/activate/configure/trusted-executor",
             "home/activate/configure/gas-subsidization"
           ]
         },
         {
-          "group": "Customize Sign-up",
+          "group": "Customize sign-up",
           "pages": [
             "home/activate/sign-up/entry-form",
             "home/activate/sign-up/walletless-onboarding",
@@ -123,7 +123,7 @@
       ]
     },
     {
-      "group": "Getting Started",
+      "group": "Getting started",
       "pages": [
         "api-reference/v1/intro",
         "api-reference/v1/getting-started/auth",
@@ -131,7 +131,7 @@
       ]
     },
     {
-      "group": "NFT Metadata",
+      "group": "NFT metadata",
       "pages": [
         "api-reference/v1/nft/overview",
         "api-reference/v1/nft/post/uploadMedia",
