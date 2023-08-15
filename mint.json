@@ -31,12 +31,12 @@
   },
   "anchors": [
     {
-      "name": "Create membership",
+      "name": "Create Membership",
       "url": "https://6vdcjqzyfj3.typeform.com/to/x3xer1Rs",
       "icon": "album-collection"
     },
     {
-      "name": "Schedule a call",
+      "name": "Schedule a Call",
       "url": "https://calendly.com/symmtry/chat",
       "icon": "face-smile",
       "iconType": "solid"
@@ -74,7 +74,7 @@
       "group": "Activate",
       "pages": [
         {
-          "group": "Create membership accounts",
+          "group": "Create Membership Accounts",
           "pages": [
             "home/activate/create/nft-accounts",
             "home/activate/create/smart-accounts",
@@ -82,14 +82,14 @@
           ]
         },
         {
-          "group": "Configure accounts",
+          "group": "Configure Membership Accounts",
           "pages": [
             "home/activate/configure/trusted-executor",
             "home/activate/configure/gas-subsidization"
           ]
         },
         {
-          "group": "Customize sign-up",
+          "group": "Customize Sign-up",
           "pages": [
             "home/activate/sign-up/entry-form",
             "home/activate/sign-up/walletless-onboarding",
@@ -97,7 +97,7 @@
           ]
         },
         {
-          "group": "Export information",
+          "group": "Export Information",
           "pages": [
             "home/activate/export/account-information"
           ]
@@ -123,7 +123,7 @@
       ]
     },
     {
-      "group": "Getting started",
+      "group": "Getting Started",
       "pages": [
         "api-reference/v1/intro",
         "api-reference/v1/getting-started/auth",
