@@ -74,15 +74,26 @@
       "group": "Activate",
       "pages": [
         {
-          "group": "Create Membership Accounts",
+          "group": "Membership NFT Accounts",
           "pages": [
             "home/activate/create/nft-accounts",
-            "home/activate/create/smart-accounts",
+            "home/activate/create/create-nft-accounts"
+          ]
+        },
+        {
+          "group": "Smart Accounts",
+          "pages": [
+            "home/activate/create/smart-accounts"
+          ]
+        },
+        {
+          "group": "Group Accounts",
+          "pages": [
             "home/activate/create/group-accounts"
           ]
         },
         {
-          "group": "Configure Membership Accounts",
+          "group": "Configure Accounts",
           "pages": [
             "home/activate/configure/trusted-executor",
             "home/activate/configure/gas-subsidization"
