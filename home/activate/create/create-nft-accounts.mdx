@@ -1,0 +1,128 @@
+---
+title: "Create NFT Accounts Collection"
+sidebarTitle: "Create NFT Accounts"
+---
+
+
+**1. Click '+ New collection' on the top right of the page or under Members tab on Dashboard**
+
+**2. Fill in 'Collection information'**
+
+![Collection information](https://station-images.nyc3.digitaloceanspaces.com/b1e4cfa5-98c0-474e-8c21-6f2e60c4183f.png)
+<AccordionGroup>
+  <Accordion title="Collection cover">
+    The collection cover is the media that represents the visual identity of your membership collection. You can edit the description after the initial launch.
+    - Accepted format: .jpg, .png, .gif
+    - Maximum file size: 1 MB
+    Dynamic Cover, where media dynamically updates with membership traits and on-chain actions, is in private beta. [Get on the list.](https://6vdcjqzyfj3.typeform.com/to/x3xer1Rs)
+  </Accordion>
+   <Accordion title="Network">
+    The selected network houses your membership collection on-chain. 
+    **Mainnet**
+
+    Mainnet is the production version of blockchain networks where membership holds real socioeconomic value. The factors to consider when selecting a network 
+
+    - Ethereum
+    - Your audience or existing token ecosystem is on Ethereum.
+    - Polygon
+    - Your audience is chain-agnostic and cost-sensitive. Transactions on Polygon are about 500x less expensive than those on Ethereum.
+    <br />
+    **Testnet**
+
+    **Goerli:** The test network supported by GroupOS that enables you to do dry runs of your membership collection without needing to spend real ETH on a main network. Here’s the list of places you can get free test ETH:
+    - [QuickNode faucet](https://faucet.quicknode.com/ethereum/goerli)
+    - [Coinbase faucet](https://coinbase.com/faucets/ethereum-goerli-faucet)
+    - [Alchemy faucet](https://goerlifaucet.com/)
+    - [Paradigm faucet](https://faucet.paradigm.xyz/)
+  </Accordion>
+  <Accordion title="Collection title and symbol">
+    The collection cover is the media that represents the visual identity of your membership collection. You can edit the description after the initial launch.
+    The collection title and the symbol will appear on explorers (like Etherscan), representing your collection contract. You won’t be able to edit the title and the symbol after the initial launch.
+  </Accordion>
+  <Accordion title="Collection description">
+    The collection description helps educate members about the story and what they can do with the membership. You can edit the description after the initial launch.
+  </Accordion>
+</AccordionGroup>
+
+<br />
+
+**3. Set NFT account constraints**
+
+![Constraint](https://station-images.nyc3.digitaloceanspaces.com/c9723112-8981-44e8-b073-8eae1aae55d4.png)
+
+<AccordionGroup>
+    <Accordion title="One membership account per address">
+        Limiting one membership per address increases sybil resistance. You can adjust the constraint after the initial launch with a small network fee. 
+    </Accordion>
+    <Accordion title="Transferability">
+        Limiting transferability is best if membership is solely meant for reputational and not financial use cases. You can adjust the constraint after the initial launch with a small network fee. 
+    </Accordion>
+</AccordionGroup>
+
+<br />
+
+**4. Define NFT account traits**
+
+Traits are membership metadata that defines each membership. Traits will appear in each member’s profile in the collection’s membership directory and on external platforms like OpenSea and Blur.
+
+![Trait](https://station-images.nyc3.digitaloceanspaces.com/31c94ec8-37a7-4be8-bd62-9b1461430697.png)
+
+<Accordion title="Trait value">
+    - Minted at: Date and time that the membership is minted
+    - Owner address: The wallet address of the membership owner
+    - Custom fixed value e.g. Member
+</Accordion>
+
+<br />
+
+**5. Configure entry fees**
+
+**Entry fees** are the fees required to mint the membership. Select one of the options:
+- Free
+- Purchase with ETH
+    - Set the amount
+    - Enter the payout address (the address the membership fee will be directed to)
+- Purchase with stablecoins ($-denominated)
+    - Set the amount in $
+    - Select accepted stablecoins: USDC and/or DAI
+    - Enter the payout address (the address the membership fee will be directed to)
+
+<br />
+
+**6. Customize mint portal**
+
+![Mint portal](https://station-images.nyc3.digitaloceanspaces.com/a5621e2a-f060-4b59-9834-a3c09cee1d6c.png)
+
+Customize membership minting experience and logic such as eligibility and minting window.
+
+<AccordionGroup>
+    <Accordion title="Eligibility">
+        Gate to curate who can mint the membership based on
+        - ERC-20 token ownership
+        - NFT ownership
+        - Allowlist (coming soon)
+        - KYC (coming soon) 
+    </Accordion>
+    <Accordion title="Member information">
+        Select relevant contact information to collect from your members upon minting:
+        - First name
+        - Last name
+        - Email (verified)
+        - Discord (verified)
+        - Source
+        - Association
+    </Accordion>
+    <Accordion title="Call-to-actions">
+        Customize up to 2 call-to-actions on where to direct your members after they’ve minted the membership:
+        - View Directory
+        - Go to site
+        - Join Discord
+        - Join Whatsapp
+    </Accordion>
+    <Accordion title="Minting window">
+        If you wish to schedule a minting window, set the start and end date and time.
+    </Accordion>
+    <Accordion title="Terms & conditions">
+        If you have terms and conditions that members are required to accept upon minting
+    </Accordion>
+</AccordionGroup>
