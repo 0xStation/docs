@@ -27,7 +27,7 @@
   "topbarLinks": [],
   "topbarCtaButton": {
     "name": "Get started",
-    "url": "https://6vdcjqzyfj3.typeform.com/to/x3xer1Rs"
+    "url": "https://groupos.xyz/"
   },
   "anchors": [
     {
@@ -74,7 +74,7 @@
       "group": "Activate",
       "pages": [
         {
-          "group": "Membership NFT Accounts",
+          "group": "Membership Accounts",
           "pages": [
             "home/activate/create/nft-accounts",
             "home/activate/create/create-nft-accounts"
