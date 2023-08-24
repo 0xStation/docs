@@ -87,12 +87,6 @@
           ]
         },
         {
-          "group": "Group Accounts",
-          "pages": [
-            "home/activate/create/group-accounts"
-          ]
-        },
-        {
           "group": "Configure Accounts",
           "pages": [
             "home/activate/configure/trusted-executor",
