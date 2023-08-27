@@ -31,7 +31,7 @@
   },
   "anchors": [
     {
-      "name": "Create NFT Accounts",
+      "name": "Create Collection",
       "url": "https://6vdcjqzyfj3.typeform.com/to/x3xer1Rs",
       "icon": "album-collection"
     },
@@ -74,7 +74,7 @@
       "group": "Activate",
       "pages": [
         {
-          "group": "NFT Accounts",
+          "group": "Membership NFT",
           "pages": [
             "home/activate/create/nft-accounts",
             "home/activate/create/create-nft-accounts"
@@ -136,7 +136,7 @@
       ]
     },
     {
-      "group": "NFT metadata",
+      "group": "NFT Metadata",
       "pages": [
         "api-reference/v1/nft/overview",
         "api-reference/v1/nft/post/uploadMedia",
