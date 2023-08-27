@@ -74,7 +74,7 @@
       "group": "Activate",
       "pages": [
         {
-          "group": "Membership NFT",
+          "group": "Membership NFT Accounts",
           "pages": [
             "home/activate/create/nft-accounts",
             "home/activate/create/create-nft-accounts"
