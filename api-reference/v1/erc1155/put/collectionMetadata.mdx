@@ -1,14 +1,14 @@
 ---
 title: "Update an NFT Collection's Default Metadata"
 sidebarTitle: "Update Collection Metadata"
-api: "PUT https://groupos.xyz/api/v1/erc721/collectionMetadata"
+api: "PUT https://groupos.xyz/api/v1/erc1155/collectionMetadata"
 ---
 
 ### How NFT collection metadata works
 
 For NFT collections that have one standard set of metadata (name, image, etc.) or support evolving metadata
 schemes, a single set of metadata can be defined at the collection-level to provide this default.
-Individual metadata can be set when [minting new NFTs](/api-reference/v1/erc721/post/mint) or [editing their metadata](/api-reference/v1/erc721/put/tokenMetadata) directly, which will override the defaults set here.
+Individual metadata can be set when [minting new NFTs](/api-reference/v1/erc1155/post/mint) or [editing their metadata](/api-reference/v1/erc1155/put/tokenMetadata) directly, which will override the defaults set here.
 
 When edits are made to the collection's default metadata, updates are propagated automatically to Opensea and other platforms.
 
@@ -48,7 +48,7 @@ When edits are made to the collection's default metadata, updates are propagated
 <RequestExample>
 
 ```bash Example Request
-curl --location --request PUT 'https://groupos.xyz/api/v1/erc721/collectionMetadata' \
+curl --location --request PUT 'https://groupos.xyz/api/v1/erc1155/collectionMetadata' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <token>' \
 --data-raw '{
