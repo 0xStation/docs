@@ -9,7 +9,7 @@ In our example, we will be minting NFTs with custom metadata for each new token.
 the `metadata` field. Starting with the image of the NFT, we first need to store our intended file in the cloud if
 we have not yet already.
 
-### a. Uploading NFT media
+### 1. Upload NFT media
 
 For convenience, the ability to upload NFT media is provided out of the box.
 Using the [/api/v1/nft/uploadMedia](/api-reference/v1/nft/post/uploadMedia) route, we can provide our file and receive back
@@ -31,7 +31,7 @@ await fetch("https://groupos.xyz/api/v1/nft/uploadMedia", {
 })
 ```
 
-### b. Mint NFT with metadata
+### 2. Mint NFT with metadata
 
 Now that we've stored our image in the cloud, we can mint our NFT.
 Using the [/api/v1/erc721/mint](/api-reference/v1/erc721/post/mint) route, we can submit our NFT contract and desired
@@ -64,7 +64,7 @@ await fetch("https://groupos.xyz/api/v1/erc721/mint", {
 })
 ```
 
-### c. Querying minted NFTs
+### 3. Query minted NFTs
 
 Now that we've minted our NFT, we can query our minted tokens for confirmation.
 Using the [/api/v1/erc721/tokens](/api-reference/v1/erc721/get/tokens) route, we can query the 
@@ -93,12 +93,15 @@ await fetch("https://groupos.xyz/api/v1/erc721/tokens" + new URLSearchParams({
         ownerAddress: userAddress
     }), 
     {
-        method: "GET",
-        headers: {
-            Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
-        }
+        method: "GET"
     }
 ).then((data) => {
     userTokens = data.tokens
 })
 ```
+
+### Other considerations
+
+This quickstart demo best serves for server-side use cases given the exposure of your API key.
+When building a client-side application, it is recommended to keep these API calls in your own
+internal backend implementation that your frontend calls instead with your own custom authentication.
