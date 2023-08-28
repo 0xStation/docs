@@ -1,14 +1,14 @@
 ---
 title: "Update an NFT Collection's Default Metadata"
 sidebarTitle: "Update Collection Metadata"
-api: "PUT https://groupos.xyz/api/v1/nft/collectionMetadata"
+api: "PUT https://groupos.xyz/api/v1/erc721/collectionMetadata"
 ---
 
 ### How NFT default metadata works
 
 For NFT collections that have one standard set of metadata (name, image, etc.) or support evolving metadata
 schemes, a single set of metadata can be defined at the collection-level to provide this default.
-Individual metadata can be set when [minting new NFTs](/api/v1/erc721/post/mint) or [editing their metadata](/api/v1/nft/put/individualMetadata) directly, which will override the defaults set here.
+Individual metadata can be set when [minting new NFTs](/api/v1/erc721/post/mint) or [editing their metadata](/api/v1/erc721/put/tokenMetadata) directly, which will override the defaults set here.
 
 When edits are made to the collection's default metadata, updates are propagated automatically to Opensea and other platforms.
 
@@ -27,35 +27,12 @@ When edits are made to the collection's default metadata, updates are propagated
 
     <Expandable title="NFT Metadata">
 
-      <ParamField body="name" type="string" required>
-        Name for the NFT.
-      </ParamField>
-
       <ParamField body="description" type="string" optional>
         Description for the NFT.
       </ParamField>
 
       <ParamField body="mediaUrl" type="string" required>
         Url for the media content associated with the NFT.
-      </ParamField>
-
-      <ParamField body="externalUrl" type="string" optional>
-        Url for the external link associated with the NFT.
-      </ParamField>
-
-      <ParamField body="traits" type="Trait[]" optional>
-        Array of trait objects.
-
-        <Expandable title="Trait">
-          <ParamField body="name" type="string" required>
-            Name for the trait.
-          </ParamField>
-
-          <ParamField body="value" type="string" required>
-            Value for the trait.
-          </ParamField>
-        </Expandable>
-
       </ParamField>
 
     </Expandable>
@@ -71,28 +48,15 @@ When edits are made to the collection's default metadata, updates are propagated
 <RequestExample>
 
 ```bash Example Request
-curl --location --request PUT 'https://groupos.xyz/api/v1/nft/collectionMetadata' \
+curl --location --request PUT 'https://groupos.xyz/api/v1/erc721/collectionMetadata' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <token>' \
 --data-raw '{
   "chainId": 137,
   "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
   "metadata": {
-    "name": "Zed Run",
     "description": "Horses run free in the metaverse.",
-    "mediaUrl": "https://hosted.station.express/abc123",
-    "externalUrl": "https://zed.run/racehorse/94979",
-    "traits": [
-      {
-        "name": "Breed type",
-        "value": "Elite"
-      },
-      {
-        "name": "Starting level",
-        "value": "22"
-      },
-      ...
-    ]
+    "mediaUrl": "https://hosted.app/abc123",
   },
 }'
 ```

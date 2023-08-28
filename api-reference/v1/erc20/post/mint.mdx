@@ -8,9 +8,6 @@ api: "POST https://groupos.xyz/api/v1/erc20/mint"
 
 Once you have a Points Token smart contract, you can mint any number of tokens to any address.
 
-You can also pair this operation with one of our [Automations](/api/automations) to create an automatic
-distribution policy or by writing custom logic in your own systems prior to calling this API.
-
 ### Body
 
 <ParamField body="chainId" type="number" required>
@@ -26,7 +23,7 @@ distribution policy or by writing custom logic in your own systems prior to call
 </ParamField>
 
 <ParamField body="amount" type="string" required>
-  The quantity of points to mint. Type `string` is used to natively support
+  The human-readable quantity of points to mint. Type `string` is used to natively support
   large numbers.
 </ParamField>
 
