@@ -132,14 +132,6 @@
       "pages": [
         "api-reference/v1/getting-started/intro",
         "api-reference/v1/getting-started/auth",
-        "api-reference/v1/getting-started/networks"
-      ]
-    },
-    {
-      "group": "Getting Started",
-      "pages": [
-        "api-reference/v1/getting-started/intro",
-        "api-reference/v1/getting-started/auth",
         "api-reference/v1/getting-started/networks",
         {
           "group": "Quickstart Examples",
@@ -147,6 +139,14 @@
             "api-reference/v1/getting-started/quickstart/mint-memberships"
           ]
         }
+      ]
+    },
+    {
+      "group": "Accounts",
+      "pages": [
+        "api-reference/v1/account/post/call",
+        "api-reference/v1/account/post/batchCalls",
+        "api-reference/v1/account/get/calls"
       ]
     },
     {
