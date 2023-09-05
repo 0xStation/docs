@@ -79,60 +79,54 @@
       ]
     },
     {
-      "group": "Activate",
+      "group": "GroupOS Components",
       "pages": [
         {
-          "group": "Membership NFT Accounts",
+          "group": "Member Accounts",
           "pages": [
-            "home/activate/create/nft-accounts",
-            "home/activate/create/create-nft-accounts"
+            "home/members/overview",
+            "home/members/gas-subsidization",
+            "home/members/trusted-executor"
           ]
         },
         {
-          "group": "Smart Accounts",
+          "group": "Badges",
           "pages": [
-            "home/activate/create/smart-accounts"
+            "home/badges/overview"
           ]
         },
         {
-          "group": "Configure Accounts",
+          "group": "Points",
           "pages": [
-            "home/activate/configure/trusted-executor",
-            "home/activate/configure/gas-subsidization"
+            "home/points/overview"
           ]
         },
         {
-          "group": "Customize Sign-up",
+          "group": "Items",
           "pages": [
-            "home/activate/sign-up/entry-form",
-            "home/activate/sign-up/walletless-onboarding",
-            "home/activate/sign-up/accounts-sdk"
+            "home/items/overview"
           ]
         },
         {
-          "group": "Export Information",
+          "group": "Directory",
           "pages": [
-            "home/activate/export/account-information"
+            "home/directory/overview"
+          ]
+        },
+        {
+          "group": "Analytics",
+          "pages": [
+            "home/analytics/accounts",
+            "home/analytics/api",
+            "home/analytics/gas"
           ]
         }
       ]
     },
     {
-      "group": "Reward",
+      "group": "Tutorials",
       "pages": [
-        "home/reward/badges",
-        "home/reward/points",
-        "home/reward/collectibles",
-        "home/reward/attestations",
-        "home/reward/automation"
-      ]
-    },
-    {
-      "group": "Measure",
-      "pages": [
-        "home/measure/accounts",
-        "home/measure/gas",
-        "home/measure/api"
+        "home/tutorials/create-member-accounts"
       ]
     },
     {
