@@ -31,7 +31,7 @@
   },
   "anchors": [
     {
-      "name": "Create Collection",
+      "name": "Create Member Accounts Collection",
       "url": "https://groupos.xyz/collection/new",
       "icon": "album-collection"
     },
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "group": "GroupOS Components",
+      "group": "Features",
       "pages": [
         {
           "group": "Member Accounts",
@@ -108,6 +108,12 @@
           ]
         },
         {
+          "group": "Attestations",
+          "pages": [
+            "home/attestations/overview"
+          ]
+        },
+        {
           "group": "Directory",
           "pages": [
             "home/directory/overview"
@@ -126,7 +132,11 @@
     {
       "group": "Tutorials",
       "pages": [
-        "home/tutorials/create-member-accounts"
+        "home/tutorials/create-member-accounts",
+        "home/tutorials/add-sign-up-form",
+        "home/tutorials/export-account-information",
+        "home/tutorials/mint-member-accounts",
+        "home/tutorials/connect-as-nft"
       ]
     },
     {
