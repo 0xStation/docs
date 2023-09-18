@@ -31,8 +31,8 @@
   },
   "anchors": [
     {
-      "name": "Create Member Accounts Collection",
-      "url": "https://groupos.xyz/collection/new",
+      "name": "Get Started",
+      "url": "https://groupos.xyz/",
       "icon": "album-collection"
     },
     {
@@ -60,6 +60,10 @@
     {
       "name": "Contract Architecture",
       "url": "contract-architecture"
+    },
+    {
+      "name": "Help Desk",
+      "url": "https://discord.gg/68dQWzGt6U"
     }
   ],
   "navigation": [
@@ -79,14 +83,21 @@
       ]
     },
     {
-      "group": "Features",
+      "group": "Components",
       "pages": [
         {
-          "group": "Member Accounts",
+          "group": "Accounts",
           "pages": [
-            "home/members/overview",
-            "home/members/gas-subsidization",
-            "home/members/trusted-executor"
+            "home/accounts/overview",
+            "home/accounts/gas-policies",
+            "home/accounts/trusted-executor"
+          ]
+        },
+        {
+          "group": "Membership",
+          "pages": [
+            "home/membership/overview",
+            "home/membership/sponsored-mints"
           ]
         },
         {
@@ -105,6 +116,12 @@
           "group": "Items",
           "pages": [
             "home/items/overview"
+          ]
+        },
+        {
+          "group": "Roles",
+          "pages": [
+            "home/points/overview"
           ]
         },
         {
@@ -132,11 +149,11 @@
     {
       "group": "Tutorials",
       "pages": [
-        "home/tutorials/create-member-accounts",
+        "home/tutorials/deploy-accounts-collection",
+        "home/tutorials/connect-as-nft",
+        "home/tutorials/launch-membership-collection",
         "home/tutorials/add-sign-up-form",
-        "home/tutorials/export-account-information",
-        "home/tutorials/mint-member-accounts",
-        "home/tutorials/connect-as-nft"
+        "home/tutorials/export-member-information"
       ]
     },
     {
