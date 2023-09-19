@@ -1,0 +1,112 @@
+---
+title: "Mint NFT Accounts"
+sidebarTitle: "Mint Accounts"
+api: "POST https://groupos.xyz/api/v1/erc6551/mint"
+---
+
+### How to mint NFT Accounts
+
+Once you have an Accounts smart contract, you can mint any number of tokens to any address. Each NFT
+has a unique `tokenId` which is an auto-incrementing number like a typical numeric identifier in a database.
+You can also optionally provide metadata specific to this newly minted NFT that will override any defaults
+set in the previous step.
+
+### Body
+
+<ParamField body="chainId" type="number" required>
+  The id of the chain supporting the NFT. This cannot be changed after creation.
+</ParamField>
+
+<ParamField body="contractAddress" type="string" required>
+  The NFT smart contract address to mint with.
+</ParamField>
+
+<ParamField body="recipientAddress" type="string" required>
+  The address to mint an NFT to.
+</ParamField>
+
+<ParamField body="metadata" type="object" optional>
+    Metadata to associate with this NFT, which overrides any defaults set at the collection-level.
+
+    <Expandable title="NFT Metadata">
+
+      <ParamField body="name" type="string" optional>
+        Name for the NFT.
+      </ParamField>
+
+      <ParamField body="description" type="string" optional>
+        Description for the NFT.
+      </ParamField>
+
+      <ParamField body="mediaUrl" type="string" optional>
+        Url for the media content associated with the NFT.
+      </ParamField>
+
+      <ParamField body="externalUrl" type="string" optional>
+        Url for the external link associated with the NFT.
+      </ParamField>
+
+      <ParamField body="traits" type="Trait[]" optional>
+        Array of trait objects.
+
+        <Expandable title="Trait">
+          <ParamField body="name" type="string" required>
+            Name for the trait.
+          </ParamField>
+
+          <ParamField body="value" type="string" required>
+            Value for the trait.
+          </ParamField>
+        </Expandable>
+
+      </ParamField>
+
+    </Expandable>
+
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="transactionHash" type="string">
+  Transaction hash for the newly created token.
+</ResponseField>
+
+<ResponseField name="transactionUrl" type="string">
+  Wraps `transactionHash` with the appropriate network-specific URL for
+  convenience.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request POST 'https://groupos.xyz/api/v1/erc6551/mint' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <token>' \
+--data-raw '{
+    "chainId": 137,
+    "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
+    "recipientAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
+}'
+```
+
+</RequestExample>
+
+<ResponseExample>
+  ```json Success
+  {
+    "success": true,
+    "transactionHash": "0x58c789b7a59312ec0a659e165700db54af896d3e8b46e4aeecb33b32b88157c9",
+    "transactionUrl": "https://polygonscan.com/tx/0x58c789b7a59312ec0a659e165700db54af896d3e8b46e4aeecb33b32b88157c9"
+  }
+  ```
+  ```json Failure
+  {
+    "success": false,
+    "error": "[message]"
+  }
+  ```
+</ResponseExample>

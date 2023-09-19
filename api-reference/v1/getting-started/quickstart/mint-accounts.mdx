@@ -2,10 +2,9 @@
 title: "Mint Accounts"
 ---
 
-This is a short tutorial on how to mint ERC-721 NFTs with custom metadata as a part of a Typescript application.
+This is a short tutorial on how to mint NFT accounts with custom metadata as a part of a Typescript application.
 
-In our example, we will be minting NFTs with custom metadata for each new token. The main API route we need is
-[/api/v1/erc721/mint](/api-reference/v1/erc721/post/mint) which allows us to set the metadata of a new token in the same request as minting via
+In our example, we will be minting NFT accounts with custom metadata for each new token. The main API route we need is [/api/v1/erc6551/mint](/api-reference/v1/erc6551/post/mint) which allows us to set the metadata of a new token in the same request as minting via
 the `metadata` field. Starting with the image of the NFT, we first need to store our intended file in the cloud if
 we have not yet already.
 
@@ -34,7 +33,7 @@ await fetch("https://groupos.xyz/api/v1/nft/uploadMedia", {
 ### 2. Mint NFT with metadata
 
 Now that we've stored our image in the cloud, we can mint our NFT.
-Using the [/api/v1/erc721/mint](/api-reference/v1/erc721/post/mint) route, we can submit our NFT contract and desired
+Using the [/api/v1/erc6551/mint](/api-reference/v1/erc6551/post/mint) route, we can submit our NFT contract and desired
 recipient address and receive back a transaction hash for the pending mint. Depending on your NFT's network, confirmation
 can take seconds or minutes.
 
@@ -46,7 +45,7 @@ const nft = {
 const userAddress = "0x..."
 
 let nftMintTransactionHash = ""
-await fetch("https://groupos.xyz/api/v1/erc721/mint", {
+await fetch("https://groupos.xyz/api/v1/erc6551/mint", {
     method: "POST",
     headers: {
         Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
@@ -67,12 +66,12 @@ await fetch("https://groupos.xyz/api/v1/erc721/mint", {
 ### 3. Query minted NFTs
 
 Now that we've minted our NFT, we can query our minted tokens for confirmation.
-Using the [/api/v1/erc721/tokens](/api-reference/v1/erc721/get/tokens) route, we can query the 
+Using the [/api/v1/erc6551/tokens](/api-reference/v1/erc6551/get/tokens) route, we can query the 
 list of all owners and also tokens for just our latest recipient.
 
 ```typescript
 let allTokens = []
-await fetch("https://groupos.xyz/api/v1/erc721/tokens" + new URLSearchParams({
+await fetch("https://groupos.xyz/api/v1/erc6551/tokens" + new URLSearchParams({
         chainId: nft.chainId,
         contractAddress: nft.contractAddress,
     }), 
@@ -87,7 +86,7 @@ await fetch("https://groupos.xyz/api/v1/erc721/tokens" + new URLSearchParams({
 })
 
 let userTokens = []
-await fetch("https://groupos.xyz/api/v1/erc721/tokens" + new URLSearchParams({
+await fetch("https://groupos.xyz/api/v1/erc6551/tokens" + new URLSearchParams({
         chainId: nft.chainId,
         contractAddress: nft.contractAddress,
         ownerAddress: userAddress

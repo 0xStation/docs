@@ -1,0 +1,78 @@
+---
+title: "Update an NFT Collection's Default Metadata"
+sidebarTitle: "Update Collection Metadata"
+api: "PUT https://groupos.xyz/api/v1/erc6551/collectionMetadata"
+---
+
+### How NFT collection metadata works
+
+For NFT collections that have one standard set of metadata (name, image, etc.) or support evolving metadata
+schemes, a single set of metadata can be defined at the collection-level to provide this default.
+Individual metadata can be set when [minting new NFTs](/api-reference/v1/erc6551/post/mint) or [editing their metadata](/api-reference/v1/erc721/put/tokenMetadata) directly, which will override the defaults set here.
+
+When edits are made to the collection's default metadata, updates are propagated automatically to Opensea and other platforms.
+
+### Body
+
+<ParamField body="chainId" type="number" required>
+  The id of the chain supporting the NFT. This cannot be changed after creation.
+</ParamField>
+
+<ParamField body="contractAddress" type="string" required>
+  The NFT smart contract address to edit.
+</ParamField>
+
+<ParamField body="metadata" type="object">
+    Default metadata to apply to every NFT in the collection, which can be overriden with token-specific metadata.
+
+    <Expandable title="NFT Metadata">
+
+      <ParamField body="description" type="string" optional>
+        Description for the NFT.
+      </ParamField>
+
+      <ParamField body="mediaUrl" type="string" required>
+        Url for the media content associated with the NFT.
+      </ParamField>
+
+    </Expandable>
+
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request PUT 'https://groupos.xyz/api/v1/erc6551/collectionMetadata' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <token>' \
+--data-raw '{
+  "chainId": 137,
+  "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
+  "metadata": {
+    "description": "Horses run free in the metaverse.",
+    "mediaUrl": "https://hosted.app/abc123",
+  },
+}'
+```
+
+</RequestExample>
+
+<ResponseExample>
+  ```json Success
+  {
+    "success": true,
+  }
+  ```
+  ```json Failure
+  {
+    "success": false,
+    "error": "[message]"
+  }
+  ```
+</ResponseExample>

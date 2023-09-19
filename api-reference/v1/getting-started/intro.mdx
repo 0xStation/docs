@@ -5,16 +5,31 @@ description: "Control token operations through one API for custom automations."
 ---
 
 Tokens are the fundamental data model for attributing value and annotating addresses with
-decentralized data. There are 3 kinds of offerings, each tailored to serve different kinds of
+decentralized data. There are 4 kinds of offerings, each tailored to serve different kinds of
 use cases. To get started, learn more about a specific token standard through its recommended use cases.
 All token options support custom transferability constraints and evolving metadata.
 
-### Token Standards
-
-<CardGroup cols={3}>
+<CardGroup cols={2}>
+<Card
+    title="Accounts"
+    icon="user"
+    iconType="solid"
+    href="/api/v1/erc6551/create"
+  >
+    <div style={{ paddingTop: "8px", fontSize: "14px" }}>
+      Best for distributing{" "}
+      <span style={{ fontWeight: "bold" }}>onchain identity</span>.
+    </div>
+    <div style={{ paddingTop: "4px", fontSize: "14px" }}>
+      Examples include passport and game players.
+    </div>
+    <div style={{ paddingTop: "4px", fontSize: "14px" }}>
+      Powered by ERC-6551 and ERC-4337.
+    </div>
+  </Card>
   <Card
-    title="Memberships"
-    icon="id-badge"
+    title="ERC-721 NFTs"
+    icon="image"
     iconType="solid"
     href="/api/v1/erc721/overview"
   >
@@ -30,7 +45,7 @@ All token options support custom transferability constraints and evolving metada
     </div>
   </Card>
   <Card
-    title="Badges"
+    title="ERC-1155 NFTs"
     icon="badge-check"
     iconType="solid"
     href="/api/v1/erc1155/overview"
@@ -47,7 +62,7 @@ All token options support custom transferability constraints and evolving metada
     </div>
   </Card>
   <Card
-    title="Points"
+    title="ERC-20 Tokens"
     icon="coin"
     iconType="solid"
     href="/api/v1/erc20/overview"

@@ -1,0 +1,147 @@
+---
+title: "Query Accounts"
+sidebarTitle: "Query Accounts"
+api: "GET https://groupos.xyz/api/v1/erc6551/tokens"
+---
+
+### Query Params
+
+<ParamField body="chainId" type="number" required>
+  The id of the chain supporting the NFT. This cannot be changed after creation.
+</ParamField>
+
+<ParamField query="contractAddress" type="string" required>
+  The NFT smart contract address.
+</ParamField>
+
+<ParamField query="discordId" type="number" optional>
+  A Discord user to filter on.
+</ParamField>
+
+<ParamField query="page" type="number" optional>
+  Page index to fetch, page size is `50`.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="tokens" type="NFT[]">
+  Array of NFT objects.
+
+  <Expandable title="NFT">
+
+      <ResponseField name="tokenId" type="string">
+        Token ID of the NFT.
+      </ResponseField>
+
+      <ResponseField name="ownerAddress" type="string">
+        Address of the current owner (lower-cased).
+      </ResponseField>
+      
+      <ResponseField name="accountAddress" type="string">
+        Address of the NFT's token-bound-account (lower-cased).
+      </ResponseField>
+      
+      <ResponseField name="metadata" type="NFTMetadata">
+        Address of the NFT's token-bound-account (lower-cased).
+        
+        <Expandable title="NFTMetadata">
+          <ResponseField name="name" type="string">
+            Name of the token.
+          </ResponseField>
+          <ResponseField name="description" type="string">
+            Description of the token.
+          </ResponseField>
+          <ResponseField name="image" type="string">
+            Url of the hosted image asset.
+          </ResponseField>
+          <ResponseField name="external_url" type="string">
+            Url for the external link associated with the NFT.
+          </ResponseField>
+          <ResponseField name="attributes" type="Attribute[]">
+            Array of Attribute objects.
+              <Expandable title="Attribute">
+                  <ParamField body="trait_type" type="string" required>
+                      Name for the trait.
+                  </ParamField>
+                  <ParamField body="value" type="string | number" required>
+                      Value for the trait.
+                  </ParamField>
+                  <ParamField body="display_type" type="string" optional>
+                      Type of display to use.
+                  </ParamField>
+              </Expandable>
+          </ResponseField>
+        </Expandable>
+      
+      </ResponseField>
+
+  </Expandable>
+
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://groupos.xyz/api/v1/erc6551/tokens' \
+--request GET \
+-d 'chainId=1' \
+-d 'contractAddress=0x67F4732266C7300cca593C814d46bee72e40659F' \
+-d 'ownerAddress=0xc517c83f417b73dA98647dad0FCB80af9f3b9531' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <token>'
+```
+
+</RequestExample>
+
+<ResponseExample>
+  ```json Success
+  {
+    "success": true,
+    "tokens": [
+      {
+        "tokenId": "69",
+        "ownerAddress": "0xc517c83f417b73da98647dad0fcb80af9f3b9531",
+        "accountAddress": "0xd628c83f417b73da98647dad0fcb80af9f3b9642",
+        "metadata": {
+          "name": "...",
+          "description": "...",
+          "image": "https://...",
+          "external_url": "https://...",
+          "attributes": [
+              {
+                  "trait_type": "Points",
+                  "value": 100
+              },
+              {
+                  "trait_type": "Guild",
+                  "value": "..."
+              },
+              ...
+          ]
+        }
+      },
+      {
+        "tokenId": "420",
+        "ownerAddress": "0xc517c83f417b73da98647dad0fcb80af9f3b9531",
+        "accountAddress": "0xe739c83f417b73da98647dad0fcb80af9f3b9753",
+        "metadata": {
+          "name": "...",
+          "description": "...",
+          "image": "https://...",
+          "attributes": []
+        }
+      }
+    ]
+  }
+  ```
+  ```json Failure
+  {
+    "success": false,
+    "error": "[message]"
+  }
+  ```
+</ResponseExample>

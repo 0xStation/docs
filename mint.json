@@ -83,7 +83,7 @@
       ]
     },
     {
-      "group": "Components",
+      "group": "GroupOS Components",
       "pages": [
         {
           "group": "Accounts",
@@ -91,13 +91,6 @@
             "home/accounts/overview",
             "home/accounts/gas-policies",
             "home/accounts/trusted-executor"
-          ]
-        },
-        {
-          "group": "Membership",
-          "pages": [
-            "home/membership/overview",
-            "home/membership/sponsored-mints"
           ]
         },
         {
@@ -147,47 +140,58 @@
       ]
     },
     {
-      "group": "Tutorials",
+      "group": "Activate",
       "pages": [
-        "home/tutorials/deploy-accounts-collection",
-        "home/tutorials/connect-as-nft",
-        "home/tutorials/launch-membership-collection",
-        "home/tutorials/add-sign-up-form",
-        "home/tutorials/export-member-information"
+        "home/tutorials/activate/deploy-accounts-collection",
+        "home/tutorials/activate/set-up-claim-portal",
+        "home/tutorials/activate/add-sign-up-form",
+        "home/tutorials/activate/export-account-information",
+        "home/tutorials/activate/connect-as-nft"
       ]
     },
     {
-      "group": "Getting Started",
+      "group": "Reward",
+      "pages": [
+        "home/tutorials/reward/deploy-badges-collection",
+        "home/tutorials/reward/deploy-points-collection"
+      ]
+    },
+    {
+      "group": "Measure",
+      "pages": [
+        "home/tutorials/measure/accounts-analytics",
+        "home/tutorials/measure/gas-usage-analytics"
+      ]
+    },
+    {
+      "group": "Overview",
       "pages": [
         "api-reference/v1/getting-started/intro",
         "api-reference/v1/getting-started/auth",
-        "api-reference/v1/getting-started/networks",
-        {
-          "group": "Quickstart Examples",
-          "pages": [
-            "api-reference/v1/getting-started/quickstart/mint-memberships"
-          ]
-        }
+        "api-reference/v1/getting-started/networks"
       ]
     },
     {
-      "group": "Accounts",
+      "group": "Quickstart",
       "pages": [
+        "api-reference/v1/getting-started/quickstart/mint-accounts"
+      ]
+    },
+    {
+      "group": "Accounts (ERC-6551)",
+      "pages": [
+        "api-reference/v1/account/post/mint",
+        "api-reference/v1/account/post/permit",
+        "api-reference/v1/account/put/collectionMetadata",
+        "api-reference/v1/account/put/tokenMetadata",
+        "api-reference/v1/account/get/tokens",
         "api-reference/v1/account/post/call",
         "api-reference/v1/account/post/batchCalls",
         "api-reference/v1/account/get/calls"
       ]
     },
     {
-      "group": "NFT Metadata",
-      "pages": [
-        "api-reference/v1/nft/overview",
-        "api-reference/v1/nft/post/uploadMedia",
-        "api-reference/v1/nft/get/metadata"
-      ]
-    },
-    {
-      "group": "Memberships (ERC-721)",
+      "group": "ERC-721 NFTs",
       "pages": [
         "api-reference/v1/erc721/post/mint",
         "api-reference/v1/erc721/post/permit",
@@ -197,7 +201,7 @@
       ]
     },
     {
-      "group": "Badges (ERC-1155)",
+      "group": "ERC-1155 NFTs",
       "pages": [
         "api-reference/v1/erc1155/post/mint",
         "api-reference/v1/erc1155/post/permit",
@@ -207,11 +211,19 @@
       ]
     },
     {
-      "group": "Points (ERC-20)",
+      "group": "ERC-20 Tokens",
       "pages": [
         "api-reference/v1/erc20/post/mint",
         "api-reference/v1/erc20/post/permit",
         "api-reference/v1/erc20/get/tokens"
+      ]
+    },
+    {
+      "group": "NFT Metadata",
+      "pages": [
+        "api-reference/v1/nft/overview",
+        "api-reference/v1/nft/post/uploadMedia",
+        "api-reference/v1/nft/get/metadata"
       ]
     },
     {
