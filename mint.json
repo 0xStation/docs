@@ -365,6 +365,18 @@
         "technical-docs/src/src/extension/interface/IExtensions.sol/interface.IExtensions",
         "technical-docs/src/src/extension/interface/IExtensions.sol/interface.IExtensionsInternal"
       ]
+    },
+    {
+      "group": "guard",
+      "pages": [
+        "technical-docs/src/src/guard/examples/TimeRangeGuard.sol/contract.TimeRangeGuard",
+        "technical-docs/src/src/guard/Guards.sol/abstract.Guards",
+        "technical-docs/src/src/guard/GuardsInternal.sol/abstract.GuardsInternal",
+        "technical-docs/src/src/guard/GuardsStorage.sol/library.GuardsStorage",
+        "technical-docs/src/src/guard/interface/IGuard.sol/interface.IGuard",
+        "technical-docs/src/src/guard/interface/IGuards.sol/interface.IGuards",
+        "technical-docs/src/src/guard/interface/IGuards.sol/interface.IGuardsInternal"
+      ]
     }
   ],
   "footerSocials": {
