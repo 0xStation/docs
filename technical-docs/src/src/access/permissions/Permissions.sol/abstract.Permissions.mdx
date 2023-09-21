@@ -1,0 +1,70 @@
+# Permissions
+[Git Source](https://github.com/0xStation/0xrails/blob/491ae339f09853335dba9e897f46862d776d54b5/src/access/permissions/Permissions.sol)
+
+**Inherits:**
+[PermissionsInternal](/src/access/permissions/PermissionsInternal.sol/abstract.PermissionsInternal.md)
+
+
+## Functions
+### supportsInterface
+
+*Function to implement ERC-165 compliance*
+
+
+```solidity
+function supportsInterface(bytes4 interfaceId) public view virtual returns (bool);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`interfaceId`|`bytes4`|The interface identifier to check.|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`bool`|_ Boolean indicating whether the contract supports the specified interface.|
+
+
+### addPermission
+
+*Function to add permission for an address to carry out an operation*
+
+
+```solidity
+function addPermission(bytes8 operation, address account) public virtual;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`operation`|`bytes8`|The operation to permit|
+|`account`|`address`|The account address to be granted permission for the operation|
+
+
+### removePermission
+
+*Function to remove permission for an address to carry out an operation*
+
+
+```solidity
+function removePermission(bytes8 operation, address account) public virtual;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`operation`|`bytes8`|The operation to restrict|
+|`account`|`address`|The account address whose permission to remove|
+
+
+### _checkCanUpdatePermissions
+
+*Function to implement access control restricting setter functions*
+
+
+```solidity
+function _checkCanUpdatePermissions() internal virtual;
+```
+

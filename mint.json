@@ -62,6 +62,10 @@
       "url": "contract-architecture"
     },
     {
+      "name": "Contract Technical Docs",
+      "url": "technical-docs"
+    },
+    {
       "name": "Help Desk",
       "url": "https://discord.gg/68dQWzGt6U"
     }
@@ -257,6 +261,23 @@
         "contract-architecture/accounts/member",
         "contract-architecture/accounts/group",
         "contract-architecture/accounts/bot"
+      ]
+    },
+    {
+      "group": "Access",
+      "pages": [
+        "technical-docs/src/src/access/Access.sol/abstract.Access",
+        "technical-docs/src/src/access/ownable/interface/IOwnable.sol/interface.IOwnable",
+        "technical-docs/src/src/access/ownable/interface/IOwnable.sol/interface.IOwnableExternal",
+        "technical-docs/src/src/access/ownable/interface/IOwnable.sol/interface.IOwnableInternal",
+        "technical-docs/src/src/access/ownable/Ownable.sol/abstract.Ownable",
+        "technical-docs/src/src/access/ownable/OwnableInternal.sol/abstract.OwnableInternal",
+        "technical-docs/src/src/access/ownable/OwnableStorage.sol/library.OwnableStorage",
+        "technical-docs/src/src/access/permissions/interface/IPermissions.sol/interface.IPermissions",
+        "technical-docs/src/src/access/permissions/interface/IPermissions.sol/interface.IPermissionsInternal",
+        "technical-docs/src/src/access/permissions/Permissions.sol/abstract.Permissions",
+        "technical-docs/src/src/access/permissions/PermissionsInternal.sol/abstract.PermissionsInternal",
+        "technical-docs/src/src/access/permissions/PermissionsStorage.sol/library.PermissionsStorage"
       ]
     }
   ],
