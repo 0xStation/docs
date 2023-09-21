@@ -332,6 +332,17 @@
         "technical-docs/src/src/cores/ERC1155/interface/IERC1155.sol/interface.IERC1155",
         "technical-docs/src/src/cores/ERC1155/interface/IERC1155Rails.sol/interface.IERC1155Rails"
       ]
+    },
+    {
+      "group": "TokenMetadata",
+      "pages": [
+        "technical-docs/src/src/cores/TokenMetadata/TokenMetadata.sol/abstract.TokenMetadata",
+        "technical-docs/src/src/cores/TokenMetadata/TokenMetadataInternal.sol/abstract.TokenMetadataInternal",
+        "technical-docs/src/src/cores/TokenMetadata/TokenMetadataStorage.sol/library.TokenMetadataStorage",
+        "technical-docs/src/src/cores/TokenMetadata/ITokenMetadata.sol/interface.ITokenMetadata",
+        "technical-docs/src/src/cores/TokenMetadata/ITokenMetadata.sol/interface.ITokenMetadataExternal",
+        "technical-docs/src/src/cores/TokenMetadata/ITokenMetadata.sol/interface.ITokenMetadataInternal"
+      ]
     }
   ],
   "footerSocials": {
