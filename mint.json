@@ -296,6 +296,42 @@
         "technical-docs/src/src/cores/account/permissions/PermissionsInternal.sol/abstract.PermissionsInternal",
         "technical-docs/src/src/cores/account/permissions/PermissionsStorage.sol/library.PermissionsStorage"
       ]
+    },
+    {
+      "group": "ERC20",
+      "pages": [
+        "technical-docs/src/src/cores/ERC20/ERC20.sol/abstract.ERC20",
+        "technical-docs/src/src/cores/ERC20/ERC20Rails.sol/contract.ERC20Rails",
+        "technical-docs/src/src/cores/ERC20/ERC20Storage.sol/library.ERC20Storage",
+        "technical-docs/src/src/cores/ERC20/interface/IERC20.sol/interface.IERC20",
+        "technical-docs/src/src/cores/ERC20/interface/IERC20Rails.sol/interface.IERC20Rails"
+      ]
+    },
+    {
+      "group": "ERC721",
+      "pages": [
+        "technical-docs/src/src/cores/ERC721/ERC721.sol/abstract.ERC721",
+        "technical-docs/src/src/cores/ERC721/ERC721AUpgradeable.sol/contract.ERC721AUpgradeable",
+        "technical-docs/src/src/cores/ERC721/ERC721AUpgradeable.sol/interface.ERC721A__IERC721Receiver",
+        "technical-docs/src/src/cores/ERC721/ERC721Internal.sol/abstract.ERC721Internal",
+        "technical-docs/src/src/cores/ERC721/ERC721Rails.sol/contract.ERC721Rails",
+        "technical-docs/src/src/cores/ERC721/ERC721Storage.sol/library.ERC721Storage",
+        "technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721",
+        "technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721External",
+        "technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721Internal",
+        "technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721Receiver",
+        "technical-docs/src/src/cores/ERC721/interface/IERC721Rails.sol/interface.IERC721Rails"
+      ]
+    },
+    {
+      "group": "ERC1155",
+      "pages": [
+        "technical-docs/src/src/cores/ERC1155/ERC1155.sol/abstract.ERC1155",
+        "technical-docs/src/src/cores/ERC1155/ERC1155Rails.sol/contract.ERC1155Rails",
+        "technical-docs/src/src/cores/ERC1155/ERC1155Storage.sol/library.ERC1155Storage",
+        "technical-docs/src/src/cores/ERC1155/interface/IERC1155.sol/interface.IERC1155",
+        "technical-docs/src/src/cores/ERC1155/interface/IERC1155Rails.sol/interface.IERC1155Rails"
+      ]
     }
   ],
   "footerSocials": {
