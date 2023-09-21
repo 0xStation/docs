@@ -63,7 +63,7 @@
     },
     {
       "name": "Contract Technical Docs",
-      "url": "technical-docs"
+      "url": "0xrails-technical-docs"
     },
     {
       "name": "Help Desk",
@@ -266,155 +266,149 @@
     {
       "group": "Rails.sol",
       "pages": [
-        "technical-docs/src/src/Rails.sol/abstract.Rails"
+        "0xrails-technical-docs/src/src/Rails.sol/abstract.Rails"
       ]
     },
     {
       "group": "Access",
       "pages": [
-        "technical-docs/src/src/access/Access.sol/abstract.Access",
-        "technical-docs/src/src/access/ownable/interface/IOwnable.sol/interface.IOwnable",
-        "technical-docs/src/src/access/ownable/interface/IOwnable.sol/interface.IOwnableExternal",
-        "technical-docs/src/src/access/ownable/interface/IOwnable.sol/interface.IOwnableInternal",
-        "technical-docs/src/src/access/ownable/Ownable.sol/abstract.Ownable",
-        "technical-docs/src/src/access/ownable/OwnableInternal.sol/abstract.OwnableInternal",
-        "technical-docs/src/src/access/ownable/OwnableStorage.sol/library.OwnableStorage",
-        "technical-docs/src/src/access/permissions/interface/IPermissions.sol/interface.IPermissions",
-        "technical-docs/src/src/access/permissions/interface/IPermissions.sol/interface.IPermissionsInternal",
-        "technical-docs/src/src/access/permissions/Permissions.sol/abstract.Permissions",
-        "technical-docs/src/src/access/permissions/PermissionsInternal.sol/abstract.PermissionsInternal",
-        "technical-docs/src/src/access/permissions/PermissionsStorage.sol/library.PermissionsStorage"
+        "0xrails-technical-docs/src/src/access/Access.sol/abstract.Access",
+        "0xrails-technical-docs/src/src/access/ownable/interface/IOwnable.sol/interface.IOwnable",
+        "0xrails-technical-docs/src/src/access/ownable/interface/IOwnable.sol/interface.IOwnableExternal",
+        "0xrails-technical-docs/src/src/access/ownable/interface/IOwnable.sol/interface.IOwnableInternal",
+        "0xrails-technical-docs/src/src/access/ownable/Ownable.sol/abstract.Ownable",
+        "0xrails-technical-docs/src/src/access/ownable/OwnableInternal.sol/abstract.OwnableInternal",
+        "0xrails-technical-docs/src/src/access/ownable/OwnableStorage.sol/library.OwnableStorage",
+        "0xrails-technical-docs/src/src/access/permissions/interface/IPermissions.sol/interface.IPermissions",
+        "0xrails-technical-docs/src/src/access/permissions/interface/IPermissions.sol/interface.IPermissionsInternal",
+        "0xrails-technical-docs/src/src/access/permissions/Permissions.sol/abstract.Permissions",
+        "0xrails-technical-docs/src/src/access/permissions/PermissionsInternal.sol/abstract.PermissionsInternal",
+        "0xrails-technical-docs/src/src/access/permissions/PermissionsStorage.sol/library.PermissionsStorage"
       ]
     },
     {
       "group": "Account",
       "pages": [
-        "technical-docs/src/src/cores/account/Account.sol/abstract.Account",
-        "technical-docs/src/src/cores/account/BaseAccount.sol/abstract.BaseAccount",
-        "technical-docs/src/src/cores/account/BotAccount.sol/contract.BotAccount",
-        "technical-docs/src/src/cores/account/factory/interface/IAccountFactory.sol/interface.IAccountFactory",
-        "technical-docs/src/src/cores/account/factory/AccountFactory.sol/abstract.AccountFactory",
-        "technical-docs/src/src/cores/account/factory/AccountFactoryStorage.sol/library.AccountFactoryStorage",
-        "technical-docs/src/src/cores/account/factory/BotAccountFactory.sol/contract.BotAccountFactory",
-        "technical-docs/src/src/cores/account/permissions/interface/IPermissions.sol/interface.IPermissions",
-        "technical-docs/src/src/cores/account/permissions/interface/IPermissions.sol/interface.IPermissionsInternal",
-        "technical-docs/src/src/cores/account/permissions/Permissions.sol/abstract.Permissions",
-        "technical-docs/src/src/cores/account/permissions/PermissionsInternal.sol/abstract.PermissionsInternal",
-        "technical-docs/src/src/cores/account/permissions/PermissionsStorage.sol/library.PermissionsStorage"
+        "0xrails-technical-docs/src/src/cores/account/Account.sol/abstract.Account",
+        "0xrails-technical-docs/src/src/cores/account/BaseAccount.sol/abstract.BaseAccount",
+        "0xrails-technical-docs/src/src/cores/account/BotAccount.sol/contract.BotAccount",
+        "0xrails-technical-docs/src/src/cores/account/factory/interface/IAccountFactory.sol/interface.IAccountFactory",
+        "0xrails-technical-docs/src/src/cores/account/factory/AccountFactory.sol/abstract.AccountFactory",
+        "0xrails-technical-docs/src/src/cores/account/factory/AccountFactoryStorage.sol/library.AccountFactoryStorage",
+        "0xrails-technical-docs/src/src/cores/account/factory/BotAccountFactory.sol/contract.BotAccountFactory"
       ]
     },
     {
       "group": "ERC20",
       "pages": [
-        "technical-docs/src/src/cores/ERC20/ERC20.sol/abstract.ERC20",
-        "technical-docs/src/src/cores/ERC20/ERC20Rails.sol/contract.ERC20Rails",
-        "technical-docs/src/src/cores/ERC20/ERC20Storage.sol/library.ERC20Storage",
-        "technical-docs/src/src/cores/ERC20/interface/IERC20.sol/interface.IERC20",
-        "technical-docs/src/src/cores/ERC20/interface/IERC20Rails.sol/interface.IERC20Rails"
+        "0xrails-technical-docs/src/src/cores/ERC20/ERC20.sol/abstract.ERC20",
+        "0xrails-technical-docs/src/src/cores/ERC20/ERC20Rails.sol/contract.ERC20Rails",
+        "0xrails-technical-docs/src/src/cores/ERC20/ERC20Storage.sol/library.ERC20Storage",
+        "0xrails-technical-docs/src/src/cores/ERC20/interface/IERC20.sol/interface.IERC20",
+        "0xrails-technical-docs/src/src/cores/ERC20/interface/IERC20Rails.sol/interface.IERC20Rails"
       ]
     },
     {
       "group": "ERC721",
       "pages": [
-        "technical-docs/src/src/cores/ERC721/ERC721.sol/abstract.ERC721",
-        "technical-docs/src/src/cores/ERC721/ERC721AUpgradeable.sol/contract.ERC721AUpgradeable",
-        "technical-docs/src/src/cores/ERC721/ERC721AUpgradeable.sol/interface.ERC721A__IERC721Receiver",
-        "technical-docs/src/src/cores/ERC721/ERC721Internal.sol/abstract.ERC721Internal",
-        "technical-docs/src/src/cores/ERC721/ERC721Rails.sol/contract.ERC721Rails",
-        "technical-docs/src/src/cores/ERC721/ERC721Storage.sol/library.ERC721Storage",
-        "technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721",
-        "technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721External",
-        "technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721Internal",
-        "technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721Receiver",
-        "technical-docs/src/src/cores/ERC721/interface/IERC721Rails.sol/interface.IERC721Rails"
+        "0xrails-technical-docs/src/src/cores/ERC721/ERC721.sol/abstract.ERC721",
+        "0xrails-technical-docs/src/src/cores/ERC721/ERC721AUpgradeable.sol/contract.ERC721AUpgradeable",
+        "0xrails-technical-docs/src/src/cores/ERC721/ERC721AUpgradeable.sol/interface.ERC721A__IERC721Receiver",
+        "0xrails-technical-docs/src/src/cores/ERC721/ERC721Internal.sol/abstract.ERC721Internal",
+        "0xrails-technical-docs/src/src/cores/ERC721/ERC721Rails.sol/contract.ERC721Rails",
+        "0xrails-technical-docs/src/src/cores/ERC721/ERC721Storage.sol/library.ERC721Storage",
+        "0xrails-technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721",
+        "0xrails-technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721External",
+        "0xrails-technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721Internal",
+        "0xrails-technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721Receiver",
+        "0xrails-technical-docs/src/src/cores/ERC721/interface/IERC721Rails.sol/interface.IERC721Rails"
       ]
     },
     {
       "group": "ERC1155",
       "pages": [
-        "technical-docs/src/src/cores/ERC1155/ERC1155.sol/abstract.ERC1155",
-        "technical-docs/src/src/cores/ERC1155/ERC1155Rails.sol/contract.ERC1155Rails",
-        "technical-docs/src/src/cores/ERC1155/ERC1155Storage.sol/library.ERC1155Storage",
-        "technical-docs/src/src/cores/ERC1155/interface/IERC1155.sol/interface.IERC1155",
-        "technical-docs/src/src/cores/ERC1155/interface/IERC1155Rails.sol/interface.IERC1155Rails"
+        "0xrails-technical-docs/src/src/cores/ERC1155/ERC1155.sol/abstract.ERC1155",
+        "0xrails-technical-docs/src/src/cores/ERC1155/ERC1155Rails.sol/contract.ERC1155Rails",
+        "0xrails-technical-docs/src/src/cores/ERC1155/ERC1155Storage.sol/library.ERC1155Storage",
+        "0xrails-technical-docs/src/src/cores/ERC1155/interface/IERC1155.sol/interface.IERC1155",
+        "0xrails-technical-docs/src/src/cores/ERC1155/interface/IERC1155Rails.sol/interface.IERC1155Rails"
       ]
     },
     {
       "group": "TokenMetadata",
       "pages": [
-        "technical-docs/src/src/cores/TokenMetadata/TokenMetadata.sol/abstract.TokenMetadata",
-        "technical-docs/src/src/cores/TokenMetadata/TokenMetadataInternal.sol/abstract.TokenMetadataInternal",
-        "technical-docs/src/src/cores/TokenMetadata/TokenMetadataStorage.sol/library.TokenMetadataStorage",
-        "technical-docs/src/src/cores/TokenMetadata/ITokenMetadata.sol/interface.ITokenMetadata",
-        "technical-docs/src/src/cores/TokenMetadata/ITokenMetadata.sol/interface.ITokenMetadataExternal",
-        "technical-docs/src/src/cores/TokenMetadata/ITokenMetadata.sol/interface.ITokenMetadataInternal"
+        "0xrails-technical-docs/src/src/cores/TokenMetadata/TokenMetadata.sol/abstract.TokenMetadata",
+        "0xrails-technical-docs/src/src/cores/TokenMetadata/TokenMetadataInternal.sol/abstract.TokenMetadataInternal",
+        "0xrails-technical-docs/src/src/cores/TokenMetadata/TokenMetadataStorage.sol/library.TokenMetadataStorage",
+        "0xrails-technical-docs/src/src/cores/TokenMetadata/ITokenMetadata.sol/interface.ITokenMetadata",
+        "0xrails-technical-docs/src/src/cores/TokenMetadata/ITokenMetadata.sol/interface.ITokenMetadataExternal",
+        "0xrails-technical-docs/src/src/cores/TokenMetadata/ITokenMetadata.sol/interface.ITokenMetadataInternal"
       ]
     },
     {
       "group": "extension",
       "pages": [
-        "technical-docs/src/src/extension/examples/beacon/ExtensionBeacon.sol/abstract.ExtensionBeacon",
-        "technical-docs/src/src/extension/examples/beacon/ExtensionBeaconFollower.sol/abstract.ExtensionBeaconFollower",
-        "technical-docs/src/src/extension/examples/beacon/IExtensionBeacon.sol/interface.IExtensionBeacon",
-        "technical-docs/src/src/extension/examples/beacon/IExtensionBeacon.sol/interface.IExtensionBeaconFollower",
-        "technical-docs/src/src/extension/examples/metadataRouter/IMetadataExtensions.sol/interface.IContractURIExtension",
-        "technical-docs/src/src/extension/examples/metadataRouter/IMetadataExtensions.sol/interface.IMetadataRouter",
-        "technical-docs/src/src/extension/examples/metadataRouter/IMetadataExtensions.sol/interface.ITokenURIExtension",
-        "technical-docs/src/src/extension/examples/metadataRouter/MetadataRouterExtension.sol/contract.MetadataRouterExtension",
-        "technical-docs/src/src/extension/examples/metadataRouter/MetadataRouterExtensionData.sol/abstract.MetadataRouterExtensionData",
-        "technical-docs/src/src/extension/examples/metadataRouter/MetadataRouterExtensionData.sol/library.MetadataRouterStorage",
-        "technical-docs/src/src/extension/Extension.sol/abstract.Extension",
-        "technical-docs/src/src/extension/Extensions.sol/abstract.Extensions",
-        "technical-docs/src/src/extension/ExtensionsInternal.sol/abstract.ExtensionsInternal",
-        "technical-docs/src/src/extension/ExtensionsStorage.sol/library.ExtensionsStorage",
-        "technical-docs/src/src/extension/interface/IExtension.sol/interface.IExtension",
-        "technical-docs/src/src/extension/interface/IExtensions.sol/interface.IExtensions",
-        "technical-docs/src/src/extension/interface/IExtensions.sol/interface.IExtensionsInternal"
+        "0xrails-technical-docs/src/src/extension/examples/beacon/ExtensionBeacon.sol/abstract.ExtensionBeacon",
+        "0xrails-technical-docs/src/src/extension/examples/beacon/ExtensionBeaconFollower.sol/abstract.ExtensionBeaconFollower",
+        "0xrails-technical-docs/src/src/extension/examples/beacon/IExtensionBeacon.sol/interface.IExtensionBeacon",
+        "0xrails-technical-docs/src/src/extension/examples/beacon/IExtensionBeacon.sol/interface.IExtensionBeaconFollower",
+        "0xrails-technical-docs/src/src/extension/examples/metadataRouter/IMetadataExtensions.sol/interface.IContractURIExtension",
+        "0xrails-technical-docs/src/src/extension/examples/metadataRouter/IMetadataExtensions.sol/interface.IMetadataRouter",
+        "0xrails-technical-docs/src/src/extension/examples/metadataRouter/IMetadataExtensions.sol/interface.ITokenURIExtension",
+        "0xrails-technical-docs/src/src/extension/examples/metadataRouter/MetadataRouterExtension.sol/contract.MetadataRouterExtension",
+        "0xrails-technical-docs/src/src/extension/examples/metadataRouter/MetadataRouterExtensionData.sol/abstract.MetadataRouterExtensionData",
+        "0xrails-technical-docs/src/src/extension/examples/metadataRouter/MetadataRouterExtensionData.sol/library.MetadataRouterStorage",
+        "0xrails-technical-docs/src/src/extension/Extension.sol/abstract.Extension",
+        "0xrails-technical-docs/src/src/extension/Extensions.sol/abstract.Extensions",
+        "0xrails-technical-docs/src/src/extension/ExtensionsInternal.sol/abstract.ExtensionsInternal",
+        "0xrails-technical-docs/src/src/extension/ExtensionsStorage.sol/library.ExtensionsStorage",
+        "0xrails-technical-docs/src/src/extension/interface/IExtension.sol/interface.IExtension",
+        "0xrails-technical-docs/src/src/extension/interface/IExtensions.sol/interface.IExtensions",
+        "0xrails-technical-docs/src/src/extension/interface/IExtensions.sol/interface.IExtensionsInternal"
       ]
     },
     {
       "group": "guard",
       "pages": [
-        "technical-docs/src/src/guard/examples/TimeRangeGuard.sol/contract.TimeRangeGuard",
-        "technical-docs/src/src/guard/Guards.sol/abstract.Guards",
-        "technical-docs/src/src/guard/GuardsInternal.sol/abstract.GuardsInternal",
-        "technical-docs/src/src/guard/GuardsStorage.sol/library.GuardsStorage",
-        "technical-docs/src/src/guard/interface/IGuard.sol/interface.IGuard",
-        "technical-docs/src/src/guard/interface/IGuards.sol/interface.IGuards",
-        "technical-docs/src/src/guard/interface/IGuards.sol/interface.IGuardsInternal"
+        "0xrails-technical-docs/src/src/guard/examples/TimeRangeGuard.sol/contract.TimeRangeGuard",
+        "0xrails-technical-docs/src/src/guard/Guards.sol/abstract.Guards",
+        "0xrails-technical-docs/src/src/guard/GuardsInternal.sol/abstract.GuardsInternal",
+        "0xrails-technical-docs/src/src/guard/GuardsStorage.sol/library.GuardsStorage",
+        "0xrails-technical-docs/src/src/guard/interface/IGuard.sol/interface.IGuard",
+        "0xrails-technical-docs/src/src/guard/interface/IGuards.sol/interface.IGuards",
+        "0xrails-technical-docs/src/src/guard/interface/IGuards.sol/interface.IGuardsInternal"
       ]
     },
     {
       "group": "lib",
       "pages": [
-        "technical-docs/src/src/lib/Contract.sol/library.Contract",
-        "technical-docs/src/src/lib/ERC165/ISupportsInterface.sol/interface.ISupportsInterface",
-        "technical-docs/src/src/lib/ERC165/ISupportsInterface.sol/interface.ISupportsInterfaceExternal",
-        "technical-docs/src/src/lib/ERC165/ISupportsInterface.sol/interface.ISupportsInterfaceInternal",
-        "technical-docs/src/src/lib/ERC165/SupportsInterface.sol/abstract.SupportsInterface",
-        "technical-docs/src/src/lib/ERC165/SupportsInterfaceInternal.sol/abstract.SupportsInterfaceInternal",
-        "technical-docs/src/src/lib/ERC165/SupportsInterfaceStorage.sol/library.SupportsInterfaceStorage",
-        "technical-docs/src/src/lib/Execute.sol/abstract.Execute",
-        "technical-docs/src/src/lib/initializable/IInitializable.sol/interface.IInitializable",
-        "technical-docs/src/src/lib/initializable/IInitializable.sol/interface.IInitializableInternal",
-        "technical-docs/src/src/lib/initializable/Initializable.sol/abstract.Initializable",
-        "technical-docs/src/src/lib/initializable/InitializableStorage.sol/library.InitializableStorage",
-        "technical-docs/src/src/lib/Operations.sol/library.Operations",
-        "technical-docs/src/src/lib/OptionalBool.sol/library.OptionalBool",
-        "technical-docs/src/src/lib/TimeVersionedBeaconFollower.sol/library.TimeVersionedBeaconFollower"
+        "0xrails-technical-docs/src/src/lib/Contract.sol/library.Contract",
+        "0xrails-technical-docs/src/src/lib/ERC165/ISupportsInterface.sol/interface.ISupportsInterface",
+        "0xrails-technical-docs/src/src/lib/ERC165/ISupportsInterface.sol/interface.ISupportsInterfaceExternal",
+        "0xrails-technical-docs/src/src/lib/ERC165/ISupportsInterface.sol/interface.ISupportsInterfaceInternal",
+        "0xrails-technical-docs/src/src/lib/ERC165/SupportsInterface.sol/abstract.SupportsInterface",
+        "0xrails-technical-docs/src/src/lib/ERC165/SupportsInterfaceInternal.sol/abstract.SupportsInterfaceInternal",
+        "0xrails-technical-docs/src/src/lib/ERC165/SupportsInterfaceStorage.sol/library.SupportsInterfaceStorage",
+        "0xrails-technical-docs/src/src/lib/Execute.sol/abstract.Execute",
+        "0xrails-technical-docs/src/src/lib/initializable/IInitializable.sol/interface.IInitializable",
+        "0xrails-technical-docs/src/src/lib/initializable/IInitializable.sol/interface.IInitializableInternal",
+        "0xrails-technical-docs/src/src/lib/initializable/Initializable.sol/abstract.Initializable",
+        "0xrails-technical-docs/src/src/lib/initializable/InitializableStorage.sol/library.InitializableStorage",
+        "0xrails-technical-docs/src/src/lib/Operations.sol/library.Operations",
+        "0xrails-technical-docs/src/src/lib/OptionalBool.sol/library.OptionalBool",
+        "0xrails-technical-docs/src/src/lib/TimeVersionedBeaconFollower.sol/library.TimeVersionedBeaconFollower"
       ]
     },
     {
       "group": "validator",
       "pages": [
-        "technical-docs/src/src/validator/CallPermitValidator.sol/contract.CallPermitValidator",
-        "technical-docs/src/src/validator/interface/IValidator.sol/interface.IValidator",
-        "technical-docs/src/src/validator/interface/IValidators.sol/interface.IValidators",
-
-        "technical-docs/src/src/validator/OnlyOwnerValidator.sol/contract.OnlyOwnerValidator",
-        "technical-docs/src/src/validator/Validator.sol/abstract.Validator",
-        "technical-docs/src/src/validator/Validators.sol/abstract.Validators",
-        "technical-docs/src/src/validator/ValidatorsStorage.sol/library.ValidatorsStorage"
+        "0xrails-technical-docs/src/src/validator/CallPermitValidator.sol/contract.CallPermitValidator",
+        "0xrails-technical-docs/src/src/validator/interface/IValidator.sol/interface.IValidator",
+        "0xrails-technical-docs/src/src/validator/interface/IValidators.sol/interface.IValidators",
+        "0xrails-technical-docs/src/src/validator/OnlyOwnerValidator.sol/contract.OnlyOwnerValidator",
+        "0xrails-technical-docs/src/src/validator/Validator.sol/abstract.Validator",
+        "0xrails-technical-docs/src/src/validator/Validators.sol/abstract.Validators",
+        "0xrails-technical-docs/src/src/validator/ValidatorsStorage.sol/library.ValidatorsStorage"
       ]
     }
   ],
