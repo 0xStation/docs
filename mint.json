@@ -264,6 +264,12 @@
       ]
     },
     {
+      "group": "Rails.sol",
+      "pages": [
+        "technical-docs/src/src/Rails.sol/abstract.Rails"
+      ]
+    },
+    {
       "group": "Access",
       "pages": [
         "technical-docs/src/src/access/Access.sol/abstract.Access",
@@ -396,6 +402,19 @@
         "technical-docs/src/src/lib/Operations.sol/library.Operations",
         "technical-docs/src/src/lib/OptionalBool.sol/library.OptionalBool",
         "technical-docs/src/src/lib/TimeVersionedBeaconFollower.sol/library.TimeVersionedBeaconFollower"
+      ]
+    },
+    {
+      "group": "validator",
+      "pages": [
+        "technical-docs/src/src/validator/CallPermitValidator.sol/contract.CallPermitValidator",
+        "technical-docs/src/src/validator/interface/IValidator.sol/interface.IValidator",
+        "technical-docs/src/src/validator/interface/IValidators.sol/interface.IValidators",
+
+        "technical-docs/src/src/validator/OnlyOwnerValidator.sol/contract.OnlyOwnerValidator",
+        "technical-docs/src/src/validator/Validator.sol/abstract.Validator",
+        "technical-docs/src/src/validator/Validators.sol/abstract.Validators",
+        "technical-docs/src/src/validator/ValidatorsStorage.sol/library.ValidatorsStorage"
       ]
     }
   ],
