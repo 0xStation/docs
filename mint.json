@@ -62,8 +62,12 @@
       "url": "contract-architecture"
     },
     {
-      "name": "Contract Technical Docs",
+      "name": "0xRails Technical Docs",
       "url": "0xrails-technical-docs"
+    },
+    {
+      "name": "GroupOS Technical Docs",
+      "url": "groupos-technical-docs"
     },
     {
       "name": "Help Desk",
@@ -409,6 +413,60 @@
         "0xrails-technical-docs/src/src/validator/Validator.sol/abstract.Validator",
         "0xrails-technical-docs/src/src/validator/Validators.sol/abstract.Validators",
         "0xrails-technical-docs/src/src/validator/ValidatorsStorage.sol/library.ValidatorsStorage"
+      ]
+    },
+    {
+      "group": "badges",
+      "pages": [
+        "groupos-technical-docs/src/src/badges/factory/BadgesFactory.sol/contract.BadgesFactory",
+        "groupos-technical-docs/src/src/badges/factory/BadgesFactoryStorage.sol/library.BadgesFactoryStorage",
+        "groupos-technical-docs/src/src/badges/factory/IBadgesFactory.sol/interface.IBadgesFactory"
+      ]
+    },
+    {
+      "group": "lib",
+      "pages": [
+        "groupos-technical-docs/src/src/lib/ContractMetadata.sol/contract.ContractMetadata",
+        "groupos-technical-docs/src/src/lib/NonceBitMap.sol/abstract.NonceBitMap",
+        "groupos-technical-docs/src/src/lib/module/FeeManager.sol/contract.FeeManager",
+        "groupos-technical-docs/src/src/lib/module/ModuleFee.sol/abstract.ModuleFee",
+        "groupos-technical-docs/src/src/lib/module/ModulePermit.sol/abstract.ModulePermit",
+        "groupos-technical-docs/src/src/lib/module/ModuleSetup.sol/contract.ModuleSetup"
+      ]
+    },
+    {
+      "group": "membership",
+      "pages": [
+        "groupos-technical-docs/src/src/membership/extensions/NFTMetadataRouter/INFTMetadata.sol/interface.INFTMetadata",
+        "groupos-technical-docs/src/src/membership/extensions/NFTMetadataRouter/NFTMetadataRouter.sol/contract.NFTMetadataRouter",
+        "groupos-technical-docs/src/src/membership/extensions/NFTMetadataRouter/NFTMetadataRouterExtension.sol/contract.NFTMetadataRouterExtension",
+        "groupos-technical-docs/src/src/membership/extensions/PayoutAddress/IPayoutAddress.sol/interface.IPayoutAddress",
+        "groupos-technical-docs/src/src/membership/extensions/PayoutAddress/PayoutAddress.sol/abstract.PayoutAddress",
+        "groupos-technical-docs/src/src/membership/extensions/PayoutAddress/PayoutAddressExtension.sol/contract.PayoutAddressExtension",
+        "groupos-technical-docs/src/src/membership/extensions/PayoutAddress/PayoutAddressStorage.sol/library.PayoutAddressStorage",
+        "groupos-technical-docs/src/src/membership/factory/IMembershipFactory.sol/interface.IMembershipFactory",
+        "groupos-technical-docs/src/src/membership/factory/MembershipFactory.sol/contract.MembershipFactory",
+        "groupos-technical-docs/src/src/membership/factory/MembershipFactoryStorage.sol/library.MembershipFactoryStorage",
+        "groupos-technical-docs/src/src/membership/guards/OnePerAddressGuard.sol/contract.OnePerAddressGuard",
+        "groupos-technical-docs/src/src/membership/modules/FreeMintModule.sol/contract.FreeMintModule",
+        "groupos-technical-docs/src/src/membership/modules/GasCoinPurchaseModule.sol/contract.GasCoinPurchaseModule",
+        "groupos-technical-docs/src/src/membership/modules/StablecoinPurchaseModule.sol/contract.StablecoinPurchaseModule"
+      ]
+    },
+    {
+      "group": "metadataRouter",
+      "pages": [
+        "groupos-technical-docs/src/src/metadataRouter/IMetadataRouter.sol/interface.IMetadataRouter",
+        "groupos-technical-docs/src/src/metadataRouter/MetadataRouter.sol/contract.MetadataRouter",
+        "groupos-technical-docs/src/src/metadataRouter/MetadataRouterStorage.sol/library.MetadataRouterStorage"
+      ]
+    },
+    {
+      "group": "points",
+      "pages": [
+        "groupos-technical-docs/src/src/points/factory/IPointsFactory.sol/interface.IPointsFactory",
+        "groupos-technical-docs/src/src/points/factory/PointsFactory.sol/contract.PointsFactory",
+        "groupos-technical-docs/src/src/points/factory/PointsFactoryStorage.sol/library.PointsFactoryStorage"
       ]
     }
   ],

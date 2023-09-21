@@ -1,0 +1,36 @@
+# PayoutAddressExtension
+[Git Source](https://github.com/0xStation/groupos/blob/dbf5849fa48aac03711471c1ce33b8c26f177a2c/src/membership/extensions/PayoutAddress/PayoutAddressExtension.sol)
+
+**Inherits:**
+[PayoutAddress](/src/membership/extensions/PayoutAddress/PayoutAddress.sol/abstract.PayoutAddress.md), Extension, [ContractMetadata](/src/lib/ContractMetadata.sol/contract.ContractMetadata.md)
+
+
+## Functions
+### constructor
+
+
+```solidity
+constructor(address router) Extension ContractMetadata(router);
+```
+
+### _contractRoute
+
+
+```solidity
+function _contractRoute() internal pure override returns (string memory route);
+```
+
+### getAllSelectors
+
+
+```solidity
+function getAllSelectors() public pure override returns (bytes4[] memory selectors);
+```
+
+### signatureOf
+
+
+```solidity
+function signatureOf(bytes4 selector) public pure override returns (string memory);
+```
+

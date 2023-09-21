@@ -19,8 +19,8 @@ function renameFilesAndRecordChanges(directoryPath) {
 
         fs.renameSync(itemPath, newPath);
 
-        // changeLog.push(`Renamed: ${itemPath} => ${newPath}`); // verbose option
-        changeLog.push(`${newPath}`);
+        // changeLog.push(`Renamed: ${itemPath} => ${newPath.slice(0, -4)}`); // verbose option
+        changeLog.push(`"${newPath.slice(0, -4)}",`); // remove '.mdx' and push it to array
       }
     }
   }
@@ -37,5 +37,5 @@ function renameFilesAndRecordChanges(directoryPath) {
 }
 
 // Hardcoded dir param: if using this in a different dir, change this value
-const directoryPath = 'src';
+const directoryPath = 'groupos-technical-docs/src';
 renameFilesAndRecordChanges(directoryPath);
