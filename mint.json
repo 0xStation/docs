@@ -343,6 +343,28 @@
         "technical-docs/src/src/cores/TokenMetadata/ITokenMetadata.sol/interface.ITokenMetadataExternal",
         "technical-docs/src/src/cores/TokenMetadata/ITokenMetadata.sol/interface.ITokenMetadataInternal"
       ]
+    },
+    {
+      "group": "extension",
+      "pages": [
+        "technical-docs/src/src/extension/examples/beacon/ExtensionBeacon.sol/abstract.ExtensionBeacon",
+        "technical-docs/src/src/extension/examples/beacon/ExtensionBeaconFollower.sol/abstract.ExtensionBeaconFollower",
+        "technical-docs/src/src/extension/examples/beacon/IExtensionBeacon.sol/interface.IExtensionBeacon",
+        "technical-docs/src/src/extension/examples/beacon/IExtensionBeacon.sol/interface.IExtensionBeaconFollower",
+        "technical-docs/src/src/extension/examples/metadataRouter/IMetadataExtensions.sol/interface.IContractURIExtension",
+        "technical-docs/src/src/extension/examples/metadataRouter/IMetadataExtensions.sol/interface.IMetadataRouter",
+        "technical-docs/src/src/extension/examples/metadataRouter/IMetadataExtensions.sol/interface.ITokenURIExtension",
+        "technical-docs/src/src/extension/examples/metadataRouter/MetadataRouterExtension.sol/contract.MetadataRouterExtension",
+        "technical-docs/src/src/extension/examples/metadataRouter/MetadataRouterExtensionData.sol/abstract.MetadataRouterExtensionData",
+        "technical-docs/src/src/extension/examples/metadataRouter/MetadataRouterExtensionData.sol/library.MetadataRouterStorage",
+        "technical-docs/src/src/extension/Extension.sol/abstract.Extension",
+        "technical-docs/src/src/extension/Extensions.sol/abstract.Extensions",
+        "technical-docs/src/src/extension/ExtensionsInternal.sol/abstract.ExtensionsInternal",
+        "technical-docs/src/src/extension/ExtensionsStorage.sol/library.ExtensionsStorage",
+        "technical-docs/src/src/extension/interface/IExtension.sol/interface.IExtension",
+        "technical-docs/src/src/extension/interface/IExtensions.sol/interface.IExtensions",
+        "technical-docs/src/src/extension/interface/IExtensions.sol/interface.IExtensionsInternal"
+      ]
     }
   ],
   "footerSocials": {
