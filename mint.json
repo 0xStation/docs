@@ -377,6 +377,26 @@
         "technical-docs/src/src/guard/interface/IGuards.sol/interface.IGuards",
         "technical-docs/src/src/guard/interface/IGuards.sol/interface.IGuardsInternal"
       ]
+    },
+    {
+      "group": "lib",
+      "pages": [
+        "technical-docs/src/src/lib/Contract.sol/library.Contract",
+        "technical-docs/src/src/lib/ERC165/ISupportsInterface.sol/interface.ISupportsInterface",
+        "technical-docs/src/src/lib/ERC165/ISupportsInterface.sol/interface.ISupportsInterfaceExternal",
+        "technical-docs/src/src/lib/ERC165/ISupportsInterface.sol/interface.ISupportsInterfaceInternal",
+        "technical-docs/src/src/lib/ERC165/SupportsInterface.sol/abstract.SupportsInterface",
+        "technical-docs/src/src/lib/ERC165/SupportsInterfaceInternal.sol/abstract.SupportsInterfaceInternal",
+        "technical-docs/src/src/lib/ERC165/SupportsInterfaceStorage.sol/library.SupportsInterfaceStorage",
+        "technical-docs/src/src/lib/Execute.sol/abstract.Execute",
+        "technical-docs/src/src/lib/initializable/IInitializable.sol/interface.IInitializable",
+        "technical-docs/src/src/lib/initializable/IInitializable.sol/interface.IInitializableInternal",
+        "technical-docs/src/src/lib/initializable/Initializable.sol/abstract.Initializable",
+        "technical-docs/src/src/lib/initializable/InitializableStorage.sol/library.InitializableStorage",
+        "technical-docs/src/src/lib/Operations.sol/library.Operations",
+        "technical-docs/src/src/lib/OptionalBool.sol/library.OptionalBool",
+        "technical-docs/src/src/lib/TimeVersionedBeaconFollower.sol/library.TimeVersionedBeaconFollower"
+      ]
     }
   ],
   "footerSocials": {
