@@ -279,6 +279,23 @@
         "technical-docs/src/src/access/permissions/PermissionsInternal.sol/abstract.PermissionsInternal",
         "technical-docs/src/src/access/permissions/PermissionsStorage.sol/library.PermissionsStorage"
       ]
+    },
+    {
+      "group": "Account",
+      "pages": [
+        "technical-docs/src/src/cores/account/Account.sol/abstract.Account",
+        "technical-docs/src/src/cores/account/BaseAccount.sol/abstract.BaseAccount",
+        "technical-docs/src/src/cores/account/BotAccount.sol/contract.BotAccount",
+        "technical-docs/src/src/cores/account/factory/interface/IAccountFactory.sol/interface.IAccountFactory",
+        "technical-docs/src/src/cores/account/factory/AccountFactory.sol/abstract.AccountFactory",
+        "technical-docs/src/src/cores/account/factory/AccountFactoryStorage.sol/library.AccountFactoryStorage",
+        "technical-docs/src/src/cores/account/factory/BotAccountFactory.sol/contract.BotAccountFactory",
+        "technical-docs/src/src/cores/account/permissions/interface/IPermissions.sol/interface.IPermissions",
+        "technical-docs/src/src/cores/account/permissions/interface/IPermissions.sol/interface.IPermissionsInternal",
+        "technical-docs/src/src/cores/account/permissions/Permissions.sol/abstract.Permissions",
+        "technical-docs/src/src/cores/account/permissions/PermissionsInternal.sol/abstract.PermissionsInternal",
+        "technical-docs/src/src/cores/account/permissions/PermissionsStorage.sol/library.PermissionsStorage"
+      ]
     }
   ],
   "footerSocials": {
