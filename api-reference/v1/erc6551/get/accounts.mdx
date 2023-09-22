@@ -1,7 +1,7 @@
 ---
-title: "Query Accounts"
+title: "Query NFT Accounts"
 sidebarTitle: "Query Accounts"
-api: "GET https://groupos.xyz/api/v1/erc6551/tokens"
+api: "GET https://groupos.xyz/api/v1/erc6551/accounts"
 ---
 
 ### Query Params
@@ -14,8 +14,8 @@ api: "GET https://groupos.xyz/api/v1/erc6551/tokens"
   The NFT smart contract address.
 </ParamField>
 
-<ParamField query="discordId" type="number" optional>
-  A Discord user to filter on.
+<ParamField query="ownerAddress" type="string" optional>
+  An NFT Account owner to filter on.
 </ParamField>
 
 <ParamField query="page" type="number" optional>
@@ -28,27 +28,27 @@ api: "GET https://groupos.xyz/api/v1/erc6551/tokens"
   Indicates whether the call was successful.
 </ResponseField>
 
-<ResponseField name="tokens" type="NFT[]">
-  Array of NFT objects.
+<ResponseField name="accounts" type="NftAccount[]">
+  Array of NFT Account objects.
 
-  <Expandable title="NFT">
+  <Expandable title="NftAccount">
+
+      <ResponseField name="ownerAddress" type="string">
+        Address of the current owner (lower-cased).
+      </ResponseField>
+
+      <ResponseField name="accountAddress" type="string">
+        Address of the NFT Account (lower-cased).
+      </ResponseField>
 
       <ResponseField name="tokenId" type="string">
         Token ID of the NFT.
       </ResponseField>
 
-      <ResponseField name="ownerAddress" type="string">
-        Address of the current owner (lower-cased).
-      </ResponseField>
-      
-      <ResponseField name="accountAddress" type="string">
-        Address of the NFT's token-bound-account (lower-cased).
-      </ResponseField>
-      
-      <ResponseField name="metadata" type="NFTMetadata">
-        Address of the NFT's token-bound-account (lower-cased).
-        
-        <Expandable title="NFTMetadata">
+      <ResponseField name="metadata" type="NftMetadata">
+        Metadata of the NFT.
+
+        <Expandable title="NftMetadata">
           <ResponseField name="name" type="string">
             Name of the token.
           </ResponseField>
@@ -76,7 +76,7 @@ api: "GET https://groupos.xyz/api/v1/erc6551/tokens"
               </Expandable>
           </ResponseField>
         </Expandable>
-      
+
       </ResponseField>
 
   </Expandable>
@@ -86,7 +86,7 @@ api: "GET https://groupos.xyz/api/v1/erc6551/tokens"
 <RequestExample>
 
 ```bash Example Request
-curl --location 'https://groupos.xyz/api/v1/erc6551/tokens' \
+curl --location 'https://groupos.xyz/api/v1/erc6551/accounts' \
 --request GET \
 -d 'chainId=1' \
 -d 'contractAddress=0x67F4732266C7300cca593C814d46bee72e40659F' \
@@ -101,11 +101,11 @@ curl --location 'https://groupos.xyz/api/v1/erc6551/tokens' \
   ```json Success
   {
     "success": true,
-    "tokens": [
+    "accounts": [
       {
-        "tokenId": "69",
         "ownerAddress": "0xc517c83f417b73da98647dad0fcb80af9f3b9531",
         "accountAddress": "0xd628c83f417b73da98647dad0fcb80af9f3b9642",
+        "tokenId": "69",
         "metadata": {
           "name": "...",
           "description": "...",
@@ -125,9 +125,9 @@ curl --location 'https://groupos.xyz/api/v1/erc6551/tokens' \
         }
       },
       {
-        "tokenId": "420",
         "ownerAddress": "0xc517c83f417b73da98647dad0fcb80af9f3b9531",
         "accountAddress": "0xe739c83f417b73da98647dad0fcb80af9f3b9753",
+        "tokenId": "420",
         "metadata": {
           "name": "...",
           "description": "...",

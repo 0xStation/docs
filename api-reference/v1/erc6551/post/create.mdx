@@ -1,32 +1,33 @@
 ---
-title: "Mint NFT Accounts"
-sidebarTitle: "Mint Accounts"
-api: "POST https://groupos.xyz/api/v1/erc6551/mint"
+title: "Create NFT Accounts"
+sidebarTitle: "Create Accounts"
+api: "POST https://groupos.xyz/api/v1/erc6551/create"
 ---
 
-### How to mint NFT Accounts
+### How to create NFT Accounts
 
-Once you have an Accounts smart contract, you can mint any number of tokens to any address. Each NFT
-has a unique `tokenId` which is an auto-incrementing number like a typical numeric identifier in a database.
-You can also optionally provide metadata specific to this newly minted NFT that will override any defaults
-set in the previous step.
+Once you have an Accounts Collection smart contract, you can create any number of accounts to any owner address.
+Each Account is powered with ERC-6551 which means you are both distributing an ERC-721 NFT and a ERC-4337 account together
+in one transaction. You can also optionally provide metadata specific to this newly minted NFT Account that will override any defaults
+set in the Accounts Collection.
 
 ### Body
 
 <ParamField body="chainId" type="number" required>
-  The id of the chain supporting the NFT. This cannot be changed after creation.
+  The id of the chain supporting the NFT Accounts Collection. This cannot be
+  changed after creation.
 </ParamField>
 
 <ParamField body="contractAddress" type="string" required>
-  The NFT smart contract address to mint with.
+  The NFT Accounts Collection smart contract address to create with.
 </ParamField>
 
-<ParamField body="recipientAddress" type="string" required>
-  The address to mint an NFT to.
+<ParamField body="ownerAddress" type="string" required>
+  The address that will own the new NFT Account.
 </ParamField>
 
 <ParamField body="metadata" type="object" optional>
-    Metadata to associate with this NFT, which overrides any defaults set at the collection-level.
+    Metadata to associate with the NFT Account, which overrides any defaults set at the collection-level.
 
     <Expandable title="NFT Metadata">
 
@@ -83,13 +84,13 @@ set in the previous step.
 <RequestExample>
 
 ```bash Example Request
-curl --location --request POST 'https://groupos.xyz/api/v1/erc6551/mint' \
+curl --location --request POST 'https://groupos.xyz/api/v1/erc6551/create' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <token>' \
 --data-raw '{
     "chainId": 137,
     "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
-    "recipientAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
+    "ownerAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
 }'
 ```
 

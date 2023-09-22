@@ -1,10 +1,10 @@
 ---
-title: "Update an NFT's Metadata"
-sidebarTitle: "Update Token Metadata"
-api: "PUT https://groupos.xyz/api/v1/erc6551/tokenMetadata"
+title: "Update an NFT Account's Metadata"
+sidebarTitle: "Update Account Metadata"
+api: "PUT https://groupos.xyz/api/v1/erc6551/accountMetadata"
 ---
 
-### How NFT token metadata works
+### How NFT Account metadata works
 
 To support differentiated NFTs within a collection and dynamic or evolving use cases, set metadata on a per-token basis.
 
@@ -18,13 +18,13 @@ When edits are made to the NFT's metadata, updates are propagated automatically 
 <ParamField body="contractAddress" type="string" required>
   The NFT smart contract address to edit.
 </ParamField>
-<ParamField body="tokenId" type="string" required>
-  The NFT smart contract address to edit.
+<ParamField body="accountAddress" type="string" required>
+  The NFT Account address to edit.
 </ParamField>
-<ParamField body="metadata" type="object" required>
+<ParamField body="metadata" type="NftMetadata" required>
   Individual metadata to associate with this NFT, which overrides any defaults
-  set at the collection-level
-  <Expandable title="NFT Metadata">
+  set at the collection-level.
+  <Expandable title="NftMetadata">
     <ParamField body="name" type="string" optional>
       Name for the NFT.
     </ParamField>
@@ -59,14 +59,14 @@ When edits are made to the NFT's metadata, updates are propagated automatically 
 
 <RequestExample>
   ```bash Example Request
-  curl 'https://groupos.xyz/api/v1/erc6551/tokenMetadata' \
+  curl 'https://groupos.xyz/api/v1/erc6551/accountMetadata' \
   --request PUT \
   --header 'Content-Type: application/json' \
   --header 'Authorization: Bearer <token>' \
   --data-raw '{
     "chainId": 137,
     "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
-    "tokenId": "10",
+    "accountAddress": "0xd628c83f417b73da98647dad0fcb80af9f3b9642",
     "metadata": {
       "name": "Zed Run",
       "description": "Horses run free in the metaverse.",

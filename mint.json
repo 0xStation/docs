@@ -96,39 +96,27 @@
         },
         {
           "group": "Badges",
-          "pages": [
-            "home/badges/overview"
-          ]
+          "pages": ["home/badges/overview"]
         },
         {
           "group": "Points",
-          "pages": [
-            "home/points/overview"
-          ]
+          "pages": ["home/points/overview"]
         },
         {
           "group": "Items",
-          "pages": [
-            "home/items/overview"
-          ]
+          "pages": ["home/items/overview"]
         },
         {
           "group": "Roles",
-          "pages": [
-            "home/points/overview"
-          ]
+          "pages": ["home/points/overview"]
         },
         {
           "group": "Attestations",
-          "pages": [
-            "home/attestations/overview"
-          ]
+          "pages": ["home/attestations/overview"]
         },
         {
           "group": "Directory",
-          "pages": [
-            "home/directory/overview"
-          ]
+          "pages": ["home/directory/overview"]
         },
         {
           "group": "Analytics",
@@ -174,21 +162,14 @@
     },
     {
       "group": "Quickstart",
-      "pages": [
-        "api-reference/v1/getting-started/quickstart/mint-accounts"
-      ]
+      "pages": ["api-reference/v1/getting-started/quickstart/mint-accounts"]
     },
     {
-      "group": "Accounts (ERC-6551)",
+      "group": "NFT Accounts (ERC-6551)",
       "pages": [
-        "api-reference/v1/account/post/mint",
-        "api-reference/v1/account/post/permit",
-        "api-reference/v1/account/put/collectionMetadata",
-        "api-reference/v1/account/put/tokenMetadata",
-        "api-reference/v1/account/get/tokens",
-        "api-reference/v1/account/post/call",
-        "api-reference/v1/account/post/batchCalls",
-        "api-reference/v1/account/get/calls"
+        "api-reference/v1/erc6551/post/create",
+        "api-reference/v1/erc6551/put/accountMetadata",
+        "api-reference/v1/erc6551/get/accounts"
       ]
     },
     {
