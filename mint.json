@@ -71,9 +71,9 @@
       "group": "Overview",
       "pages": [
         "home/overview/why",
+        "home/overview/nft-accounts",
         "home/overview/use-cases",
-        "home/overview/networks",
-        "home/overview/nft-accounts"
+        "home/overview/networks"
       ]
     },
     {
