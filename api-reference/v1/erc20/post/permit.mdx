@@ -17,21 +17,21 @@ a blockchain transaction. This makes permiting free for your application as user
 own gas at the time of mint, which can take place on your own interface or use a default experience provided
 by Station.
 
-When you permit an NFT, our cloud-wallets sign an approval for the recipient that is used to authenticate
+When you permit an token, our cloud-wallets sign an approval for the recipient that is used to authenticate
 their mint call within the smart contract. Each signature can optionally be set with an expiration as well.
 
 ### Body
 
 <ParamField body="chainId" type="number" required>
-  The id of the chain supporting the NFT. This cannot be changed after creation.
+  The id of the chain supporting the token. This cannot be changed after creation.
 </ParamField>
 
 <ParamField body="contractAddress" type="string" required>
-  The NFT smart contract address to permit with.
+  The token smart contract address to permit with.
 </ParamField>
 
 <ParamField body="recipientAddress" type="string" required>
-  The address to permit an NFT to.
+  The address to permit an token to.
 </ParamField>
 
 <ParamField body="amount" type="string" required>
