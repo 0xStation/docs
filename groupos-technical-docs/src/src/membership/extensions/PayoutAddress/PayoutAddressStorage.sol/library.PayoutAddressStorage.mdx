@@ -1,0 +1,29 @@
+# PayoutAddressStorage
+[Git Source](https://github.com/0xStation/groupos/blob/dbf5849fa48aac03711471c1ce33b8c26f177a2c/src/membership/extensions/PayoutAddress/PayoutAddressStorage.sol)
+
+
+## State Variables
+### SLOT
+
+```solidity
+bytes32 internal constant SLOT = keccak256(abi.encode(uint256(keccak256("groupos.PayoutAddress")) - 1));
+```
+
+
+## Functions
+### layout
+
+
+```solidity
+function layout() internal pure returns (Layout storage l);
+```
+
+## Structs
+### Layout
+
+```solidity
+struct Layout {
+    address payoutAddress;
+}
+```
+

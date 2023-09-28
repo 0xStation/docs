@@ -1,0 +1,46 @@
+# Ownable
+[Git Source](https://github.com/0xStation/0xrails/blob/491ae339f09853335dba9e897f46862d776d54b5/src/access/ownable/Ownable.sol)
+
+**Inherits:**
+[OwnableInternal](/src/access/ownable/OwnableInternal.sol/abstract.OwnableInternal.md), [IOwnableExternal](/src/access/ownable/interface/IOwnable.sol/interface.IOwnableExternal.md)
+
+*This contract provides access control by defining an owner address,
+which can be updated through a two-step pending acceptance system or even revoked if desired.*
+
+
+## Functions
+### renounceOwnership
+
+*Function to renounce all potential for ownership of the contract
+by assigning it to the zero address, which has no known private key.*
+
+
+```solidity
+function renounceOwnership() public virtual onlyOwner;
+```
+
+### transferOwnership
+
+*Function to commence ownership transfer by setting `newOwner` as pending*
+
+
+```solidity
+function transferOwnership(address newOwner) public virtual onlyOwner;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`newOwner`|`address`|The intended new owner to be set as pending, awaiting acceptance|
+
+
+### acceptOwnership
+
+*Function to accept an offer of ownership, intended to be called
+only by the address that is currently set as `pendingOwner`*
+
+
+```solidity
+function acceptOwnership() public virtual;
+```
+

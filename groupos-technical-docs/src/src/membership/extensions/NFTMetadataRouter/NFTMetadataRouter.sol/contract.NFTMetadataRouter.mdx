@@ -1,0 +1,37 @@
+# NFTMetadataRouter
+[Git Source](https://github.com/0xStation/groupos/blob/dbf5849fa48aac03711471c1ce33b8c26f177a2c/src/membership/extensions/NFTMetadataRouter/NFTMetadataRouter.sol)
+
+**Inherits:**
+[ContractMetadata](/src/lib/ContractMetadata.sol/contract.ContractMetadata.md), [INFTMetadata](/src/membership/extensions/NFTMetadataRouter/INFTMetadata.sol/interface.INFTMetadata.md)
+
+
+## Functions
+### constructor
+
+
+```solidity
+constructor(address router) ContractMetadata(router);
+```
+
+### ext_contractURI
+
+Intended to be invoked in the context of a delegatecall
+
+*Function to extend the `contractURI()` function*
+
+
+```solidity
+function ext_contractURI() external view returns (string memory uri);
+```
+
+### ext_tokenURI
+
+Intended to be invoked in the context of a delegatecall
+
+*Function to extend the `tokenURI()` function*
+
+
+```solidity
+function ext_tokenURI(uint256 tokenId) external view returns (string memory uri);
+```
+

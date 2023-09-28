@@ -1,0 +1,89 @@
+# MembershipFactory
+[Git Source](https://github.com/0xStation/groupos/blob/dbf5849fa48aac03711471c1ce33b8c26f177a2c/src/membership/factory/MembershipFactory.sol)
+
+**Inherits:**
+Initializable, Ownable, UUPSUpgradeable, [IMembershipFactory](/src/membership/factory/IMembershipFactory.sol/interface.IMembershipFactory.md)
+
+
+## Functions
+### constructor
+
+
+```solidity
+constructor() Initializable;
+```
+
+### initialize
+
+*Initializes the proxy for the factory*
+
+
+```solidity
+function initialize(address membershipImpl_, address owner_) external initializer;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`membershipImpl_`|`address`|The initial Membership implementation address whose logic to use|
+|`owner_`|`address`|The owner address to be set for the factory contract|
+
+
+### membershipImpl
+
+*Get the current implementation contract*
+
+
+```solidity
+function membershipImpl() public view returns (address);
+```
+
+### setMembershipImpl
+
+*Set the `newImpl` address whose logic will be used by deployed Membership proxies*
+
+
+```solidity
+function setMembershipImpl(address newImpl) external onlyOwner;
+```
+
+### _updateMembershipImpl
+
+
+```solidity
+function _updateMembershipImpl(address newImpl) internal;
+```
+
+### _authorizeUpgrade
+
+
+```solidity
+function _authorizeUpgrade(address newImplementation) internal override onlyOwner;
+```
+
+### create
+
+*Function to create a new Membership proxy using given data*
+
+
+```solidity
+function create(address membershipOwner, string memory name, string memory symbol, bytes calldata initData)
+    public
+    returns (address membership);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`membershipOwner`|`address`||
+|`name`|`string`|The membership name string|
+|`symbol`|`string`|The membership symbol string|
+|`initData`|`bytes`|Data to pass to `initialize()` on the created Membership proxy|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`membership`|`address`|The created Membership proxy address|
+
+

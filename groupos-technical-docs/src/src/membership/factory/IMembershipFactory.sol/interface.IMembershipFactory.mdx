@@ -1,0 +1,85 @@
+# IMembershipFactory
+[Git Source](https://github.com/0xStation/groupos/blob/dbf5849fa48aac03711471c1ce33b8c26f177a2c/src/membership/factory/IMembershipFactory.sol)
+
+
+## Functions
+### membershipImpl
+
+*Get the current implementation contract*
+
+
+```solidity
+function membershipImpl() external view returns (address);
+```
+
+### setMembershipImpl
+
+*Set the `newImpl` address whose logic will be used by deployed Membership proxies*
+
+
+```solidity
+function setMembershipImpl(address newImpl) external;
+```
+
+### initialize
+
+*Initializes the proxy for the factory*
+
+
+```solidity
+function initialize(address membershipImpl_, address owner_) external;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`membershipImpl_`|`address`|The initial Membership implementation address whose logic to use|
+|`owner_`|`address`|The owner address to be set for the factory contract|
+
+
+### create
+
+*Function to create a new Membership proxy using given data*
+
+
+```solidity
+function create(address owner, string memory name, string memory symbol, bytes calldata initData)
+    external
+    returns (address membership);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`owner`|`address`|The owner address to be set for the new Membership|
+|`name`|`string`|The membership name string|
+|`symbol`|`string`|The membership symbol string|
+|`initData`|`bytes`|Data to pass to `initialize()` on the created Membership proxy|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`membership`|`address`|The created Membership proxy address|
+
+
+## Events
+### MembershipUpdated
+
+```solidity
+event MembershipUpdated(address indexed membershipImpl);
+```
+
+### MembershipCreated
+
+```solidity
+event MembershipCreated(address indexed membership);
+```
+
+## Errors
+### InvalidImplementation
+
+```solidity
+error InvalidImplementation();
+```
+
