@@ -7,13 +7,13 @@ api: "GET https://groupos.xyz/api/v1/erc20/tokens"
 ### Query Params
 
 <ParamField query="chainId" type="number" required>
-  The id of the chain supporting the NFT. This cannot be changed after creation.
+  The id of the chain supporting the token. This cannot be changed after creation.
 </ParamField>
 <ParamField query="contractAddress" type="string" required>
-  The NFT smart contract address.
+  The token smart contract address.
 </ParamField>
 <ParamField query="ownerAddress" type="string" optional>
-  An NFT owner to filter on.
+  An token owner to filter on.
 </ParamField>
 <ParamField query="page" type="number" optional>
   Page index to fetch, page size is `50`.
