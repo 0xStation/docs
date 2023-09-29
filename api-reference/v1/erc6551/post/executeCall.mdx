@@ -1,0 +1,93 @@
+---
+title: "Execute a Call"
+sidebarTitle: "Execute Call"
+api: "POST https://groupos.xyz/api/v1/account/executeCall"
+---
+
+### How to execute calls from an Account
+
+<Info>
+  Executing calls via this API requires you configure this permission on your
+  Account Collection settings.
+</Info>
+
+Once you have an Account smart contract, you can execute any arbitrary call to another address.
+A call is defined by three parameters, the address you are calling, how much network token (e.g. ETH) to send,
+and the data that is an ABI-encoded function and arguments.
+
+Transactions are submitted through our ERC-4337 bundler system which abstracts away the need for your accounts
+or your users to provide gas. Depending on your billing settings, the cost will be rolled up monthly to your
+developer account.
+
+### Body
+
+<ParamField body="chainId" type="number" required>
+  The chain id where the Account resides.
+</ParamField>
+
+<ParamField body="accountAddress" type="string" required>
+  The Account smart contract address to execute a call with.
+</ParamField>
+
+<ParamField body="call" type="Call" required>
+  The call parameters to execute.
+  <Expandable title="Call">
+    <ParamField body="toAddress" type="string" required>
+      The address to call.
+    </ParamField>
+    <ParamField body="value" type="string" optional default={"0"}>
+      The amount of network token (e.g. ETH) to send in the call.
+    </ParamField>
+    <ParamField body="data" type="string" optional default={"0x"}>
+      The data to send in the call. Must begin with `"0x"`.
+    </ParamField>
+  </Expandable>
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="transactionHash" type="string">
+  Transaction hash for the newly created token.
+</ResponseField>
+
+<ResponseField name="transactionUrl" type="string">
+  Wraps `transactionHash` with the appropriate network-specific URL for
+  convenience.
+</ResponseField>
+
+<RequestExample>
+  ```bash Example Request
+  curl --location --request POST 'https://groupos.xyz/api/v1/account/executeCall' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer <token>' \
+  --data-raw '{
+      "chainId": 137,
+      "accountAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
+      "call": {
+        "toAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
+        "value": "420",
+        "data": "0x",
+      }
+  }'
+  ```
+</RequestExample>
+
+<ResponseExample>
+  ```json Success
+  {
+    "success": true,
+    "transactionHash": "0x58c789b7a59312ec0a659e165700db54af896d3e8b46e4aeecb33b32b88157c9",
+    "transactionUrl": "https://polygonscan.com/tx/0x58c789b7a59312ec0a659e165700db54af896d3e8b46e4aeecb33b32b88157c9"
+  }
+  ```
+  ```json Failure
+  {
+    "success": false,
+    "error": "[message]"
+  }
+  ```
+</ResponseExample>

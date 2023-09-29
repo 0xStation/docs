@@ -177,6 +177,7 @@
       "group": "NFT Accounts (ERC-6551)",
       "pages": [
         "api-reference/v1/erc6551/post/create",
+        "api-reference/v1/erc6551/post/executeCall",
         "api-reference/v1/erc6551/put/accountMetadata",
         "api-reference/v1/erc6551/get/accounts"
       ]
