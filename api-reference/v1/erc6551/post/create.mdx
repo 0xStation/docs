@@ -1,40 +1,48 @@
 ---
-title: "Create NFT Accounts"
-sidebarTitle: "Create Accounts"
+title: "Create NFT Account"
+sidebarTitle: "Create Account"
 api: "POST https://groupos.xyz/api/v1/erc6551/create"
 ---
 
-### How to create NFT Accounts
+### How to create an NFT Account
 
-Once you have an Accounts Collection smart contract, you can create any number of accounts to any owner address.
-Each Account is powered with ERC-6551 which means you are both distributing an ERC-721 NFT and a ERC-4337 account together
-in one transaction. You can also optionally provide metadata specific to this newly minted NFT Account that will override any defaults
-set in the Accounts Collection.
+Once you have an Account Group smart contract, you can create any number of accounts bound to any NFTs.
+Account Groups let you define settings that apply to your Accounts such as eligible NFT contracts and
+initial state configurations (eg. enabling our API to have access to trigger executions).
 
 ### Body
 
-<ParamField body="chainId" type="number" required>
-  The id of the chain supporting the NFT Accounts Collection. This cannot be
-  changed after creation.
+<ParamField body="groupAddress" type="string" required>
+  The Accounts Group smart contract address to create with.
 </ParamField>
 
-<ParamField body="accountCollectionAddress" type="string" required>
-  The Accounts Collection smart contract address to create with.
-</ParamField>
+<ParamField body="nft" type="Nft" required>
+  The NFT to bound the new Account to.
+  <Expandable title="Nft">
+    <ParamField body="chainId" type="number" required>
+      The id of the chain the NFT lives on.
+    </ParamField>
+    <ParamField body="contractAddress" type="string" required>
+      The NFT Collection smart contract address.
+    </ParamField>
 
-<ParamField body="tokenContractAddress" type="string" required>
-  The NFT Collection smart contract address to bound this account to.
-</ParamField>
+    <ParamField body="tokenId" type="string" required>
+      The token ID of the NFT to bound this account to. String used for potentially
+      large numbers.
+    </ParamField>
 
-<ParamField body="tokenId" type="string" required>
-  The token ID of the NFT to bound this account to. String used for potentially
-  large numbers.
+  </Expandable>
 </ParamField>
 
 ### Response
 
 <ResponseField name="success" type="boolean">
   Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="accountAddress" type="string">
+  Address of the newly created account. Note that the transaction still needs to
+  be confirmed before the account is officially created.
 </ResponseField>
 
 <ResponseField name="transactionHash" type="string">
@@ -53,10 +61,12 @@ curl --location --request POST 'https://groupos.xyz/api/v1/erc6551/create' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <token>' \
 --data-raw '{
-    "chainId": 137,
-    "accountCollectionAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
-    "tokenContractAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
-    "tokenId": "10"
+    "groupAddress": "0x8a686f4b3a3cbf9c5d88825278963978a6f0c12e",
+    "nft": {
+      "chainId": 137,
+      "contractAddress": "0xDb46d1Dc155634FbC732f92E853b10B288AD5a1d",
+      "tokenId": "12692"
+    }
 }'
 ```
 
@@ -66,9 +76,10 @@ curl --location --request POST 'https://groupos.xyz/api/v1/erc6551/create' \
   ```json Success
   {
     "success": true,
-    "transactionHash": "0x58c789b7a59312ec0a659e165700db54af896d3e8b46e4aeecb33b32b88157c9",
-    "transactionUrl": "https://polygonscan.com/tx/0x58c789b7a59312ec0a659e165700db54af896d3e8b46e4aeecb33b32b88157c9"
-  }
+    "accountAddress": "0x3a31f58294bdcB59653ea19ec651f92e8e5f4A8c",
+    "transactionHash": "0x5f4691a7fba52b04662b2598eea37993b93a278fc26db724f7cc630b13756739",
+    "transactionUrl": "https://polygonscan.com/tx/0x5f4691a7fba52b04662b2598eea37993b93a278fc26db724f7cc630b13756739"
+}
   ```
   ```json Failure
   {

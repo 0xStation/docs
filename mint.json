@@ -178,7 +178,6 @@
       "pages": [
         "api-reference/v1/erc6551/post/create",
         "api-reference/v1/erc6551/post/executeCall",
-        "api-reference/v1/erc6551/put/accountMetadata",
         "api-reference/v1/erc6551/get/accounts"
       ]
     },
@@ -252,9 +251,7 @@
     },
     {
       "group": "Rails.sol",
-      "pages": [
-        "0xrails-technical-docs/src/src/Rails.sol/abstract.Rails"
-      ]
+      "pages": ["0xrails-technical-docs/src/src/Rails.sol/abstract.Rails"]
     },
     {
       "group": "Access",
