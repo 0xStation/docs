@@ -36,8 +36,8 @@ api: "GET https://groupos.xyz/api/v1/erc1155/tokenOwners"
     <ResponseField name="ownerAddress" type="string">
       Address of an owner (lower-cased).
     </ResponseField>
-    <ResponseField name="amount" type="string">
-      The amount of tokens of `tokenId` owned by `ownerAddress`.
+    <ResponseField name="balance" type="string">
+      The balance of tokens of `tokenId` owned by `ownerAddress`.
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -63,7 +63,7 @@ api: "GET https://groupos.xyz/api/v1/erc1155/tokenOwners"
       {
         "tokenId": "69",
         "ownerAddress": "0xc517c83f417b73da98647dad0fcb80af9f3b9531",
-        "amount": "12",
+        "balance": "12",
       }
       ...
     ]

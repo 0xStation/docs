@@ -31,14 +31,9 @@
   },
   "anchors": [
     {
-      "name": "Get Started",
-      "url": "https://groupos.xyz/",
-      "icon": "album-collection"
-    },
-    {
-      "name": "Schedule a Call",
-      "url": "https://calendly.com/symmtry/chat",
-      "icon": "face-smile",
+      "name": "Help Desk",
+      "url": "https://discord.gg/68dQWzGt6U",
+      "icon": "hand",
       "iconType": "solid"
     },
     {
@@ -47,7 +42,7 @@
       "icon": "discord"
     },
     {
-      "name": "Follow Station",
+      "name": "Follow Us",
       "url": "https://twitter.com/0xstation",
       "icon": "twitter"
     }
@@ -60,10 +55,6 @@
     {
       "name": "Contract Architecture",
       "url": "contract-architecture"
-    },
-    {
-      "name": "Help Desk",
-      "url": "https://discord.gg/68dQWzGt6U"
     }
   ],
   "navigation": [
@@ -164,6 +155,13 @@
     {
       "group": "Quickstart",
       "pages": ["api-reference/v1/getting-started/quickstart/mint-accounts"]
+    },
+    {
+      "group": "Cloud Keys",
+      "pages": [
+        "api-reference/v1/key/post/create",
+        "api-reference/v1/key/get/keys"
+      ]
     },
     {
       "group": "NFT Accounts (ERC-6551)",
