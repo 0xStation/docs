@@ -1,5 +1,5 @@
 ---
-title: "Mint Accounts"
+title: "Mint ERC-721 NFTs"
 ---
 
 This is a short tutorial on how to mint ERC-721 NFTs with custom metadata as a part of a Typescript application.
@@ -16,19 +16,19 @@ Using the [/api/v1/nft/uploadMedia](/api-reference/v1/nft/post/uploadMedia) rout
 a `mediaUrl`.
 
 ```typescript
-const formData = new FormData()
-formData.append("media", "./path/image")
+const formData = new FormData();
+formData.append("media", "./path/image");
 
-let imageUrl = ""
+let imageUrl = "";
 await fetch("https://groupos.xyz/api/v1/nft/uploadMedia", {
-    method: "POST",
-    headers: {
-        Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
-    },
-    body: formData,
+  method: "POST",
+  headers: {
+    Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+  },
+  body: formData,
 }).then((data) => {
-    imageUrl = data.mediaUrl
-})
+  imageUrl = data.mediaUrl;
+});
 ```
 
 ### 2. Mint NFT with metadata
@@ -40,64 +40,68 @@ can take seconds or minutes.
 
 ```typescript
 const nft = {
-    chainId: 5, // goerli testnet
-    contractAddress: "0x..."
-}
-const userAddress = "0x..."
+  chainId: 5, // goerli testnet
+  contractAddress: "0x...",
+};
+const userAddress = "0x...";
 
-let nftMintTransactionHash = ""
+let nftMintTransactionHash = "";
 await fetch("https://groupos.xyz/api/v1/erc721/mint", {
-    method: "POST",
-    headers: {
-        Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+  method: "POST",
+  headers: {
+    Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+  },
+  body: {
+    chainId: nft.chainId,
+    contractAddress: nft.contractAddress,
+    recipientAddress: userAddress,
+    metadata: {
+      mediaUrl: imageUrl,
     },
-    body: {
-        chainId: nft.chainId,
-        contractAddress: nft.contractAddress,
-        recipientAddress: userAddress,
-        metadata: {
-            mediaUrl: imageUrl
-        }
-    },
+  },
 }).then((data) => {
-    nftMintTransactionHash = data.transactionHash
-})
+  nftMintTransactionHash = data.transactionHash;
+});
 ```
 
 ### 3. Query minted NFTs
 
 Now that we've minted our NFT, we can query our minted tokens for confirmation.
-Using the [/api/v1/erc721/tokens](/api-reference/v1/erc721/get/tokens) route, we can query the 
+Using the [/api/v1/erc721/tokens](/api-reference/v1/erc721/get/tokens) route, we can query the
 list of all owners and also tokens for just our latest recipient.
 
 ```typescript
-let allTokens = []
-await fetch("https://groupos.xyz/api/v1/erc721/tokens" + new URLSearchParams({
-        chainId: nft.chainId,
-        contractAddress: nft.contractAddress,
-    }), 
-    {
-        method: "GET",
-        headers: {
-            Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
-        }
-    }
+let allTokens = [];
+await fetch(
+  "https://groupos.xyz/api/v1/erc721/tokens" +
+    new URLSearchParams({
+      chainId: nft.chainId,
+      contractAddress: nft.contractAddress,
+    }),
+  {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+    },
+  }
 ).then((data) => {
-    allTokens = data.tokens
-})
+  allTokens = data.tokens;
+});
 
-let userTokens = []
-await fetch("https://groupos.xyz/api/v1/erc721/tokens" + new URLSearchParams({
-        chainId: nft.chainId,
-        contractAddress: nft.contractAddress,
-        ownerAddress: userAddress
-    }), 
-    {
-        method: "GET"
-    }
+let userTokens = [];
+await fetch(
+  "https://groupos.xyz/api/v1/erc721/tokens" +
+    new URLSearchParams({
+      chainId: nft.chainId,
+      contractAddress: nft.contractAddress,
+      ownerAddress: userAddress,
+    }),
+  {
+    method: "GET",
+  }
 ).then((data) => {
-    userTokens = data.tokens
-})
+  userTokens = data.tokens;
+});
 ```
 
 ### Other considerations

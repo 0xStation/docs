@@ -154,7 +154,7 @@
     },
     {
       "group": "Quickstart",
-      "pages": ["api-reference/v1/getting-started/quickstart/mint-accounts"]
+      "pages": ["api-reference/v1/getting-started/quickstart/mint-erc721"]
     },
     {
       "group": "Cloud Keys",
