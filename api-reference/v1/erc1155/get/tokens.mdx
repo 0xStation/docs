@@ -12,8 +12,8 @@ api: "GET https://groupos.xyz/api/v1/erc1155/tokens"
 <ParamField query="contractAddress" type="string" required>
   The NFT smart contract address.
 </ParamField>
-<ParamField query="tokenId" type="string" optional>
-  An NFT `tokenId` to filter on.
+<ParamField query="tokenIds" type="string[]" optional>
+  A list of NFT token IDs to filter on.
 </ParamField>
 <ParamField query="page" type="number" optional>
   Page index to fetch, page size is `50`.
@@ -73,7 +73,7 @@ api: "GET https://groupos.xyz/api/v1/erc1155/tokens"
   -d 'chainId=1' \
   -d 'contractAddress=0x67F4732266C7300cca593C814d46bee72e40659F' \
   -d 'ownerAddress=0xc517c83f417b73dA98647dad0FCB80af9f3b9531' \
-  -d 'tokenId=69' \
+  -d 'tokenIds=[69, 420]' \
   --header 'Content-Type: application/json' \
   --header 'Authorization: Bearer <token>'
   ```
@@ -94,6 +94,20 @@ api: "GET https://groupos.xyz/api/v1/erc1155/tokens"
             {
               "trait_type": "Hat",
               "value": "Backwards cap"
+            }
+          ]
+        }
+      },
+      {
+        "tokenId": "420",
+        "metadata": {
+          "name": "...",
+          "description": "...",
+          "image": "https://...",
+          "attributes": [
+            {
+              "trait_type": "Eyes",
+              "value": "Bloodshot"
             }
           ]
         }

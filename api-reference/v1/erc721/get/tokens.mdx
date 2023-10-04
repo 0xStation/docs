@@ -14,8 +14,8 @@ api: "GET https://groupos.xyz/api/v1/erc721/tokens"
   The NFT smart contract address.
 </ParamField>
 
-<ParamField query="tokenId" type="string" optional>
-  An NFT token ID to filter on.
+<ParamField query="tokenIds" type="string[]" optional>
+  A list of NFT token IDs to filter on.
 </ParamField>
 
 <ParamField query="ownerAddress" type="string" optional>
@@ -130,7 +130,6 @@ curl --location 'https://groupos.xyz/api/v1/erc721/tokens' \
       {
         "tokenId": "420",
         "ownerAddress": "0xc517c83f417b73da98647dad0fcb80af9f3b9531",
-        "tbaAddress": "0xe739c83f417b73da98647dad0fcb80af9f3b9753",
         "metadata": {
           "name": "...",
           "description": "...",
