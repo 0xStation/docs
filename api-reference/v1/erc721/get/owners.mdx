@@ -33,6 +33,45 @@ api: "GET https://groupos.xyz/api/v1/erc721/owners"
     <ResponseField name="totalBalance" type="string">
       Token balance across all tokens in this NFT collection.
     </ResponseField>
+    <ResponseField name="tokens" type="object[]">
+      Array of NFT objects.
+      <Expandable title="object">
+        <ResponseField name="tokenId" type="string">
+          Token id of the NFT.
+        </ResponseField>
+        <ResponseField name="metadata" type="object">
+          Metadata of the NFT.
+          <Expandable title="object">
+            <ResponseField name="name" type="string">
+              Name of the token.
+            </ResponseField>
+            <ResponseField name="description" type="string">
+              Description of the token.
+            </ResponseField>
+            <ResponseField name="image" type="string">
+              Url of the hosted image asset.
+            </ResponseField>
+            <ResponseField name="external_url" type="string">
+              Url for the external link associated with the NFT.
+            </ResponseField>
+            <ResponseField name="attributes" type="object[]">
+              Array of Attribute objects.
+              <Expandable title="object">
+                <ParamField body="trait_type" type="string" required>
+                  Name for the trait.
+                </ParamField>
+                <ParamField body="value" type="string | number" required>
+                  Value for the trait.
+                </ParamField>
+                <ParamField body="display_type" type="string" optional>
+                  Type of display to use.
+                </ParamField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
@@ -56,7 +95,21 @@ api: "GET https://groupos.xyz/api/v1/erc721/owners"
     "owners": [
       {
         "ownerAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
-        "totalBalance": "12"
+        "totalBalance": "3",
+        "tokens": [
+          {
+            "tokenId": "2",
+            "metadata": {...}
+          },
+          {
+            "tokenId": "15",
+            "metadata": {...}
+          },
+          {
+            "tokenId": "48",
+            "metadata": {...}
+          }
+        ]
       }
     ]
   }

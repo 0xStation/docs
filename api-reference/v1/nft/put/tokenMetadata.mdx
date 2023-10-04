@@ -1,10 +1,10 @@
 ---
-title: "Update an ERC-721 NFT's Metadata"
-sidebarTitle: "Update NFT Metadata"
-api: "PUT https://groupos.xyz/api/v1/erc721/tokenMetadata"
+title: "Update an NFT's Metadata"
+sidebarTitle: "Update Token Metadata"
+api: "PUT https://groupos.xyz/api/v1/nft/tokenMetadata"
 ---
 
-### How NFT token metadata works
+### How token metadata works
 
 To support differentiated NFTs within a collection and dynamic or evolving use cases, set metadata on a per-token basis.
 
@@ -19,7 +19,7 @@ When edits are made to the NFT's metadata, updates are propagated automatically 
   The NFT smart contract address to edit.
 </ParamField>
 <ParamField body="tokenId" type="string" required>
-  The NFT smart contract address to edit.
+  The individual token ID edit.
 </ParamField>
 <ParamField body="metadata" type="object" required>
   Individual metadata to associate with this NFT, which overrides any defaults
@@ -59,7 +59,7 @@ When edits are made to the NFT's metadata, updates are propagated automatically 
 
 <RequestExample>
   ```bash Example Request
-  curl 'https://groupos.xyz/api/v1/erc721/tokenMetadata' \
+  curl 'https://groupos.xyz/api/v1/nft/tokenMetadata' \
   --request PUT \
   --header 'Content-Type: application/json' \
   --header 'Authorization: Bearer <token>' \
