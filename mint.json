@@ -147,9 +147,9 @@
     {
       "group": "Overview",
       "pages": [
-        "api-reference/v1/getting-started/intro",
-        "api-reference/v1/getting-started/auth",
-        "api-reference/v1/getting-started/networks"
+        "api-reference/v1/getting-started/introduction",
+        "api-reference/v1/getting-started/authentication",
+        "api-reference/v1/getting-started/supported-networks"
       ]
     },
     {
