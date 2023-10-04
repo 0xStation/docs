@@ -205,7 +205,6 @@
     {
       "group": "NFT Metadata",
       "pages": [
-        "api-reference/v1/nft/overview",
         "api-reference/v1/nft/post/uploadMedia",
         "api-reference/v1/nft/get/metadata"
       ]

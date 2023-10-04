@@ -9,8 +9,6 @@ api: "GET https://groupos.xyz/api/v1/nft/metadata"
 The combination of an NFT collection's default metadata and overriden token-specific metadata are combined together when fetching the metadata of a specific token.
 This API route follows the informal specification [standardized by Opensea](https://docs.opensea.io/docs/metadata-standards) which is compatible with most marketplaces, indexers, and wallets.
 
-### Query Parameters
-
 ### Query Params
 
 <ParamField body="chainId" type="number" required>
@@ -43,19 +41,19 @@ This API route follows the informal specification [standardized by Opensea](http
   URL of the hosted image asset.
 </ResponseField>
 
-<ResponseField name="attributes" type="Attribute[]">
+<ResponseField name="attributes" type="object[]">
   Array of Attribute objects.
-    <Expandable title="Attribute">
-        <ParamField body="trait_type" type="string" required>
-            Name for the trait.
-        </ParamField>
-        <ParamField body="value" type="string | number" required>
-            Value for the trait.
-        </ParamField>
-        <ParamField body="display_type" type="string" optional>
-            Type of display to use.
-        </ParamField>
-    </Expandable>
+  <Expandable title="object">
+    <ParamField body="trait_type" type="string" required>
+      Name for the trait.
+    </ParamField>
+    <ParamField body="value" type="string | number" required>
+      Value for the trait.
+    </ParamField>
+    <ParamField body="display_type" type="string" optional>
+      Type of display to use.
+    </ParamField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
