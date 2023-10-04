@@ -1,6 +1,6 @@
 ---
-title: "Permit Point Tokens"
-sidebarTitle: "Permit Points"
+title: "Permit ERC-20 Tokens"
+sidebarTitle: "Permit Tokens"
 api: "POST https://groupos.xyz/api/v1/erc20/permit"
 ---
 
@@ -23,7 +23,8 @@ their mint call within the smart contract. Each signature can optionally be set 
 ### Body
 
 <ParamField body="chainId" type="number" required>
-  The id of the chain supporting the token. This cannot be changed after creation.
+  The id of the chain supporting the token. This cannot be changed after
+  creation.
 </ParamField>
 
 <ParamField body="contractAddress" type="string" required>

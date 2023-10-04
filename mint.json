@@ -174,12 +174,21 @@
       ]
     },
     {
+      "group": "ERC-20 Tokens",
+      "pages": [
+        "api-reference/v1/erc20/post/mint",
+        "api-reference/v1/erc20/post/permit",
+        "api-reference/v1/erc20/get/owners"
+      ]
+    },
+    {
       "group": "ERC-721 NFTs",
       "pages": [
         "api-reference/v1/erc721/post/mint",
         "api-reference/v1/erc721/post/permit",
         "api-reference/v1/erc721/put/collectionMetadata",
         "api-reference/v1/erc721/put/tokenMetadata",
+        "api-reference/v1/erc721/get/owners",
         "api-reference/v1/erc721/get/tokens"
       ]
     },
@@ -190,15 +199,9 @@
         "api-reference/v1/erc1155/post/permit",
         "api-reference/v1/erc1155/put/collectionMetadata",
         "api-reference/v1/erc1155/put/tokenMetadata",
-        "api-reference/v1/erc1155/get/tokens"
-      ]
-    },
-    {
-      "group": "ERC-20 Tokens",
-      "pages": [
-        "api-reference/v1/erc20/post/mint",
-        "api-reference/v1/erc20/post/permit",
-        "api-reference/v1/erc20/get/tokens"
+        "api-reference/v1/erc1155/get/owners",
+        "api-reference/v1/erc1155/get/tokens",
+        "api-reference/v1/erc1155/get/tokenOwners"
       ]
     },
     {
@@ -239,206 +242,6 @@
         "contract-architecture/accounts/member",
         "contract-architecture/accounts/group",
         "contract-architecture/accounts/bot"
-      ]
-    },
-    {
-      "group": "Rails.sol",
-      "pages": ["0xrails-technical-docs/src/src/Rails.sol/abstract.Rails"]
-    },
-    {
-      "group": "Access",
-      "pages": [
-        "0xrails-technical-docs/src/src/access/Access.sol/abstract.Access",
-        "0xrails-technical-docs/src/src/access/ownable/interface/IOwnable.sol/interface.IOwnable",
-        "0xrails-technical-docs/src/src/access/ownable/interface/IOwnable.sol/interface.IOwnableExternal",
-        "0xrails-technical-docs/src/src/access/ownable/interface/IOwnable.sol/interface.IOwnableInternal",
-        "0xrails-technical-docs/src/src/access/ownable/Ownable.sol/abstract.Ownable",
-        "0xrails-technical-docs/src/src/access/ownable/OwnableInternal.sol/abstract.OwnableInternal",
-        "0xrails-technical-docs/src/src/access/ownable/OwnableStorage.sol/library.OwnableStorage",
-        "0xrails-technical-docs/src/src/access/permissions/interface/IPermissions.sol/interface.IPermissions",
-        "0xrails-technical-docs/src/src/access/permissions/interface/IPermissions.sol/interface.IPermissionsInternal",
-        "0xrails-technical-docs/src/src/access/permissions/Permissions.sol/abstract.Permissions",
-        "0xrails-technical-docs/src/src/access/permissions/PermissionsInternal.sol/abstract.PermissionsInternal",
-        "0xrails-technical-docs/src/src/access/permissions/PermissionsStorage.sol/library.PermissionsStorage"
-      ]
-    },
-    {
-      "group": "Account",
-      "pages": [
-        "0xrails-technical-docs/src/src/cores/account/Account.sol/abstract.Account",
-        "0xrails-technical-docs/src/src/cores/account/BaseAccount.sol/abstract.BaseAccount",
-        "0xrails-technical-docs/src/src/cores/account/BotAccount.sol/contract.BotAccount",
-        "0xrails-technical-docs/src/src/cores/account/factory/interface/IAccountFactory.sol/interface.IAccountFactory",
-        "0xrails-technical-docs/src/src/cores/account/factory/AccountFactory.sol/abstract.AccountFactory",
-        "0xrails-technical-docs/src/src/cores/account/factory/AccountFactoryStorage.sol/library.AccountFactoryStorage",
-        "0xrails-technical-docs/src/src/cores/account/factory/BotAccountFactory.sol/contract.BotAccountFactory"
-      ]
-    },
-    {
-      "group": "ERC20",
-      "pages": [
-        "0xrails-technical-docs/src/src/cores/ERC20/ERC20.sol/abstract.ERC20",
-        "0xrails-technical-docs/src/src/cores/ERC20/ERC20Rails.sol/contract.ERC20Rails",
-        "0xrails-technical-docs/src/src/cores/ERC20/ERC20Storage.sol/library.ERC20Storage",
-        "0xrails-technical-docs/src/src/cores/ERC20/interface/IERC20.sol/interface.IERC20",
-        "0xrails-technical-docs/src/src/cores/ERC20/interface/IERC20Rails.sol/interface.IERC20Rails"
-      ]
-    },
-    {
-      "group": "ERC721",
-      "pages": [
-        "0xrails-technical-docs/src/src/cores/ERC721/ERC721.sol/abstract.ERC721",
-        "0xrails-technical-docs/src/src/cores/ERC721/ERC721AUpgradeable.sol/contract.ERC721AUpgradeable",
-        "0xrails-technical-docs/src/src/cores/ERC721/ERC721AUpgradeable.sol/interface.ERC721A__IERC721Receiver",
-        "0xrails-technical-docs/src/src/cores/ERC721/ERC721Internal.sol/abstract.ERC721Internal",
-        "0xrails-technical-docs/src/src/cores/ERC721/ERC721Rails.sol/contract.ERC721Rails",
-        "0xrails-technical-docs/src/src/cores/ERC721/ERC721Storage.sol/library.ERC721Storage",
-        "0xrails-technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721",
-        "0xrails-technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721External",
-        "0xrails-technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721Internal",
-        "0xrails-technical-docs/src/src/cores/ERC721/interface/IERC721.sol/interface.IERC721Receiver",
-        "0xrails-technical-docs/src/src/cores/ERC721/interface/IERC721Rails.sol/interface.IERC721Rails"
-      ]
-    },
-    {
-      "group": "ERC1155",
-      "pages": [
-        "0xrails-technical-docs/src/src/cores/ERC1155/ERC1155.sol/abstract.ERC1155",
-        "0xrails-technical-docs/src/src/cores/ERC1155/ERC1155Rails.sol/contract.ERC1155Rails",
-        "0xrails-technical-docs/src/src/cores/ERC1155/ERC1155Storage.sol/library.ERC1155Storage",
-        "0xrails-technical-docs/src/src/cores/ERC1155/interface/IERC1155.sol/interface.IERC1155",
-        "0xrails-technical-docs/src/src/cores/ERC1155/interface/IERC1155Rails.sol/interface.IERC1155Rails"
-      ]
-    },
-    {
-      "group": "TokenMetadata",
-      "pages": [
-        "0xrails-technical-docs/src/src/cores/TokenMetadata/TokenMetadata.sol/abstract.TokenMetadata",
-        "0xrails-technical-docs/src/src/cores/TokenMetadata/TokenMetadataInternal.sol/abstract.TokenMetadataInternal",
-        "0xrails-technical-docs/src/src/cores/TokenMetadata/TokenMetadataStorage.sol/library.TokenMetadataStorage",
-        "0xrails-technical-docs/src/src/cores/TokenMetadata/ITokenMetadata.sol/interface.ITokenMetadata",
-        "0xrails-technical-docs/src/src/cores/TokenMetadata/ITokenMetadata.sol/interface.ITokenMetadataExternal",
-        "0xrails-technical-docs/src/src/cores/TokenMetadata/ITokenMetadata.sol/interface.ITokenMetadataInternal"
-      ]
-    },
-    {
-      "group": "extension",
-      "pages": [
-        "0xrails-technical-docs/src/src/extension/examples/beacon/ExtensionBeacon.sol/abstract.ExtensionBeacon",
-        "0xrails-technical-docs/src/src/extension/examples/beacon/ExtensionBeaconFollower.sol/abstract.ExtensionBeaconFollower",
-        "0xrails-technical-docs/src/src/extension/examples/beacon/IExtensionBeacon.sol/interface.IExtensionBeacon",
-        "0xrails-technical-docs/src/src/extension/examples/beacon/IExtensionBeacon.sol/interface.IExtensionBeaconFollower",
-        "0xrails-technical-docs/src/src/extension/examples/metadataRouter/IMetadataExtensions.sol/interface.IContractURIExtension",
-        "0xrails-technical-docs/src/src/extension/examples/metadataRouter/IMetadataExtensions.sol/interface.IMetadataRouter",
-        "0xrails-technical-docs/src/src/extension/examples/metadataRouter/IMetadataExtensions.sol/interface.ITokenURIExtension",
-        "0xrails-technical-docs/src/src/extension/examples/metadataRouter/MetadataRouterExtension.sol/contract.MetadataRouterExtension",
-        "0xrails-technical-docs/src/src/extension/examples/metadataRouter/MetadataRouterExtensionData.sol/abstract.MetadataRouterExtensionData",
-        "0xrails-technical-docs/src/src/extension/examples/metadataRouter/MetadataRouterExtensionData.sol/library.MetadataRouterStorage",
-        "0xrails-technical-docs/src/src/extension/Extension.sol/abstract.Extension",
-        "0xrails-technical-docs/src/src/extension/Extensions.sol/abstract.Extensions",
-        "0xrails-technical-docs/src/src/extension/ExtensionsInternal.sol/abstract.ExtensionsInternal",
-        "0xrails-technical-docs/src/src/extension/ExtensionsStorage.sol/library.ExtensionsStorage",
-        "0xrails-technical-docs/src/src/extension/interface/IExtension.sol/interface.IExtension",
-        "0xrails-technical-docs/src/src/extension/interface/IExtensions.sol/interface.IExtensions",
-        "0xrails-technical-docs/src/src/extension/interface/IExtensions.sol/interface.IExtensionsInternal"
-      ]
-    },
-    {
-      "group": "guard",
-      "pages": [
-        "0xrails-technical-docs/src/src/guard/examples/TimeRangeGuard.sol/contract.TimeRangeGuard",
-        "0xrails-technical-docs/src/src/guard/Guards.sol/abstract.Guards",
-        "0xrails-technical-docs/src/src/guard/GuardsInternal.sol/abstract.GuardsInternal",
-        "0xrails-technical-docs/src/src/guard/GuardsStorage.sol/library.GuardsStorage",
-        "0xrails-technical-docs/src/src/guard/interface/IGuard.sol/interface.IGuard",
-        "0xrails-technical-docs/src/src/guard/interface/IGuards.sol/interface.IGuards",
-        "0xrails-technical-docs/src/src/guard/interface/IGuards.sol/interface.IGuardsInternal"
-      ]
-    },
-    {
-      "group": "lib",
-      "pages": [
-        "0xrails-technical-docs/src/src/lib/Contract.sol/library.Contract",
-        "0xrails-technical-docs/src/src/lib/ERC165/ISupportsInterface.sol/interface.ISupportsInterface",
-        "0xrails-technical-docs/src/src/lib/ERC165/ISupportsInterface.sol/interface.ISupportsInterfaceExternal",
-        "0xrails-technical-docs/src/src/lib/ERC165/ISupportsInterface.sol/interface.ISupportsInterfaceInternal",
-        "0xrails-technical-docs/src/src/lib/ERC165/SupportsInterface.sol/abstract.SupportsInterface",
-        "0xrails-technical-docs/src/src/lib/ERC165/SupportsInterfaceInternal.sol/abstract.SupportsInterfaceInternal",
-        "0xrails-technical-docs/src/src/lib/ERC165/SupportsInterfaceStorage.sol/library.SupportsInterfaceStorage",
-        "0xrails-technical-docs/src/src/lib/Execute.sol/abstract.Execute",
-        "0xrails-technical-docs/src/src/lib/initializable/IInitializable.sol/interface.IInitializable",
-        "0xrails-technical-docs/src/src/lib/initializable/IInitializable.sol/interface.IInitializableInternal",
-        "0xrails-technical-docs/src/src/lib/initializable/Initializable.sol/abstract.Initializable",
-        "0xrails-technical-docs/src/src/lib/initializable/InitializableStorage.sol/library.InitializableStorage",
-        "0xrails-technical-docs/src/src/lib/Operations.sol/library.Operations",
-        "0xrails-technical-docs/src/src/lib/OptionalBool.sol/library.OptionalBool",
-        "0xrails-technical-docs/src/src/lib/TimeVersionedBeaconFollower.sol/library.TimeVersionedBeaconFollower"
-      ]
-    },
-    {
-      "group": "validator",
-      "pages": [
-        "0xrails-technical-docs/src/src/validator/CallPermitValidator.sol/contract.CallPermitValidator",
-        "0xrails-technical-docs/src/src/validator/interface/IValidator.sol/interface.IValidator",
-        "0xrails-technical-docs/src/src/validator/interface/IValidators.sol/interface.IValidators",
-        "0xrails-technical-docs/src/src/validator/OnlyOwnerValidator.sol/contract.OnlyOwnerValidator",
-        "0xrails-technical-docs/src/src/validator/Validator.sol/abstract.Validator",
-        "0xrails-technical-docs/src/src/validator/Validators.sol/abstract.Validators",
-        "0xrails-technical-docs/src/src/validator/ValidatorsStorage.sol/library.ValidatorsStorage"
-      ]
-    },
-    {
-      "group": "badges",
-      "pages": [
-        "groupos-technical-docs/src/src/badges/factory/BadgesFactory.sol/contract.BadgesFactory",
-        "groupos-technical-docs/src/src/badges/factory/BadgesFactoryStorage.sol/library.BadgesFactoryStorage",
-        "groupos-technical-docs/src/src/badges/factory/IBadgesFactory.sol/interface.IBadgesFactory"
-      ]
-    },
-    {
-      "group": "lib",
-      "pages": [
-        "groupos-technical-docs/src/src/lib/ContractMetadata.sol/contract.ContractMetadata",
-        "groupos-technical-docs/src/src/lib/NonceBitMap.sol/abstract.NonceBitMap",
-        "groupos-technical-docs/src/src/lib/module/FeeManager.sol/contract.FeeManager",
-        "groupos-technical-docs/src/src/lib/module/ModuleFee.sol/abstract.ModuleFee",
-        "groupos-technical-docs/src/src/lib/module/ModulePermit.sol/abstract.ModulePermit",
-        "groupos-technical-docs/src/src/lib/module/ModuleSetup.sol/contract.ModuleSetup"
-      ]
-    },
-    {
-      "group": "membership",
-      "pages": [
-        "groupos-technical-docs/src/src/membership/extensions/NFTMetadataRouter/INFTMetadata.sol/interface.INFTMetadata",
-        "groupos-technical-docs/src/src/membership/extensions/NFTMetadataRouter/NFTMetadataRouter.sol/contract.NFTMetadataRouter",
-        "groupos-technical-docs/src/src/membership/extensions/NFTMetadataRouter/NFTMetadataRouterExtension.sol/contract.NFTMetadataRouterExtension",
-        "groupos-technical-docs/src/src/membership/extensions/PayoutAddress/IPayoutAddress.sol/interface.IPayoutAddress",
-        "groupos-technical-docs/src/src/membership/extensions/PayoutAddress/PayoutAddress.sol/abstract.PayoutAddress",
-        "groupos-technical-docs/src/src/membership/extensions/PayoutAddress/PayoutAddressExtension.sol/contract.PayoutAddressExtension",
-        "groupos-technical-docs/src/src/membership/extensions/PayoutAddress/PayoutAddressStorage.sol/library.PayoutAddressStorage",
-        "groupos-technical-docs/src/src/membership/factory/IMembershipFactory.sol/interface.IMembershipFactory",
-        "groupos-technical-docs/src/src/membership/factory/MembershipFactory.sol/contract.MembershipFactory",
-        "groupos-technical-docs/src/src/membership/factory/MembershipFactoryStorage.sol/library.MembershipFactoryStorage",
-        "groupos-technical-docs/src/src/membership/guards/OnePerAddressGuard.sol/contract.OnePerAddressGuard",
-        "groupos-technical-docs/src/src/membership/modules/FreeMintModule.sol/contract.FreeMintModule",
-        "groupos-technical-docs/src/src/membership/modules/GasCoinPurchaseModule.sol/contract.GasCoinPurchaseModule",
-        "groupos-technical-docs/src/src/membership/modules/StablecoinPurchaseModule.sol/contract.StablecoinPurchaseModule"
-      ]
-    },
-    {
-      "group": "metadataRouter",
-      "pages": [
-        "groupos-technical-docs/src/src/metadataRouter/IMetadataRouter.sol/interface.IMetadataRouter",
-        "groupos-technical-docs/src/src/metadataRouter/MetadataRouter.sol/contract.MetadataRouter",
-        "groupos-technical-docs/src/src/metadataRouter/MetadataRouterStorage.sol/library.MetadataRouterStorage"
-      ]
-    },
-    {
-      "group": "points",
-      "pages": [
-        "groupos-technical-docs/src/src/points/factory/IPointsFactory.sol/interface.IPointsFactory",
-        "groupos-technical-docs/src/src/points/factory/PointsFactory.sol/contract.PointsFactory",
-        "groupos-technical-docs/src/src/points/factory/PointsFactoryStorage.sol/library.PointsFactoryStorage"
       ]
     }
   ],

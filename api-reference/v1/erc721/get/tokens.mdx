@@ -1,6 +1,6 @@
 ---
-title: "Query Membership NFTs"
-sidebarTitle: "Query Memberships"
+title: "Query ERC-721 Tokens"
+sidebarTitle: "Query Tokens"
 api: "GET https://groupos.xyz/api/v1/erc721/tokens"
 ---
 
@@ -12,6 +12,10 @@ api: "GET https://groupos.xyz/api/v1/erc721/tokens"
 
 <ParamField query="contractAddress" type="string" required>
   The NFT smart contract address.
+</ParamField>
+
+<ParamField query="tokenId" type="string" optional>
+  An NFT token ID to filter on.
 </ParamField>
 
 <ParamField query="ownerAddress" type="string" optional>
@@ -32,10 +36,10 @@ api: "GET https://groupos.xyz/api/v1/erc721/tokens"
   Indicates whether the call was successful.
 </ResponseField>
 
-<ResponseField name="tokens" type="NFT[]">
+<ResponseField name="tokens" type="object[]">
   Array of NFT objects.
 
-  <Expandable title="NFT">
+  <Expandable title="object">
 
       <ResponseField name="tokenId" type="string">
         Token id of the NFT.
@@ -44,15 +48,11 @@ api: "GET https://groupos.xyz/api/v1/erc721/tokens"
       <ResponseField name="ownerAddress" type="string">
         Address of the current owner (lower-cased).
       </ResponseField>
-      
-      <ResponseField name="tbaAddress" type="string">
-        Address of the NFT's token-bound-account (lower-cased).
-      </ResponseField>
-      
-      <ResponseField name="metadata" type="NFTMetadata">
-        Address of the NFT's token-bound-account (lower-cased).
-        
-        <Expandable title="NFTMetadata">
+
+      <ResponseField name="metadata" type="object">
+        Metadata of the NFT.
+
+        <Expandable title="object">
           <ResponseField name="name" type="string">
             Name of the token.
           </ResponseField>
@@ -65,9 +65,9 @@ api: "GET https://groupos.xyz/api/v1/erc721/tokens"
           <ResponseField name="external_url" type="string">
             Url for the external link associated with the NFT.
           </ResponseField>
-          <ResponseField name="attributes" type="Attribute[]">
+          <ResponseField name="attributes" type="object[]">
             Array of Attribute objects.
-              <Expandable title="Attribute">
+              <Expandable title="object">
                   <ParamField body="trait_type" type="string" required>
                       Name for the trait.
                   </ParamField>
@@ -80,7 +80,7 @@ api: "GET https://groupos.xyz/api/v1/erc721/tokens"
               </Expandable>
           </ResponseField>
         </Expandable>
-      
+
       </ResponseField>
 
   </Expandable>
@@ -109,7 +109,6 @@ curl --location 'https://groupos.xyz/api/v1/erc721/tokens' \
       {
         "tokenId": "69",
         "ownerAddress": "0xc517c83f417b73da98647dad0fcb80af9f3b9531",
-        "tbaAddress": "0xd628c83f417b73da98647dad0fcb80af9f3b9642",
         "metadata": {
           "name": "...",
           "description": "...",

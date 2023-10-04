@@ -1,5 +1,5 @@
 ---
-title: "Update an NFT's Metadata"
+title: "Update an ERC-1155 NFT's Metadata"
 sidebarTitle: "Update Token Metadata"
 api: "PUT https://groupos.xyz/api/v1/erc1155/tokenMetadata"
 ---
@@ -24,7 +24,7 @@ When edits are made to the NFT's metadata, updates are propagated automatically 
 <ParamField body="metadata" type="object" required>
   Individual metadata to associate with this NFT, which overrides any defaults
   set at the collection-level
-  <Expandable title="NFT Metadata">
+  <Expandable title="object">
     <ParamField body="name" type="string" optional>
       Name for the NFT.
     </ParamField>
@@ -37,9 +37,9 @@ When edits are made to the NFT's metadata, updates are propagated automatically 
     <ParamField body="externalUrl" type="string" optional>
       Url for the external link associated with the NFT.
     </ParamField>
-    <ParamField body="traits" type="Trait[]" optional>
+    <ParamField body="traits" type="object[]" optional>
       Array of trait objects.
-      <Expandable title="Trait">
+      <Expandable title="object">
         <ParamField body="name" type="string" required>
           Name for the trait.
         </ParamField>

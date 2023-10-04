@@ -1,5 +1,5 @@
 ---
-title: "Update an NFT Collection's Default Metadata"
+title: "Update an ERC-1155 NFT Collection's Metadata"
 sidebarTitle: "Update Collection Metadata"
 api: "PUT https://groupos.xyz/api/v1/erc1155/collectionMetadata"
 ---
@@ -25,7 +25,7 @@ When edits are made to the collection's default metadata, updates are propagated
 <ParamField body="metadata" type="object">
     Default metadata to apply to every NFT in the collection, which can be overriden with token-specific metadata.
 
-    <Expandable title="NFT Metadata">
+    <Expandable title="object">
 
       <ParamField body="description" type="string" optional>
         Description for the NFT.

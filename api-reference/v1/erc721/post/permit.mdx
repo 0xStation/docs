@@ -1,6 +1,6 @@
 ---
-title: "Permit Membership NFTs"
-sidebarTitle: "Permit Memberships"
+title: "Permit ERC-721 NFTs"
+sidebarTitle: "Permit NFTs"
 api: "POST https://groupos.xyz/api/v1/erc721/permit"
 ---
 
@@ -38,10 +38,10 @@ their mint call within the smart contract. Each signature can optionally be set 
   The datetime for when this permit expires.
 </ParamField>
 
-<ParamField body="individualMetadata" type="object" optional>
-  Individual metadata to associate with this NFT, which overrides any defaults
-  set at the collection-level.
-  <Expandable title="NFT Metadata">
+<ParamField body="metadata" type="object" optional>
+  Metadata to associate with this NFT, which overrides any defaults set at the
+  collection-level.
+  <Expandable title="object">
     <ParamField body="name" type="string" required>
       Name for the NFT.
     </ParamField>
@@ -54,9 +54,9 @@ their mint call within the smart contract. Each signature can optionally be set 
     <ParamField body="externalUrl" type="string" optional>
       Url for the external link associated with the NFT.
     </ParamField>
-    <ParamField body="traits" type="Trait[]" optional>
+    <ParamField body="traits" type="object[]" optional>
       Array of trait objects.
-      <Expandable title="Trait">
+      <Expandable title="object">
         <ParamField body="name" type="string" required>
           Name for the trait.
         </ParamField>
