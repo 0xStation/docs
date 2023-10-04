@@ -1,17 +1,18 @@
 ---
-title: "Mint Point Tokens"
-sidebarTitle: "Mint Points"
+title: "Mint ERC-20 Tokens"
+sidebarTitle: "Mint Tokens"
 api: "POST https://groupos.xyz/api/v1/erc20/mint"
 ---
 
-### How to mint Points
+### How to mint ERC-20 tokens
 
-Once you have a Points Token smart contract, you can mint any number of tokens to any address.
+Once you have a ERC-20 Token smart contract, you can mint any number of tokens to any address.
 
 ### Body
 
 <ParamField body="chainId" type="number" required>
-  The id of the chain supporting the token. This cannot be changed after creation.
+  The id of the chain supporting the token. This cannot be changed after
+  creation.
 </ParamField>
 
 <ParamField body="contractAddress" type="string" required>
@@ -23,8 +24,8 @@ Once you have a Points Token smart contract, you can mint any number of tokens t
 </ParamField>
 
 <ParamField body="amount" type="string" required>
-  The human-readable quantity of points to mint. Type `string` is used to natively support
-  large numbers.
+  The human-readable quantity of points to mint. Type `string` is used to
+  natively support large numbers.
 </ParamField>
 
 ### Response

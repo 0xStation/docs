@@ -1,6 +1,6 @@
 ---
-title: "Query Badge NFTs"
-sidebarTitle: "Query Badges"
+title: "Query ERC-1155 Tokens"
+sidebarTitle: "Query Tokens"
 api: "GET https://groupos.xyz/api/v1/erc1155/tokens"
 ---
 
@@ -11,9 +11,6 @@ api: "GET https://groupos.xyz/api/v1/erc1155/tokens"
 </ParamField>
 <ParamField query="contractAddress" type="string" required>
   The NFT smart contract address.
-</ParamField>
-<ParamField query="ownerAddress" type="string" optional>
-  An NFT owner to filter on.
 </ParamField>
 <ParamField query="tokenId" type="string" optional>
   An NFT `tokenId` to filter on.
@@ -27,18 +24,47 @@ api: "GET https://groupos.xyz/api/v1/erc1155/tokens"
 <ResponseField name="success" type="boolean">
   Indicates whether the call was successful.
 </ResponseField>
-<ResponseField name="tokens" type="NFT[]">
+<ResponseField name="tokens" type="object[]">
   Array of NFT objects.
-  <Expandable title="NFT">
+  <Expandable title="object">
     <ResponseField name="tokenId" type="string">
       Token id of the NFT.
     </ResponseField>
-    <ResponseField name="ownerAddress" type="string">
-      Address of an owner (lower-cased).
-    </ResponseField>
-    <ResponseField name="amount" type="string">
-      The amount of tokens of `tokenId` owned by `ownerAddress`.
-    </ResponseField>
+
+    <ResponseField name="metadata" type="object">
+        Metadata of the NFT.
+
+        <Expandable title="object">
+          <ResponseField name="name" type="string">
+            Name of the token.
+          </ResponseField>
+          <ResponseField name="description" type="string">
+            Description of the token.
+          </ResponseField>
+          <ResponseField name="image" type="string">
+            Url of the hosted image asset.
+          </ResponseField>
+          <ResponseField name="external_url" type="string">
+            Url for the external link associated with the NFT.
+          </ResponseField>
+          <ResponseField name="attributes" type="object[]">
+            Array of Attribute objects.
+              <Expandable title="object">
+                  <ParamField body="trait_type" type="string" required>
+                      Name for the trait.
+                  </ParamField>
+                  <ParamField body="value" type="string | number" required>
+                      Value for the trait.
+                  </ParamField>
+                  <ParamField body="display_type" type="string" optional>
+                      Type of display to use.
+                  </ParamField>
+              </Expandable>
+          </ResponseField>
+        </Expandable>
+
+      </ResponseField>
+
   </Expandable>
 </ResponseField>
 
@@ -62,8 +88,17 @@ api: "GET https://groupos.xyz/api/v1/erc1155/tokens"
     "tokens": [
       {
         "tokenId": "69",
-        "ownerAddress": "0xc517c83f417b73da98647dad0fcb80af9f3b9531",
-        "amount": "12",
+        "metadata": {
+          "name": "...",
+          "description": "...",
+          "image": "https://...",
+          "attributes": [
+            {
+              "trait_type": "Hat",
+              "value": "Backwards cap"
+            }
+          ]
+        }
       }
     ]
   }

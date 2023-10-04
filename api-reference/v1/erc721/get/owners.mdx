@@ -1,0 +1,70 @@
+---
+title: "Query ERC-721 Owners"
+sidebarTitle: "Query Owners"
+api: "GET https://groupos.xyz/api/v1/erc721/owners"
+---
+
+### Query Params
+
+<ParamField query="chainId" type="number" required>
+  The id of the chain supporting the NFT. This cannot be changed after creation.
+</ParamField>
+<ParamField query="contractAddress" type="string" required>
+  The NFT smart contract address.
+</ParamField>
+<ParamField query="ownerAddress" type="string" optional>
+  An NFT owner to filter on.
+</ParamField>
+<ParamField query="page" type="number" optional>
+  Page index to fetch, page size is `50`.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+<ResponseField name="owners" type="object[]">
+  Array of owner objects.
+  <Expandable title="object">
+    <ResponseField name="ownerAddress" type="string">
+      Address of an owner (lower-cased).
+    </ResponseField>
+    <ResponseField name="totalBalance" type="string">
+      Token balance across all tokens in this NFT collection.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+  ```bash Example Request
+  curl --location 'https://groupos.xyz/api/v1/erc721/owners' \
+  --request GET \
+  -d 'chainId=1' \
+  -d 'contractAddress=0x67F4732266C7300cca593C814d46bee72e40659F' \
+  -d 'ownerAddress=0xc517c83f417b73dA98647dad0FCB80af9f3b9531' \
+  -d 'tokenId=69' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer <token>'
+  ```
+</RequestExample>
+
+<ResponseExample>
+  ```json Success
+  {
+    "success": true,
+    "owners": [
+      {
+        "ownerAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
+        "totalBalance": "12"
+      }
+    ]
+  }
+  ```
+  ```json Failure
+  {
+    "success": false,
+    "error": "[message]"
+  }
+  ```
+</ResponseExample>

@@ -20,10 +20,10 @@ api: "GET https://groupos.xyz/api/v1/erc6551/accounts"
   Indicates whether the call was successful.
 </ResponseField>
 
-<ResponseField name="accounts" type="NftAccount[]">
+<ResponseField name="accounts" type="object[]">
   Array of NFT Account objects.
 
-  <Expandable title="NftAccount">
+  <Expandable title="object">
 
       <ResponseField name="contractAddress" type="string">
         Address of the Account.
@@ -33,9 +33,9 @@ api: "GET https://groupos.xyz/api/v1/erc6551/accounts"
         Address of the Account's implementation.
       </ResponseField>
 
-      <ResponseField name="nft" type="string">
+      <ResponseField name="nft" type="object">
         NFT this Account is bound to.
-        <Expandable title="Nft">
+        <Expandable title="object">
           <ResponseField name="chainId" type="string">
             Chain ID of where this NFT is deployed on.
           </ResponseField>

@@ -1,0 +1,96 @@
+---
+title: "API Introduction"
+sidebarTitle: "Introduction"
+description: "Run a smart contract Account and Token system from your backend."
+---
+
+GroupOS API offers 3 primary tools:
+
+1. **Tokens** for attributing value in your network
+2. **Accounts** for accruing value in your network
+3. **Keys** for onboarding new-to-web3 users
+
+Note that each API offering can be used independently from the other. For Token and Account systems,
+our no-code dashboard guides you to deploy your own smart contracts that you are always in control of.
+These smart contracts are designed to let you grant our offchain systems permission to coordinate behavior,
+and this permission can be revoked at any time. These contracts have no platform lock-in and are as interoperable
+with existing standards as possible to encourage this.
+
+Our Token smart contracts include all common standards for fungibility (ERC-20), non-fungibility (ERC-721), and semi-fungibility (ERC-1155).
+Our Account smart contracts support the latest standards in gas subsidization (ERC-4337) and token-bounding (ERC-6551).
+
+<CardGroup cols={2}>
+  <Card
+    title="Cloud Keys"
+    icon="key"
+    iconType="solid"
+    href="/api-reference/v1/key/post/create"
+  >
+    <div style={{ paddingTop: "8px", fontSize: "14px" }}>
+      Best for enabling{" "}
+      <span style={{ fontWeight: "bold" }}>wallet-less onboarding</span>.
+    </div>
+    <div style={{ paddingTop: "4px", fontSize: "14px" }}>
+      Examples include Sign-in with Google and guest users.
+    </div>
+  </Card>
+  <Card
+    title="NFT Accounts"
+    icon="user"
+    iconType="solid"
+    href="/api-reference/v1/erc6551/post/create"
+  >
+    <div style={{ paddingTop: "8px", fontSize: "14px" }}>
+      Best for distributing{" "}
+      <span style={{ fontWeight: "bold" }}>onchain identity</span>.
+    </div>
+    <div style={{ paddingTop: "4px", fontSize: "14px" }}>
+      Examples include member passport and game players.
+    </div>
+  </Card>
+</CardGroup>
+
+<CardGroup cols={3}>
+  <Card
+    title="ERC-20 Tokens"
+    icon="coin"
+    iconType="solid"
+    href="/api-reference/v1/erc20/post/mint"
+  >
+    <div style={{ paddingTop: "8px", fontSize: "14px" }}>
+      Best for attributing value{" "}
+      <span style={{ fontWeight: "bold" }}>quantitatively</span>.
+    </div>
+    <div style={{ paddingTop: "4px", fontSize: "14px" }}>
+      Examples include redeemable points and voting weight.
+    </div>
+  </Card>
+  <Card
+    title="ERC-721 NFTs"
+    icon="image"
+    iconType="solid"
+    href="/api-reference/v1/erc721/post/mint"
+  >
+    <div style={{ paddingTop: "8px", fontSize: "14px" }}>
+      Best for attributing value{" "}
+      <span style={{ fontWeight: "bold" }}>uniquely</span>.
+    </div>
+    <div style={{ paddingTop: "4px", fontSize: "14px" }}>
+      Examples include organizational identity and unique collectibles.
+    </div>
+  </Card>
+  <Card
+    title="ERC-1155 NFTs"
+    icon="badge-check"
+    iconType="solid"
+    href="/api-reference/v1/erc1155/post/mint"
+  >
+    <div style={{ paddingTop: "8px", fontSize: "14px" }}>
+      Best for attributing value{" "}
+      <span style={{ fontWeight: "bold" }}>categorically</span>.
+    </div>
+    <div style={{ paddingTop: "4px", fontSize: "14px" }}>
+      Examples include earned stamps and organization roles.
+    </div>
+  </Card>
+</CardGroup>

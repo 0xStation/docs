@@ -1,20 +1,20 @@
 ---
-title: "Mint Badge NFTs"
-sidebarTitle: "Mint Badges"
+title: "Mint ERC-1155 NFTs"
+sidebarTitle: "Mint NFTs"
 api: "POST https://groupos.xyz/api/v1/erc1155/mint"
 ---
 
-### How to mint Badge NFTs
+### How to mint ERC-1155 NFTs
 
-Once you have a Badge NFT smart contract, you can mint any number of tokens to any address. Each Badge NFT
+Once you have a ERC-1155 NFT smart contract, you can mint any number of tokens to any address. Each ERC-1155 NFT
 has a unique `tokenId` to identify it within the collection and all items of this `tokenId` share the same
 metadata.
 
-### Differences with Memberships (ERC-721)
+### Differences with ERC-721 NFTs
 
-While minting Memberships, the unique `tokenId` associated with each NFT will auto-increment for you, but
-minting Badges requires an explicit argument for `tokenId` to indicate which Badge should be minted. For
-example, one may define badge `1` as marking a donor, `2` for participating in last season, and `3` for
+While minting ERC-721 NFTs, the unique `tokenId` associated with each NFT will auto-increment for you, but
+minting ERC-1155 NFTs requires an explicit argument for `tokenId` to indicate which NFT should be minted. For
+example, one may define NFT `1` as marking a donor, `2` for participating in last season, and `3` for
 being a attendee at the most recent event.
 
 ### Body

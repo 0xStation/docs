@@ -1,0 +1,56 @@
+---
+title: "Create a Custodial Key"
+sidebarTitle: "Create Key"
+api: "POST https://groupos.xyz/api/v1/key/create"
+---
+
+### Key custody
+
+Currently, keys are custodied in the cloud with secure enclave technology through our partner [Turnkey](https://www.turnkey.com/).
+This allows you and your users to easily onboard to a dApp without needing to touch private keys. For more information about
+key security and operations, please contact us at our Help Desk.
+
+### Body
+
+<ParamField body="keyId" type="string" required>
+  The ID to associate with the key for future reference. Can be anything you
+  want to identify keys or users by, eg. a user's email or a database UUID.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="evmAddress" type="string">
+  Public EVM Address for the new key.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request POST 'https://groupos.xyz/api/v1/key/create' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <token>' \
+--data-raw '{
+    "keyId": "user@email.com"
+}'
+```
+
+</RequestExample>
+
+<ResponseExample>
+  ```json Success
+  {
+    "success": true,
+    "evmAddress": "0x016562aA41A8697720ce0943F003141f5dEAe006"
+  }
+  ```
+  ```json Failure
+  {
+    "success": false,
+    "error": "[message]"
+  }
+  ```
+</ResponseExample>

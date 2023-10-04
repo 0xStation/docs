@@ -1,12 +1,12 @@
 ---
-title: "Mint Membership NFTs"
-sidebarTitle: "Mint Memberships"
+title: "Mint ERC-721 NFTs"
+sidebarTitle: "Mint NFTs"
 api: "POST https://groupos.xyz/api/v1/erc721/mint"
 ---
 
-### How to mint Membership NFTs
+### How to mint ERC-721 NFTs
 
-Once you have a Membership NFT smart contract, you can mint any number of tokens to any address. Each NFT
+Once you have a ERC-721 NFT smart contract, you can mint any number of tokens to any address. Each NFT
 has a unique `tokenId` which is an auto-incrementing number like a typical numeric identifier in a database.
 You can also optionally provide metadata specific to this newly minted NFT that will override any defaults
 set in the previous step.
@@ -28,7 +28,7 @@ set in the previous step.
 <ParamField body="metadata" type="object" optional>
     Metadata to associate with this NFT, which overrides any defaults set at the collection-level.
 
-    <Expandable title="NFT Metadata">
+    <Expandable title="object">
 
       <ParamField body="name" type="string" optional>
         Name for the NFT.
@@ -46,10 +46,10 @@ set in the previous step.
         Url for the external link associated with the NFT.
       </ParamField>
 
-      <ParamField body="traits" type="Trait[]" optional>
+      <ParamField body="traits" type="object[]" optional>
         Array of trait objects.
 
-        <Expandable title="Trait">
+        <Expandable title="object">
           <ParamField body="name" type="string" required>
             Name for the trait.
           </ParamField>
