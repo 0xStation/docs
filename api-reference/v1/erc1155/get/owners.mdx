@@ -33,6 +33,17 @@ api: "GET https://groupos.xyz/api/v1/erc1155/owners"
     <ResponseField name="totalBalance" type="string">
       Token balance across all tokens in this NFT collection.
     </ResponseField>
+    <ResponseField name="tokens" type="object[]">
+      Array of NFT balance objects.
+      <Expandable title="object">
+        <ResponseField name="tokenId" type="string">
+          Token id of the NFT.
+        </ResponseField>
+        <ResponseField name="balance" type="string">
+          The balance of tokens of `tokenId` owned by `ownerAddress`.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
@@ -56,7 +67,21 @@ api: "GET https://groupos.xyz/api/v1/erc1155/owners"
     "owners": [
       {
         "ownerAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
-        "totalBalance": "12"
+        "totalBalance": "12",
+        "tokens": [
+          {
+            "tokenId": "1",
+            "balance": "10"
+          },
+          {
+            "tokenId": "2",
+            "balance": "1"
+          },
+          {
+            "tokenId": "3",
+            "balance": "1"
+          }
+        ]
       }
     ]
   }

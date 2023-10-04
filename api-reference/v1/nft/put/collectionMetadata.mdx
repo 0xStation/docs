@@ -1,14 +1,14 @@
 ---
-title: "Update an ERC-1155 NFT Collection's Metadata"
+title: "Update an NFT Collection's Metadata"
 sidebarTitle: "Update Collection Metadata"
-api: "PUT https://groupos.xyz/api/v1/erc1155/collectionMetadata"
+api: "PUT https://groupos.xyz/api/v1/nft/collectionMetadata"
 ---
 
-### How NFT collection metadata works
+### How collection metadata works
 
 For NFT collections that have one standard set of metadata (name, image, etc.) or support evolving metadata
 schemes, a single set of metadata can be defined at the collection-level to provide this default.
-Individual metadata can be set when [minting new NFTs](/api-reference/v1/erc1155/post/mint) or [editing their metadata](/api-reference/v1/erc1155/put/tokenMetadata) directly, which will override the defaults set here.
+Individual metadata can be [updated individually](/api-reference/v1/nft/put/tokenMetadata) as well, which will override the defaults set here.
 
 When edits are made to the collection's default metadata, updates are propagated automatically to Opensea and other platforms.
 
@@ -23,20 +23,22 @@ When edits are made to the collection's default metadata, updates are propagated
 </ParamField>
 
 <ParamField body="metadata" type="object">
-    Default metadata to apply to every NFT in the collection, which can be overriden with token-specific metadata.
-
-    <Expandable title="object">
-
-      <ParamField body="description" type="string" optional>
-        Description for the NFT.
-      </ParamField>
-
-      <ParamField body="mediaUrl" type="string" required>
-        Url for the media content associated with the NFT.
-      </ParamField>
-
-    </Expandable>
-
+  Default metadata to apply to every NFT in the collection, which can be
+  overriden with token-specific metadata.
+  <Expandable title="object">
+    <ParamField body="name" type="string" optional>
+      Name for the NFT.
+    </ParamField>
+    <ParamField body="description" type="string" optional>
+      Description for the NFT.
+    </ParamField>
+    <ParamField body="mediaUrl" type="string" optional>
+      Url for the media content associated with the NFT.
+    </ParamField>
+    <ParamField body="externalUrl" type="string" optional>
+      Url for the external link associated with the NFT.
+    </ParamField>
+  </Expandable>
 </ParamField>
 
 ### Response
@@ -48,7 +50,7 @@ When edits are made to the collection's default metadata, updates are propagated
 <RequestExample>
 
 ```bash Example Request
-curl --location --request PUT 'https://groupos.xyz/api/v1/erc1155/collectionMetadata' \
+curl --location --request PUT 'https://groupos.xyz/api/v1/nft/collectionMetadata' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <token>' \
 --data-raw '{

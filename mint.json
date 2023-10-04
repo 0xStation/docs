@@ -184,8 +184,6 @@
       "pages": [
         "api-reference/v1/erc721/post/mint",
         "api-reference/v1/erc721/post/permit",
-        "api-reference/v1/erc721/put/collectionMetadata",
-        "api-reference/v1/erc721/put/tokenMetadata",
         "api-reference/v1/erc721/get/owners",
         "api-reference/v1/erc721/get/tokens"
       ]
@@ -195,17 +193,16 @@
       "pages": [
         "api-reference/v1/erc1155/post/mint",
         "api-reference/v1/erc1155/post/permit",
-        "api-reference/v1/erc1155/put/collectionMetadata",
-        "api-reference/v1/erc1155/put/tokenMetadata",
         "api-reference/v1/erc1155/get/owners",
-        "api-reference/v1/erc1155/get/tokens",
-        "api-reference/v1/erc1155/get/tokenOwners"
+        "api-reference/v1/erc1155/get/tokens"
       ]
     },
     {
       "group": "NFT Metadata",
       "pages": [
         "api-reference/v1/nft/post/uploadMedia",
+        "api-reference/v1/nft/put/collectionMetadata",
+        "api-reference/v1/nft/put/tokenMetadata",
         "api-reference/v1/nft/get/metadata"
       ]
     },
