@@ -22,7 +22,7 @@ When edits are made to the collection's default metadata, updates are propagated
   The NFT smart contract address to edit.
 </ParamField>
 
-<ParamField body="metadata" type="object">
+<ParamField body="metadata" type="object" required>
   Default metadata to apply to every NFT in the collection, which can be
   overriden with token-specific metadata.
   <Expandable title="object">
@@ -34,9 +34,6 @@ When edits are made to the collection's default metadata, updates are propagated
     </ParamField>
     <ParamField body="mediaUrl" type="string" optional>
       Url for the media content associated with the NFT.
-    </ParamField>
-    <ParamField body="externalUrl" type="string" optional>
-      Url for the external link associated with the NFT.
     </ParamField>
   </Expandable>
 </ParamField>

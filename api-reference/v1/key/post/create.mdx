@@ -1,5 +1,5 @@
 ---
-title: "Create a Custodial Key"
+title: "Create a Cloud Key"
 sidebarTitle: "Create Key"
 api: "POST https://groupos.xyz/api/v1/key/create"
 ---
@@ -12,9 +12,10 @@ key security and operations, please contact us at our Help Desk.
 
 ### Body
 
-<ParamField body="keyId" type="string" required>
-  The ID to associate with the key for future reference. Can be anything you
-  want to identify keys or users by, eg. a user's email or a database UUID.
+<ParamField body="customRef" type="string" optional>
+  A custom reference to associate with the key for later querying. Can be
+  anything you want to identify keys or users by, eg. a user's email or a
+  database UUID.
 </ParamField>
 
 ### Response
@@ -34,7 +35,7 @@ curl --location --request POST 'https://groupos.xyz/api/v1/key/create' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <token>' \
 --data-raw '{
-    "keyId": "user@email.com"
+    "customRef": "user@email.com"
 }'
 ```
 
