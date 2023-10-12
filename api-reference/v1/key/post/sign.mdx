@@ -1,0 +1,58 @@
+---
+title: "Sign Message With a Cloud Key"
+sidebarTitle: "Sign Message With Key"
+api: "POST https://groupos.xyz/api/v1/key/sign"
+---
+
+### Sign Message
+
+Sign a raw payload with a Private Key stored in the cloud.
+
+### Body
+
+<ParamField body="accountAddress" type="string">
+  The address of the account to sign the message with.
+</ParamField>
+
+<ParamField body="message" type="string">
+  The message to sign.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="message" type="string">
+  The signed message.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request POST 'https://groupos.xyz/api/v1/key/sign' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <token>' \
+--data-raw '{
+    "accountAddress": "0xabc123...",
+    "message": "Hello, World!"
+}'
+```
+
+</RequestExample>
+
+<ResponseExample>
+  ```json Success
+  {
+    "success": true,
+    "signature": "0xed10de3263df401d86261eb8811185ad934bde90cfc20493ace2fc435463b8806833ece6c69b86c7851f30e8c9fb0359b092189f6e7abe8cad717a5c1484bcc01b"
+  }
+  ```
+  ```json Failure
+  {
+    "success": false,
+    "error": "[message]"
+  }
+  ```
+</ResponseExample>
