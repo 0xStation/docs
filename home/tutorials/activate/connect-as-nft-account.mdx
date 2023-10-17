@@ -7,7 +7,7 @@ sidebarTitle: "Support Connect as NFT"
 
 ![connect as nft](https://station-images.nyc3.digitaloceanspaces.com/9ba80f5f-5dc9-4415-83a1-36831f03d690.png)
 
-### Checklist
+### Implementation checklist
 
 <AccordionGroup>
   <Accordion title="WalletConnect Integration">
@@ -37,6 +37,20 @@ return the tx hash
 - WalletConnect session termination from a dApp automatically resets Connect as NFT state by reacting to `session_delete` event
 </Accordion>
 
+</AccordionGroup>
+
+### Test compatibility
+
+<AccordionGroup>
+  <Accordion title="Linea">
+    1. Claim the [NFT Account](https://groupos.xyz/linea-goerli:0xe52ac082cdde624f639bdf74fc24dbf61ead21fc/mint). Gas is “subsidized” so you wouldn’t need testnet ETH.
+    2. Connect as your NFT account via GroupOS’s WalletConnect integration. 
+        - Choose WalletConnect and copy the WalletConnect string.
+        - Go to [GroupOS’s NFT Account Connection Portal](https://groupos.xyz/wc) and paste the string.
+        - Select the NFT Account.
+    3. Perform a transaction on your application.
+    4. Confirm transactions on [GroupOS’s NFT Account Connection Portal](https://groupos.xyz/wc)
+  </Accordion>
 </AccordionGroup>
 
 ### Compatible applications
