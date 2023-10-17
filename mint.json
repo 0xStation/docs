@@ -99,10 +99,6 @@
           "pages": ["home/items/overview"]
         },
         {
-          "group": "Roles",
-          "pages": ["home/points/overview"]
-        },
-        {
           "group": "Attestations",
           "pages": ["home/attestations/overview"]
         },
@@ -126,7 +122,6 @@
         "home/tutorials/activate/deploy-accounts-collection",
         "home/tutorials/activate/set-up-claim-portal",
         "home/tutorials/activate/add-sign-up-form",
-        "home/tutorials/activate/export-account-information",
         "home/tutorials/activate/connect-as-nft-account"
       ]
     },
@@ -141,7 +136,8 @@
       "group": "Measure",
       "pages": [
         "home/tutorials/measure/accounts-analytics",
-        "home/tutorials/measure/gas-usage-analytics"
+        "home/tutorials/measure/gas-usage-analytics",
+        "home/tutorials/activate/export-account-information"
       ]
     },
     {
