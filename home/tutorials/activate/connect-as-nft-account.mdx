@@ -1,26 +1,53 @@
 ---
-title: "Connect as NFT Account"
-sidebarTitle: "Connect as NFT Account"
+title: "Support Connect as NFT"
+sidebarTitle: "Support Connect as NFT"
 ---
 
-Your members can connect and execute on applications* via GroupOS WalletConnect Portal. 
-
-1. Go to [GroupOS WalletConnect Portal](https://groupos.xyz/wc) 
-
-2. Go to the application you want to connect to and find **WalletConnect**.
-
-3. Click copy icon on the top right of the WalletConnect modal to copy the URI. Go back to [GroupOS WalletConnect Portal](https://groupos.xyz/wc) and paste the URI.
-
-<video
-  controls
-  className="w-full aspect-video"
-  src="https://station-images.nyc3.digitaloceanspaces.com/f3b99d13-8f59-403b-960f-96c5fce708f0.mp4"
-></video>
-
-4. Connect to the wallet that owns the NFT account and select the NFT account you want to connect to the application with.
-
-5. Go to the application and perform your actions as your NFT account.
-
-You can also explore the curated list of applications that support smart contract wallet on [GroupOS WalletConnect Portal](https://groupos.xyz/wc).
+![GroupOS Connect as NFT Portal](https://groupos.xyz/wc) enables users to connect to applications as their NFT Accounts.
 
 
+### Checklist
+
+**WalletConnect Integration**
+
+- If your application doesn't support WalletConnect, follow ![this tutorial](https://docs.walletconnect.com/web3modal/about) to integrate.
+
+For the sections below, please refer to ![WalletConnect documentation](https://docs.walletconnect.com/api/sign/dapp-usage)
+
+**Contract Signatures**
+
+- ![EIP-1271](https://eips.ethereum.org/EIPS/eip-1271) must be supported
+    <Info>Recommended: viem’s [verifyMessage](https://viem.sh/docs/actions/public/verifyMessage.html) public client function is recommended</Info>
+
+**Networks*
+
+-  Connection is established with Mainnet + selected NFT account chain
+
+**Methods**
+
+- `eth_sendTransaction` which will sign the requested tx, send out and
+return the tx hash
+- Simple data signing support using `personal_sign`
+- Typed data signing support using `eth_signTypedData_v4`
+
+**Events**
+
+- Network suggestion (NFT’s network) sent to dApps using `chainChanged` event
+- Account switching adjusts WalletConnect session and informs the dApp via `accountsChanged` event
+- WalletConnect session termination from a dApp automatically resets Connect as NFT state by reacting to `session_delete` event
+
+
+### Compatible applications
+
+** Linea
+- ![EchoDex](https://www.echodex.io/?chain=linea)
+- ![Battlemon](https://battlemon.com/)
+- ![KyberSwap](https://kyberswap.com/)
+- ![Lynex](https://www.lynex.fi/)
+- ![Owlto Finance](https://owlto.finance/bridge)
+
+
+
+### Current limitations
+
+- Accounts need to be deployed on the same chain as the connected chain on the application to transact. Currently, we intentionally kill the session if the network of the NFT Account and the selected network on the application is mismatched.
