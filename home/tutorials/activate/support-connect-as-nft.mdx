@@ -7,6 +7,11 @@ sidebarTitle: "Support Connect as NFT"
 
 ![connect as nft](https://station-images.nyc3.digitaloceanspaces.com/9ba80f5f-5dc9-4415-83a1-36831f03d690.png)
 
+### Sandbox
+
+- [UI](https://tm7q7m-3000.csb.app/)
+- [Code](https://codesandbox.io/p/sandbox/connect-as-nft-dapp-tm7q7m)
+
 ### Implementation checklist
 
 <AccordionGroup>
@@ -24,19 +29,17 @@ sidebarTitle: "Support Connect as NFT"
     Connection is established with Mainnet + selected NFT account chain.
   </Accordion>
 
-<Accordion title="Methods">
-- `eth_sendTransaction` which will sign the requested tx, send out and
-return the tx hash
-- Simple data signing support using `personal_sign`
-- Typed data signing support using `eth_signTypedData_v4`
-</Accordion>
+  <Accordion title="Methods">
+    - `eth_sendTransaction` which will sign the requested tx, send out and return the tx hash
+    - Simple data signing support using `personal_sign`
+    - Typed data signing support using `eth_signTypedData_v4`
+  </Accordion>
 
-<Accordion title="Events">
-- Network suggestion (NFT’s network) sent to dApps using `chainChanged` event
-- Account switching adjusts WalletConnect session and informs the dApp via `accountsChanged` event
-- WalletConnect session termination from a dApp automatically resets Connect as NFT state by reacting to `session_delete` event
-</Accordion>
-
+  <Accordion title="Events">
+    - Network suggestion (NFT’s network) sent to dApps using `chainChanged` event
+    - Account switching adjusts WalletConnect session and informs the dApp via `accountsChanged` event
+    - WalletConnect session termination from a dApp automatically resets Connect as NFT state by reacting to `session_delete` event
+  </Accordion>
 </AccordionGroup>
 
 ### Test compatibility
