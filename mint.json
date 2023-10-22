@@ -68,6 +68,12 @@
       ]
     },
     {
+      "group": "Products",
+      "pages": [
+        "home/products/browse-by-products"
+      ]
+    },
+    {
       "group": "GroupOS Components",
       "pages": [
         {
