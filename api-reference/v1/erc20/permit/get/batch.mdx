@@ -1,0 +1,85 @@
+---
+title: "Batch Permit ERC-20 Tokens"
+sidebarTitle: "Batch Permit Tokens"
+api: "GET https://groupos.xyz/api/v1/erc20/permit/batch"
+---
+
+<Note>
+  Permiting is still currently in beta. Please [schedule a
+  call](https://calendly.com/symmtry/chat) if you would like to use permits in
+  production and we can fast-track your onboarding.
+</Note>
+
+### Batch Permiting
+
+If a particular user has earned a large amount of permits, it may be easier to batch them together. This way, the user only needs to execute a single transaction to claim all of their available permits. This endpoint batches all of the permits for a user from a particular token collection together and returns a single transaction that can be used to claim all of the tokens at once.
+
+### Body
+
+<ParamField body="chainId" type="number" required>
+  The id of the chain supporting the token.
+</ParamField>
+
+<ParamField body="contractAddress" type="string" required>
+  The token smart contract address of the permits to batch.
+</ParamField>
+
+<ParamField body="recipientAddress" type="string" required>
+  The address to recipient owning the permits to batch.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+<ResponseField name="rawTransaction" type="object">
+  To, value, data to be used in a transaction.
+  <Expandable title="Transaction details">
+    <ResponseField name="to" type="string">
+      The Ethereum address the minting module is deployed to.
+    </ResponseField>
+    <ResponseField name="value" type="string">
+      The amount of value to send alongside the transaction. This is only
+      necessary if the permits are paid permits, free permit use 0 value.
+    </ResponseField>
+    <ResponseField name="data" type="string">
+      The calldata to be used in the transaction representing all of the permits
+      batched together.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+  ```bash Example Request
+  curl 'https://groupos.xyz/api/v1/erc20/permit' \
+  --request POST \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer <token>' \
+  --data-raw '{
+      "chainId": 137,
+      "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
+      "recipientAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
+      "amount": "5"
+  }'
+  ```
+</RequestExample>
+
+<ResponseExample>
+  ```json Success
+  {
+    "success": true,
+    "rawTransaction": {
+      "to": "0xfb7b7f2d7ecef20a3a7a8ff4b3ae4a66d06a8df7",
+      "value": "0",
+      "data": "0x23b872dd000000000000000000000000c517c83f417b73da98647dad0fcb80af9f3b9531000000000000"
+    }
+  }
+  ```
+  ```json Failure
+  {
+    "success": false,
+    "error": "[message]"
+  }
+  ```
+</ResponseExample>
