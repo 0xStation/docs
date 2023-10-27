@@ -31,6 +31,11 @@
   },
   "anchors": [
     {
+      "name": "Book a Demo",
+      "url": "https://calendly.com/fakepixels/station-partnerships",
+      "icon": "phone"
+    },
+    {
       "name": "Newstand",
       "url": "https://www.station.express/newstand",
       "icon": "megaphone"
@@ -39,12 +44,7 @@
       "name": "Help Desk",
       "url": "https://www.station.express/newstand",
       "icon": "telegram"
-    },
-    {
-      "name": "Follow Us",
-      "url": "https://twitter.com/0xstation",
-      "icon": "twitter"
-    }
+    }  
   ],
   "tabs": [
     {
@@ -78,6 +78,23 @@
       "pages": [
         "smart-accounts/overview",
         "smart-accounts/start-integration"
+      ]
+    },
+    {
+      "group": "Extensions",
+      "pages": [
+        {
+          "group": "Tokens",
+          "pages": [
+            "extensions/tokens/points",
+            "extensions/tokens/badges",
+            "extensions/tokens/roles"
+          ]
+        },
+        {
+          "group": "Attestations",
+          "pages": ["extensions/attestations"]
+        }
       ]
     },
     {
