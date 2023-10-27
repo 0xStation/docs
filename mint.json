@@ -31,15 +31,14 @@
   },
   "anchors": [
     {
-      "name": "Help Desk",
-      "url": "https://discord.gg/68dQWzGt6U",
-      "icon": "hand",
-      "iconType": "solid"
+      "name": "Newstand",
+      "url": "https://www.station.express/newstand",
+      "icon": "megaphone"
     },
     {
-      "name": "Join Discord",
-      "url": "https://discord.gg/wxDm3gXmZz",
-      "icon": "discord"
+      "name": "Help Desk",
+      "url": "https://www.station.express/newstand",
+      "icon": "telegram"
     },
     {
       "name": "Follow Us",
@@ -59,91 +58,51 @@
   ],
   "navigation": [
     {
-      "group": "Overview",
+      "group": "Introduction",
       "pages": [
-        "home/overview/why",
-        "home/overview/nft-accounts",
-        "home/overview/use-cases",
-        "home/overview/networks"
+        "introduction/group-os",
+        "introduction/products",
+        "introduction/use-cases",
+        "introduction/networks"
       ]
     },
     {
-      "group": "Industries",
+      "group": "NFT Accounts",
       "pages": [
-        "home/industries/gaming",
-        "home/industries/l2s",
-        "home/industries/nft-collections"
+        "nft-accounts/overview",
+        "nft-accounts/new-collection"
+      ]
+    }, 
+    {
+      "group": "Smart Accounts",
+      "pages": [
+        "smart-accounts/overview",
+        "smart-accounts/start-integration"
       ]
     },
     {
-      "group": "GroupOS Components",
+      "group": "Use Cases",
       "pages": [
         {
-          "group": "Accounts",
+          "group": "Membership & Loyalty",
+          "pages": ["home/badges/overview"]
+        },
+        {
+          "group": "Gas Pass",
+          "pages": ["home/points/overview"]
+        },
+        {
+          "group": "User Onboarding & Management",
           "pages": [
             "home/accounts/overview",
             "home/accounts/gas-policies",
             "home/accounts/trusted-executor"
           ]
-        },
-        {
-          "group": "Badges",
-          "pages": ["home/badges/overview"]
-        },
-        {
-          "group": "Points",
-          "pages": ["home/points/overview"]
-        },
-        {
-          "group": "Items",
-          "pages": ["home/items/overview"]
-        },
-        {
-          "group": "Roles",
-          "pages": ["home/points/overview"]
-        },
-        {
-          "group": "Attestations",
-          "pages": ["home/attestations/overview"]
-        },
-        {
-          "group": "Directory",
-          "pages": ["home/directory/overview"]
-        },
-        {
-          "group": "Analytics",
-          "pages": [
-            "home/analytics/accounts",
-            "home/analytics/api",
-            "home/analytics/gas"
-          ]
         }
       ]
     },
-    {
-      "group": "Activate",
-      "pages": [
-        "home/tutorials/activate/deploy-accounts-collection",
-        "home/tutorials/activate/set-up-claim-portal",
-        "home/tutorials/activate/add-sign-up-form",
-        "home/tutorials/activate/export-account-information",
-        "home/tutorials/activate/connect-as-nft-account"
-      ]
-    },
-    {
-      "group": "Reward",
-      "pages": [
-        "home/tutorials/reward/deploy-badges-collection",
-        "home/tutorials/reward/deploy-points-collection"
-      ]
-    },
-    {
-      "group": "Measure",
-      "pages": [
-        "home/tutorials/measure/accounts-analytics",
-        "home/tutorials/measure/gas-usage-analytics"
-      ]
-    },
+
+
     {
       "group": "Overview",
       "pages": [
