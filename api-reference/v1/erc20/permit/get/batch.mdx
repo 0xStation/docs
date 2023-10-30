@@ -1,7 +1,7 @@
 ---
-title: "Permit ERC-20 Tokens"
-sidebarTitle: "Permit Tokens"
-api: "POST https://groupos.xyz/api/v1/erc20/permit"
+title: "Batch Permit ERC-20 Tokens"
+sidebarTitle: "Batch Permit Tokens"
+api: "GET https://groupos.xyz/api/v1/erc20/permit/batch"
 ---
 
 <Note>
@@ -10,50 +10,28 @@ api: "POST https://groupos.xyz/api/v1/erc20/permit"
   production and we can fast-track your onboarding.
 </Note>
 
-### Permiting vs. Minting
+### Batch Permiting
 
-Permiting enables you to permit an address to mint tokens on their own time and does not itself produce
-a blockchain transaction. This makes permiting free for your application as users will be paying with their
-own gas at the time of mint, which can take place on your own interface or use a default experience provided
-by Station.
-
-When you permit an token, our cloud-wallets sign an approval for the recipient that is used to authenticate
-their mint call within the smart contract. Each signature can optionally be set with an expiration as well.
+If a particular user has earned a large amount of permits, it may be easier to batch them together. This way, the user only needs to execute a single transaction to claim all of their available permits. This endpoint batches all of the permits for a user from a particular token collection together and returns a single transaction that can be used to claim all of the tokens at once.
 
 ### Body
 
 <ParamField body="chainId" type="number" required>
-  The id of the chain supporting the token. This cannot be changed after
-  creation.
+  The id of the chain supporting the token.
 </ParamField>
 
 <ParamField body="contractAddress" type="string" required>
-  The token smart contract address to permit with.
+  The token smart contract address of the permits to batch.
 </ParamField>
 
 <ParamField body="recipientAddress" type="string" required>
-  The address to permit an token to.
-</ParamField>
-
-<ParamField body="amount" type="string" required>
-  The amount of tokens to mint to recipient. Type `string` is used to natively
-  support large numbers.
-</ParamField>
-
-<ParamField body="expiration" type="date" optional>
-  The datetime for when this permit expires.
+  The address to recipient owning the permits to batch.
 </ParamField>
 
 ### Response
 
 <ResponseField name="success" type="boolean">
   Indicates whether the call was successful.
-</ResponseField>
-<ResponseField name="permitId" type="string">
-  ID for the newly created permit.
-</ResponseField>
-<ResponseField name="signature" type="string">
-  Raw bytes signature of approval for the newly created permit.
 </ResponseField>
 <ResponseField name="rawTransaction" type="object">
   To, value, data to be used in a transaction.
@@ -63,10 +41,11 @@ their mint call within the smart contract. Each signature can optionally be set 
     </ResponseField>
     <ResponseField name="value" type="string">
       The amount of value to send alongside the transaction. This is only
-      necessary for a paid permit, free permit uses 0 value.
+      necessary if the permits are paid permits, free permit use 0 value.
     </ResponseField>
     <ResponseField name="data" type="string">
-      The calldata to be used in the transaction.
+      The calldata to be used in the transaction representing all of the permits
+      batched together.
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -90,8 +69,6 @@ their mint call within the smart contract. Each signature can optionally be set 
   ```json Success
   {
     "success": true,
-    "permitId": "8493b65e-e0a1-4b13-90ec-7af3a923f8b9",
-    "signature": "0xecb043a2da3a1c5e9a0a00cea8ffabb5815b12a9e1f91b97005c8d92b41b19cea8ffabb5815b12a9e1f91b97005c8d92b41b19ce",
     "rawTransaction": {
       "to": "0xfb7b7f2d7ecef20a3a7a8ff4b3ae4a66d06a8df7",
       "value": "0",
