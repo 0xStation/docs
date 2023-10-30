@@ -1,0 +1,63 @@
+---
+title: "Transact with Gas Pass"
+---
+
+Enable your members to connect and transact on applications with their Gas Passes.
+
+### Pre-requisite
+
+Your members can transact with Gas Passes on applications that support signing and transacting with smart contract wallets.  
+
+You can find the list of compatible applications and request to be added [here](https://0xstation.notion.site/6556761d47604c96910c6a08cee3f1ef?v=cea6cb3a2f634d928e5aa3899701c45e&pvs=4). 
+
+### Implementation checklist
+
+Share this checklist with partnered applications.
+
+Use our **[sandbox](https://codesandbox.io/p/sandbox/connect-as-nft-dapp-tm7q7m)** to get started.
+
+<AccordionGroup>
+  <Accordion title="WalletConnect Integration">
+    If your application doesn't support WalletConnect, follow [this tutorial](https://docs.walletconnect.com/web3modal/about) to integrate.
+  </Accordion>
+
+  <Accordion title="Contract Signatures">
+    [EIP-1271](https://eips.ethereum.org/EIPS/eip-1271) must be supported.
+
+    <Info>Recommended: viem’s [verifyMessage](https://viem.sh/docs/actions/public/verifyMessage.html) public client function is recommended</Info>
+  </Accordion>
+
+  <Accordion title="Networks">
+    Connection is established with Mainnet + selected NFT account chain.
+  </Accordion>
+
+  <Accordion title="Methods">
+    - `eth_sendTransaction` which will sign the requested tx, send out and return the tx hash
+    - Simple data signing support using `personal_sign`
+    - Typed data signing support using `eth_signTypedData_v4`
+  </Accordion>
+
+  <Accordion title="Events">
+    - Network suggestion (NFT’s network) sent to dApps using `chainChanged` event
+    - Account switching adjusts WalletConnect session and informs the dApp via `accountsChanged` event
+    - WalletConnect session termination from a dApp automatically resets Connect as NFT state by reacting to `session_delete` event
+  </Accordion>
+  
+</AccordionGroup>
+
+### Run your test
+
+<video
+  controls
+  className="w-full aspect-video"
+  src="https://www.loom.com/share/6e19637d23e244a88f1f6e2680002e60?t=4"
+></video>
+
+1. Go to your application. Navigate to WalletConnect.
+
+2. Copy the WalletConnect string. Go to [Connect Portal](https://groupos.xyz/wc) and paste the string.
+
+3. Select an NFT Account to connect. Check if the connected wallet in the application matches that of the Account.
+<Warning>Do not close the Connect Portal tab as transaction confirmation will happen in this tab.</Warning>
+
+4. Perform transactions. 

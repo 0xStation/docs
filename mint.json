@@ -69,8 +69,18 @@
     {
       "group": "NFT Accounts",
       "pages": [
+        
         "nft-accounts/overview",
-        "nft-accounts/new-collection"
+        "nft-accounts/new-collection",
+        {
+          "group": "Distribute NFT Accounts",
+          "pages": [
+            "nft-accounts/claim-portal",
+            "nft-accounts/api"
+          ]
+        },
+        "nft-accounts/track",
+        "nft-accounts/transact"
       ]
     }, 
     {
@@ -86,14 +96,38 @@
         {
           "group": "Tokens",
           "pages": [
-            "extensions/tokens/points",
-            "extensions/tokens/badges",
-            "extensions/tokens/roles"
+            {
+              "group": "ERC-20",
+              "pages": [
+                "extensions/tokens/erc20/overview",
+                "extensions/tokens/erc20/new-collection",
+                "extensions/tokens/erc20/distribute",
+                "extensions/tokens/erc20/track"
+              ]
+            },
+            {
+              "group": "ERC-1155",
+              "pages": [
+                "extensions/tokens/erc1155/overview",
+                "extensions/tokens/erc1155/new-collection",
+                "extensions/tokens/erc1155/distribute",
+                "extensions/tokens/erc1155/track"
+              ]
+            },
+            {
+              "group": "ERC-721",
+              "pages": [
+                "extensions/tokens/erc721/overview",
+                "extensions/tokens/erc721/new-collection",
+                "extensions/tokens/erc721/distribute",
+                "extensions/tokens/erc721/track"
+              ]
+            }
           ]
         },
         {
           "group": "Attestations",
-          "pages": ["extensions/attestations"]
+          "pages": ["extensions/attestations/overview"]
         }
       ]
     },
@@ -102,24 +136,26 @@
       "pages": [
         {
           "group": "Membership & Loyalty",
-          "pages": ["home/badges/overview"]
+          "pages": [
+            "membership-loyalty/overview",
+            "membership-loyalty/cards",
+            "membership-loyalty/points",
+            "membership-loyalty/badges",
+            "membership-loyalty/track",
+            "membership-loyalty/transact"
+          ]
         },
         {
           "group": "Gas Pass",
-          "pages": ["home/points/overview"]
-        },
-        {
-          "group": "User Onboarding & Management",
           "pages": [
-            "home/accounts/overview",
-            "home/accounts/gas-policies",
-            "home/accounts/trusted-executor"
+            "gas-pass/overview",
+            "gas-pass/create",
+            "gas-pass/track",
+            "gas-pass/transact"
           ]
         }
       ]
     },
-
-
     {
       "group": "Overview",
       "pages": [
