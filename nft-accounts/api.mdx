@@ -2,14 +2,18 @@
 title: "Distribute with APIs"
 ---
 
-Automatically mint, update NFT metadata, and batch execute transactions based on offchain events with NFT Account APIs.  
+Automatically mint, update NFT metadata, and batch execute transactions based on offchain events with NFT Account APIs.
 
 ### Set up your API keys
-1. In the Dashboard, go to the 'Settings' tab. 
+
+1. In the Dashboard, go to the 'Settings' tab.
 2. Go to the 'API keys' tab and click 'Add' to generate a new key.
-![API.png](https://station-images.nyc3.digitaloceanspaces.com/8e6e553e-1da4-4501-ac64-52094d9c1a0d.png)
-3. Name your API key and click 'Generate'. 
-<Warning>Copy and save the key in a secured location. We don’t store or retrieve your API keys.</Warning>
+   ![API.png](https://station-images.nyc3.digitaloceanspaces.com/8e6e553e-1da4-4501-ac64-52094d9c1a0d.png)
+3. Name your API key and click 'Generate'.
+   <Warning>
+     Copy and save the key in a secured location. We don’t store or retrieve
+     your API keys.
+   </Warning>
 4. Once you're done with the set up, follow the guide below to distribute with APIs.
 
 ### Mint NFT Accounts
@@ -25,7 +29,7 @@ we have not yet already.
 
 For convenience, the ability to upload NFT media is provided out of the box.
 Using the [/api/v1/nft/uploadMedia](/api-reference/v1/nft/post/uploadMedia) route, we can provide our file and receive back
-a `mediaUrl`.
+a `mediaUrl`. Please not that this is not required if you already have the url of your media.
 
 ```typescript
 const formData = new FormData();
