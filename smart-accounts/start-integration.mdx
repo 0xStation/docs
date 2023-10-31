@@ -1,0 +1,89 @@
+---
+title: "Start an Integration"
+---
+
+### Requirements
+
+<Info>
+Currently, "Log in with Station" is not compatible with wallet modal packages (eg. ConnectKit, Privy) and is best fit for teams that implement their own connection experience.
+
+</Info>
+
+1. Create an API key on the GroupOS app
+2. Use `wagmi ^1.0.0` and `viem ^1.0.0` in your dApp
+
+### Integration
+
+Install the GroupOS SSO package:
+
+```bash
+npm install @station/sso
+```
+
+Import the wallet connector and add it to your [wagmi config](https://wagmi.sh/react/WagmiConfig#configuration):
+
+```jsx
+import { WagmiConfig, createConfig, configureChains, mainnet } from 'wagmi'
+import { publicProvider } from 'wagmi/providers/public'
+import { InjectedConnector } from 'wagmi/connectors/injected'
+import { GroupOsConnector } from '@groupos/sso'
+ 
+const { chains, publicClient } = configureChains([mainnet], [publicProvider()])
+ 
+const config = createConfig({
+  publicClient,
+  connectors: [
+    new InjectedConnector({ chains }),
+    new GroupOsConnector({
+      chains,
+      options: {
+        apiKey: 'GROUPOS_API_KEY'
+      },
+    }),
+  ],
+})
+
+function App() {
+  return (
+    <WagmiConfig config={config}>
+      <YourRoutes />
+    </WagmiConfig>
+  )
+}
+```
+
+Add the GroupOS option in your supported wallet list
+
+```jsx
+import { GroupOsIcon } from '@groupos/sso'
+
+function YourOnboardingPage() {
+	return (
+		<YourModal>
+			{* ...options *}
+     <YourWalletOption>
+	     <GroupOsIcon>
+			 <p>GroupOS</p>
+     </YourWalletOption>
+		</YourModal>
+	)
+}
+```
+
+### Run your test
+
+<AccordionGroup>
+    <Accordion title="Open your application's connection experience and click the `Station` wallet option">
+        ![SSO1](https://station-images.nyc3.digitaloceanspaces.com/aabe7b05-44ea-4844-ab9c-6e5a2e1e632c.png)
+    </Accordion>
+    <Accordion title="Authenticate with social platform">
+        ![SSO1](https://station-images.nyc3.digitaloceanspaces.com/b17d0ced-20b2-4ec0-9ad7-925d2904eb1a.png)
+        ![SSO1](https://station-images.nyc3.digitaloceanspaces.com/f9156d3e-be55-4b86-b2a4-bc17ba1e8bea.png)
+    </Accordion>
+    <Accordion title="Select an Account or create a new one">
+        ![SSO1](https://station-images.nyc3.digitaloceanspaces.com/1eb7107f-c6db-48b5-8f4a-df3b3e889d42.png)
+    </Accordion>
+    <Accordion title="Station SSO tab closes and your selected Account is connected to your application">
+        Check the connected wallet address if it matches with the Smart Account's address.
+    </Accordion>
+</AccordionGroup>

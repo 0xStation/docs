@@ -1,0 +1,50 @@
+---
+title: "WalletConnect Integration"
+---
+
+You can access WalletConnect-integrated Portal [here](https://groupos.xyz/wc).
+
+If your application doesn't yet support transacting with smart contract wallets, follow the guide below.
+
+### Implementation checklist
+
+Use our **[sandbox](https://codesandbox.io/p/sandbox/connect-as-nft-dapp-tm7q7m)** to get started.
+
+<AccordionGroup>
+  <Accordion title="WalletConnect Integration">
+    If your application doesn't support WalletConnect, follow [this tutorial](https://docs.walletconnect.com/web3modal/about) to integrate.
+  </Accordion>
+
+  <Accordion title="Contract Signatures">
+    [EIP-1271](https://eips.ethereum.org/EIPS/eip-1271) must be supported.
+    <Info>Recommended: viem’s [verifyMessage](https://viem.sh/docs/actions/public/verifyMessage.html) public client function is recommended</Info>
+  </Accordion>
+
+  <Accordion title="Networks">
+    Connection is established with Mainnet + selected NFT account chain.
+  </Accordion>
+
+  <Accordion title="Methods">
+    - `eth_sendTransaction` which will sign the requested tx, send out and return the tx hash
+    - Simple data signing support using `personal_sign`
+    - Typed data signing support using `eth_signTypedData_v4`
+  </Accordion>
+
+  <Accordion title="Events">
+    - Network suggestion (NFT’s network) sent to dApps using `chainChanged` event
+    - Account switching adjusts WalletConnect session and informs the dApp via `accountsChanged` event
+    - WalletConnect session termination from a dApp automatically resets Portal state by reacting to `session_delete` event
+  </Accordion>
+  
+</AccordionGroup>
+
+### Run your test
+
+1. Go to your application. Navigate to WalletConnect.
+
+2. Copy the WalletConnect string. Go to [Portal](https://groupos.xyz/wc) and paste the string.
+
+3. Select an NFT Account to connect. Check if the connected wallet in the application matches that of the Account.
+<Warning>Do not close the Portal tab as transaction confirmation will happen in this tab.</Warning>
+
+4. Perform transactions. 

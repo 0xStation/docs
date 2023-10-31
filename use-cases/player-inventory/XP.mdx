@@ -1,0 +1,40 @@
+---
+title: "XP"
+---
+
+Distribute non-transferrable ERC-20 tokens to account for your players' in-game reputation.
+
+### Create a XP Collection
+
+1. Go to the ‘Tokens’ tab in the Dashboard.
+2. Click ‘+ New Token’. Select ‘ERC-20’.
+3. Fill out the details and configure transferability. Click ‘Done’.
+
+![ERC-20.png](https://station-images.nyc3.digitaloceanspaces.com/c42ffaa9-1d72-405d-9d5f-9ab0fee0fd7c.png)
+
+### Distribute XP
+
+After [setting up your API Keys](/introduction/quickstart) and creating the XP Collection, you can start distributing XP to your members.
+
+<CardGroup cols={2}>
+<Card
+    title="Mint API"
+    icon="terminal"
+    iconType="solid"
+    href="/api-reference/v1/erc20/post/mint"
+  >
+    <div style={{ paddingTop: "8px", fontSize: "14px" }}>
+      Automatically mint XP based on offchain actions with Token APIs.  
+    </div>
+  </Card>
+  <Card
+    title="Permit API"
+    icon="terminal"
+    iconType="solid"
+    href="/api-reference/v1/erc20/post/permit"
+  >
+    <div style={{ paddingTop: "8px", fontSize: "14px" }}>
+      Permit an address to mint XP on their own time and does not itself produce a blockchain transaction.  
+    </div>
+  </Card>
+</CardGroup>

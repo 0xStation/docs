@@ -31,6 +31,16 @@
   },
   "anchors": [
     {
+      "name": "Book a Demo",
+      "url": "https://calendly.com/fakepixels/station-partnerships",
+      "icon": "phone"
+    },
+    {
+      "name": "Newstand",
+      "url": "https://www.station.express/newstand",
+      "icon": "megaphone"
+    },
+    {
       "name": "Help Desk",
       "url": "https://t.me/+euGUz7RfKxFhOWZh",
       "icon": "hand",
@@ -54,81 +64,138 @@
   ],
   "navigation": [
     {
-      "group": "Overview",
+      "group": "Introduction",
       "pages": [
-        "home/overview/why",
-        "home/overview/smart-accounts",
-        "home/overview/use-cases",
-        "home/overview/networks"
+        "introduction/group-os",
+        "introduction/products",
+        "introduction/use-cases",
+        "introduction/quickstart"
       ]
     },
     {
-      "group": "GroupOS Components",
+      "group": "NFT Accounts",
+      "pages": [
+        
+        "nft-accounts/overview",
+        "nft-accounts/new-collection",
+        {
+          "group": "Distribute NFT Accounts",
+          "pages": [
+            "nft-accounts/claim-portal",
+            "nft-accounts/api"
+          ]
+        },
+        "nft-accounts/gas-policies",
+        {
+          "group": "Automate",
+          "pages": [
+            "nft-accounts/update-metadata",
+            "nft-accounts/token-distribution",
+            "nft-accounts/custom-execution"
+          ]
+        },
+        "nft-accounts/track",
+        "nft-accounts/transact"
+      ]
+    }, 
+    {
+      "group": "Smart Accounts",
+      "pages": [
+        "smart-accounts/overview"
+      ]
+    },
+    {
+      "group": "Extensions",
       "pages": [
         {
-          "group": "Accounts",
+          "group": "Tokens",
           "pages": [
-            "home/accounts/overview",
-            "home/accounts/gas-policies",
-            "home/accounts/trusted-executor"
+            {
+              "group": "ERC-20",
+              "pages": [
+                "extensions/tokens/erc20/overview",
+                "extensions/tokens/erc20/new-collection",
+                "extensions/tokens/erc20/distribute",
+                "extensions/tokens/erc20/track"
+              ]
+            },
+            {
+              "group": "ERC-1155",
+              "pages": [
+                "extensions/tokens/erc1155/overview",
+                "extensions/tokens/erc1155/new-collection",
+                "extensions/tokens/erc1155/distribute",
+                "extensions/tokens/erc1155/track"
+              ]
+            },
+            {
+              "group": "ERC-721",
+              "pages": [
+                "extensions/tokens/erc721/overview",
+                "extensions/tokens/erc721/new-collection",
+                "extensions/tokens/erc721/distribute",
+                "extensions/tokens/erc721/track"
+              ]
+            }
           ]
         },
         {
-          "group": "Badges",
-          "pages": ["home/badges/overview"]
-        },
-        {
-          "group": "Points",
-          "pages": ["home/points/overview"]
-        },
-        {
-          "group": "Items",
-          "pages": ["home/items/overview"]
-        },
-        {
-          "group": "Roles",
-          "pages": ["home/points/overview"]
-        },
-        {
-          "group": "Attestations",
-          "pages": ["home/attestations/overview"]
-        },
-        {
-          "group": "Directory",
-          "pages": ["home/directory/overview"]
-        },
-        {
-          "group": "Analytics",
+          "group": "Portal",
           "pages": [
-            "home/analytics/accounts",
-            "home/analytics/api",
-            "home/analytics/gas"
+            "extensions/portal/overview",
+            "extensions/portal/wallet-connect"
           ]
         }
       ]
     },
     {
-      "group": "Activate",
+      "group": "Use Cases",
       "pages": [
-        "home/tutorials/activate/deploy-accounts-collection",
-        "home/tutorials/activate/set-up-claim-portal",
-        "home/tutorials/activate/add-sign-up-form",
-        "home/tutorials/activate/export-account-information",
-        "home/tutorials/activate/connect-as-nft-account"
-      ]
-    },
-    {
-      "group": "Reward",
-      "pages": [
-        "home/tutorials/reward/deploy-badges-collection",
-        "home/tutorials/reward/deploy-points-collection"
-      ]
-    },
-    {
-      "group": "Measure",
-      "pages": [
-        "home/tutorials/measure/accounts-analytics",
-        "home/tutorials/measure/gas-usage-analytics"
+        {
+          "group": "Membership & Loyalty",
+          "pages": [
+            "use-cases/membership-loyalty/overview",
+            "use-cases/membership-loyalty/id",
+            "use-cases/membership-loyalty/points",
+            "use-cases/membership-loyalty/badges",
+            "use-cases/membership-loyalty/track",
+            "use-cases/membership-loyalty/transact"
+          ]
+        },
+        {
+          "group": "Gas Pass",
+          "pages": [
+            "use-cases/gas-pass/overview",
+            "use-cases/gas-pass/create",
+            "use-cases/gas-pass/gas-policies",
+            "use-cases/gas-pass/track",
+            "use-cases/gas-pass/transact"
+          ]
+        },
+        {
+          "group": "Governance",
+          "pages": [
+            "use-cases/governance/overview",
+            "use-cases/governance/id",
+            "use-cases/governance/points",
+            "use-cases/governance/badges",
+            "use-cases/governance/snapshot",
+            "use-cases/governance/track"
+          ]
+        },
+        {
+          "group": "Player Inventory",
+          "pages": [
+            "use-cases/player-inventory/overview",
+            "use-cases/player-inventory/inventory",
+            "use-cases/player-inventory/items",
+            "use-cases/player-inventory/currencies",
+            "use-cases/player-inventory/XP",
+            "use-cases/player-inventory/track",
+            "use-cases/player-inventory/transact"
+            
+          ]
+        }
       ]
     },
     {
@@ -138,10 +205,6 @@
         "api-reference/v1/getting-started/authentication",
         "api-reference/v1/getting-started/supported-networks"
       ]
-    },
-    {
-      "group": "Quickstart",
-      "pages": ["api-reference/v1/getting-started/quickstart/mint-erc721"]
     },
     {
       "group": "Cloud Keys",
