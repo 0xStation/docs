@@ -63,7 +63,7 @@
         "introduction/group-os",
         "introduction/products",
         "introduction/use-cases",
-        "introduction/networks"
+        "introduction/quickstart"
       ]
     },
     {
@@ -79,6 +79,15 @@
             "nft-accounts/api"
           ]
         },
+        "nft-accounts/gas-policies",
+        {
+          "group": "Automate",
+          "pages": [
+            "nft-accounts/update-metadata",
+            "nft-accounts/token-distribution",
+            "nft-accounts/custom-execution"
+          ]
+        },
         "nft-accounts/track",
         "nft-accounts/transact"
       ]
@@ -86,8 +95,7 @@
     {
       "group": "Smart Accounts",
       "pages": [
-        "smart-accounts/overview",
-        "smart-accounts/start-integration"
+        "smart-accounts/overview"
       ]
     },
     {
@@ -126,8 +134,11 @@
           ]
         },
         {
-          "group": "Attestations",
-          "pages": ["extensions/attestations/overview"]
+          "group": "Portal",
+          "pages": [
+            "extensions/portal/overview",
+            "extensions/portal/wallet-connect"
+          ]
         }
       ]
     },
@@ -137,21 +148,46 @@
         {
           "group": "Membership & Loyalty",
           "pages": [
-            "membership-loyalty/overview",
-            "membership-loyalty/cards",
-            "membership-loyalty/points",
-            "membership-loyalty/badges",
-            "membership-loyalty/track",
-            "membership-loyalty/transact"
+            "use-cases/membership-loyalty/overview",
+            "use-cases/membership-loyalty/id",
+            "use-cases/membership-loyalty/points",
+            "use-cases/membership-loyalty/badges",
+            "use-cases/membership-loyalty/track",
+            "use-cases/membership-loyalty/transact"
           ]
         },
         {
           "group": "Gas Pass",
           "pages": [
-            "gas-pass/overview",
-            "gas-pass/create",
-            "gas-pass/track",
-            "gas-pass/transact"
+            "use-cases/gas-pass/overview",
+            "use-cases/gas-pass/create",
+            "use-cases/gas-pass/gas-policies",
+            "use-cases/gas-pass/track",
+            "use-cases/gas-pass/transact"
+          ]
+        },
+        {
+          "group": "Governance",
+          "pages": [
+            "use-cases/governance/overview",
+            "use-cases/governance/id",
+            "use-cases/governance/points",
+            "use-cases/governance/badges",
+            "use-cases/governance/snapshot",
+            "use-cases/governance/track"
+          ]
+        },
+        {
+          "group": "Player Inventory",
+          "pages": [
+            "use-cases/player-inventory/overview",
+            "use-cases/player-inventory/inventory",
+            "use-cases/player-inventory/items",
+            "use-cases/player-inventory/currencies",
+            "use-cases/player-inventory/XP",
+            "use-cases/player-inventory/track",
+            "use-cases/player-inventory/transact"
+            
           ]
         }
       ]
@@ -163,10 +199,6 @@
         "api-reference/v1/getting-started/authentication",
         "api-reference/v1/getting-started/supported-networks"
       ]
-    },
-    {
-      "group": "Quickstart",
-      "pages": ["api-reference/v1/getting-started/quickstart/mint-erc721"]
     },
     {
       "group": "Cloud Keys",

@@ -2,12 +2,8 @@
 title: "Transact with Gas Pass"
 ---
 
-Enable your members to connect and transact on applications with their Gas Passes.
-
-### Pre-requisite
-
-Your members can transact with Gas Passes on applications that support signing and transacting with smart contract wallets.  
-
+Enable your members to connect and transact on applications with their Gas Passes via [Portal](/extensions/portal/overview)
+ 
 You can find the list of compatible applications and request to be added [here](https://0xstation.notion.site/6556761d47604c96910c6a08cee3f1ef?v=cea6cb3a2f634d928e5aa3899701c45e&pvs=4). 
 
 ### Implementation checklist
@@ -40,22 +36,16 @@ Use our **[sandbox](https://codesandbox.io/p/sandbox/connect-as-nft-dapp-tm7q7m)
   <Accordion title="Events">
     - Network suggestion (NFT’s network) sent to dApps using `chainChanged` event
     - Account switching adjusts WalletConnect session and informs the dApp via `accountsChanged` event
-    - WalletConnect session termination from a dApp automatically resets Connect as NFT state by reacting to `session_delete` event
+    - WalletConnect session termination from a dApp automatically resets Portal state by reacting to `session_delete` event
   </Accordion>
   
 </AccordionGroup>
 
 ### Run your test
 
-<video
-  controls
-  className="w-full aspect-video"
-  src="https://www.loom.com/share/6e19637d23e244a88f1f6e2680002e60?t=4"
-></video>
-
 1. Go to your application. Navigate to WalletConnect.
 
-2. Copy the WalletConnect string. Go to [Connect Portal](https://groupos.xyz/wc) and paste the string.
+2. Copy the WalletConnect string. Go to [Portal](https://groupos.xyz/wc) and paste the string.
 
 3. Select an NFT Account to connect. Check if the connected wallet in the application matches that of the Account.
 <Warning>Do not close the Connect Portal tab as transaction confirmation will happen in this tab.</Warning>
