@@ -42,9 +42,15 @@
     },
     {
       "name": "Help Desk",
-      "url": "https://www.station.express/newstand",
-      "icon": "telegram"
-    }  
+      "url": "https://t.me/+euGUz7RfKxFhOWZh",
+      "icon": "hand",
+      "iconType": "solid"
+    },
+    {
+      "name": "Follow Us",
+      "url": "https://twitter.com/0xstation",
+      "icon": "twitter"
+    }
   ],
   "tabs": [
     {

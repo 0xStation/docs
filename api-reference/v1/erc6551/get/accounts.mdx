@@ -6,8 +6,8 @@ api: "GET https://groupos.xyz/api/v1/erc6551/accounts"
 
 ### Query Params
 
-<ParamField query="groupAddress" type="string" required>
-  The Account Group smart contract address.
+<ParamField query="accountGroupId" type="string" required>
+  The Account Group id.
 </ParamField>
 
 <ParamField query="page" type="number" optional>
@@ -59,7 +59,7 @@ api: "GET https://groupos.xyz/api/v1/erc6551/accounts"
 ```bash Example Request
 curl --location 'https://groupos.xyz/api/v1/erc6551/accounts' \
 --request GET \
--d 'groupAddress=0x8a686f4b3a3cbf9c5d88825278963978a6f0c12e' \
+-d 'accountGroupId=6e4adbcf-ef53-49aa-82c0-2e10ae4b0d84' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <token>'
 ```

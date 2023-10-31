@@ -1,0 +1,62 @@
+---
+title: "Support Connect as NFT"
+sidebarTitle: "Support Connect as NFT"
+---
+
+[GroupOS Connect as NFT Portal](https://groupos.xyz/wc) enables users to connect and transact applications as their NFT Accounts.
+
+![connect as nft](https://station-images.nyc3.digitaloceanspaces.com/9ba80f5f-5dc9-4415-83a1-36831f03d690.png)
+
+### Sandbox
+
+- [UI](https://tm7q7m-3000.csb.app/)
+- [Code](https://codesandbox.io/p/sandbox/connect-as-nft-dapp-tm7q7m)
+
+### Implementation checklist
+
+<AccordionGroup>
+  <Accordion title="WalletConnect Integration">
+    If your application doesn't support WalletConnect, follow [this tutorial](https://docs.walletconnect.com/web3modal/about) to integrate.
+  </Accordion>
+
+  <Accordion title="Contract Signatures">
+    [EIP-1271](https://eips.ethereum.org/EIPS/eip-1271) must be supported.
+
+    <Info>Recommended: viem’s [verifyMessage](https://viem.sh/docs/actions/public/verifyMessage.html) public client function is recommended</Info>
+  </Accordion>
+
+  <Accordion title="Networks">
+    Connection is established with Mainnet + selected NFT account chain.
+  </Accordion>
+
+  <Accordion title="Methods">
+    - `eth_sendTransaction` which will sign the requested tx, send out and return the tx hash
+    - Simple data signing support using `personal_sign`
+    - Typed data signing support using `eth_signTypedData_v4`
+  </Accordion>
+
+  <Accordion title="Events">
+    - Network suggestion (NFT’s network) sent to dApps using `chainChanged` event
+    - Account switching adjusts WalletConnect session and informs the dApp via `accountsChanged` event
+    - WalletConnect session termination from a dApp automatically resets Connect as NFT state by reacting to `session_delete` event
+  </Accordion>
+</AccordionGroup>
+
+### Test compatibility
+
+<AccordionGroup>
+  <Accordion title="Linea">
+    1. Claim the [NFT Account](https://groupos.xyz/linea-goerli:0xe52ac082cdde624f639bdf74fc24dbf61ead21fc/mint). Gas is “subsidized” so you wouldn’t need testnet ETH.
+    2. Connect as your NFT account via GroupOS’s WalletConnect integration. 
+        - Choose WalletConnect and copy the WalletConnect string.
+        - Go to [GroupOS’s NFT Account Connection Portal](https://groupos.xyz/wc) and paste the string.
+        - Select the NFT Account.
+    3. Perform a transaction on your application.
+    4. Confirm transactions on [GroupOS’s NFT Account Connection Portal](https://groupos.xyz/wc)
+  </Accordion>
+</AccordionGroup>
+
+
+### Current limitations
+
+- Accounts need to be deployed on the same chain as the connected chain on the application to transact. Currently, we intentionally kill the session if the network of the NFT Account and the selected network on the application is mismatched.
