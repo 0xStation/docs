@@ -179,8 +179,7 @@
             "use-cases/governance/id",
             "use-cases/governance/points",
             "use-cases/governance/badges",
-            "use-cases/governance/snapshot",
-            "use-cases/governance/track"
+            "use-cases/governance/snapshot"
           ]
         },
         {
