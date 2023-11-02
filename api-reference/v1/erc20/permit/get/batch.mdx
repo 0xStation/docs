@@ -1,14 +1,8 @@
 ---
-title: "Batch Permit ERC-20 Tokens"
-sidebarTitle: "Batch Permit Tokens"
+title: "Batch ERC-20 Permits"
+sidebarTitle: "Batch Permits"
 api: "GET https://groupos.xyz/api/v1/erc20/permit/batch"
 ---
-
-<Note>
-  Permiting is still currently in beta. Please [schedule a
-  call](https://calendly.com/symmtry/chat) if you would like to use permits in
-  production and we can fast-track your onboarding.
-</Note>
 
 ### Batch Permiting
 
@@ -34,36 +28,38 @@ If a particular user has earned a large amount of permits, it may be easier to b
   Indicates whether the call was successful.
 </ResponseField>
 <ResponseField name="totalAmount" type="string">
-  The total amount redeemable by the batch permit.
+  The total amount redeemable by the batch permit in human-readable form.
 </ResponseField>
-<ResponseField name="rawTransaction" type="object">
-  To, value, data to be used in a transaction.
-  <Expandable title="Transaction details">
+<ResponseField name="totalAmountRaw" type="string">
+  The total amount redeemable by the batch permit in raw `uint256` units.
+</ResponseField>
+<ResponseField name="preparedCall" type="object">
+  A call object prepared to be used in a new transaction.
+  <Expandable title="object">
     <ResponseField name="to" type="string">
-      The Ethereum address the minting module is deployed to.
+      The contract address to call.
     </ResponseField>
     <ResponseField name="value" type="string">
       The amount of value to send alongside the transaction. This is only
       necessary if the permits are paid permits, free permit use 0 value.
     </ResponseField>
     <ResponseField name="data" type="string">
-      The calldata to be used in the transaction representing all of the permits
-      batched together.
+      The data to call the contract with. Includes details about the recipient,
+      amount, and a signature for authentication.
     </ResponseField>
   </Expandable>
 </ResponseField>
 
 <RequestExample>
   ```bash Example Request
-  curl 'https://groupos.xyz/api/v1/erc20/permit' \
-  --request POST \
+  curl 'https://groupos.xyz/api/v1/erc20/permit/batch' \
+  --request GET \
   --header 'Content-Type: application/json' \
   --header 'Authorization: Bearer <token>' \
   --data-raw '{
       "chainId": 137,
       "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
-      "recipientAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
-      "amount": "5"
+      "recipientAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531"
   }'
   ```
 </RequestExample>
@@ -72,11 +68,12 @@ If a particular user has earned a large amount of permits, it may be easier to b
   ```json Success
   {
     "success": true,
-    "totalAmount": "5",
-    "rawTransaction": {
+    "totalAmount": "17.5",
+    "totalAmountRaw": "17500000000000000000",
+    "preparedCall": {
       "to": "0xfb7b7f2d7ecef20a3a7a8ff4b3ae4a66d06a8df7",
       "value": "0",
-      "data": "0x23b872dd000000000000000000000000c517c83f417b73da98647dad0fcb80af9f3b9531000000000000"
+      "data": "0x23b872dd000000000000000000000000c517c83f417b73da98647dad0fcb80af9f3b9531000000000000..."
     }
   }
   ```

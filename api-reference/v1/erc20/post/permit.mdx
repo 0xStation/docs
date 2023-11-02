@@ -4,12 +4,6 @@ sidebarTitle: "Permit Tokens"
 api: "POST https://groupos.xyz/api/v1/erc20/permit"
 ---
 
-<Note>
-  Permiting is still currently in beta. Please [schedule a
-  call](https://calendly.com/symmtry/chat) if you would like to use permits in
-  production and we can fast-track your onboarding.
-</Note>
-
 ### Permiting vs. Minting
 
 Permiting enables you to permit an address to mint tokens on their own time and does not itself produce
@@ -35,9 +29,9 @@ their mint call within the smart contract. Each signature can optionally be set 
   The address to permit an token to.
 </ParamField>
 
-<ParamField body="amount" type="string" required>
-  The amount of tokens to mint to recipient. Type `string` is used to natively
-  support large numbers.
+<ParamField body="amount" type="number" required>
+  The amount of tokens to mint to recipient in human-readable form, decimals
+  supported.
 </ParamField>
 
 <ParamField body="expiration" type="date" optional>
@@ -55,18 +49,19 @@ their mint call within the smart contract. Each signature can optionally be set 
 <ResponseField name="signature" type="string">
   Raw bytes signature of approval for the newly created permit.
 </ResponseField>
-<ResponseField name="rawTransaction" type="object">
-  To, value, data to be used in a transaction.
-  <Expandable title="Transaction details">
+<ResponseField name="preparedCall" type="object">
+  A call object prepared to be used in a new transaction.
+  <Expandable title="object">
     <ResponseField name="to" type="string">
-      The Ethereum address the minting module is deployed to.
+      The contract address to call.
     </ResponseField>
     <ResponseField name="value" type="string">
       The amount of value to send alongside the transaction. This is only
       necessary for a paid permit, free permit uses 0 value.
     </ResponseField>
     <ResponseField name="data" type="string">
-      The calldata to be used in the transaction.
+      The data to call the contract with. Includes details about the recipient,
+      amount, and a signature for authentication.
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -81,7 +76,7 @@ their mint call within the smart contract. Each signature can optionally be set 
       "chainId": 137,
       "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
       "recipientAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
-      "amount": "5"
+      "amount": 1.5
   }'
   ```
 </RequestExample>
@@ -92,10 +87,10 @@ their mint call within the smart contract. Each signature can optionally be set 
     "success": true,
     "permitId": "8493b65e-e0a1-4b13-90ec-7af3a923f8b9",
     "signature": "0xecb043a2da3a1c5e9a0a00cea8ffabb5815b12a9e1f91b97005c8d92b41b19cea8ffabb5815b12a9e1f91b97005c8d92b41b19ce",
-    "rawTransaction": {
+    "preparedCall": {
       "to": "0xfb7b7f2d7ecef20a3a7a8ff4b3ae4a66d06a8df7",
       "value": "0",
-      "data": "0x23b872dd000000000000000000000000c517c83f417b73da98647dad0fcb80af9f3b9531000000000000"
+      "data": "0x23b872dd000000000000000000000000c517c83f417b73da98647dad0fcb80af9f3b9531000000000000..."
     }
   }
   ```
