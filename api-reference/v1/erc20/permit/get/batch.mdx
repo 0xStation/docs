@@ -33,6 +33,9 @@ If a particular user has earned a large amount of permits, it may be easier to b
 <ResponseField name="success" type="boolean">
   Indicates whether the call was successful.
 </ResponseField>
+<ResponseField name="totalAmount" type="string">
+  The total amount redeemable by the batch permit.
+</ResponseField>
 <ResponseField name="rawTransaction" type="object">
   To, value, data to be used in a transaction.
   <Expandable title="Transaction details">
@@ -69,6 +72,7 @@ If a particular user has earned a large amount of permits, it may be easier to b
   ```json Success
   {
     "success": true,
+    "totalAmount": "5",
     "rawTransaction": {
       "to": "0xfb7b7f2d7ecef20a3a7a8ff4b3ae4a66d06a8df7",
       "value": "0",

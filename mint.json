@@ -75,15 +75,11 @@
     {
       "group": "NFT Accounts",
       "pages": [
-        
         "nft-accounts/overview",
         "nft-accounts/new-collection",
         {
           "group": "Distribute NFT Accounts",
-          "pages": [
-            "nft-accounts/claim-portal",
-            "nft-accounts/api"
-          ]
+          "pages": ["nft-accounts/claim-portal", "nft-accounts/api"]
         },
         "nft-accounts/gas-policies",
         {
@@ -97,12 +93,10 @@
         "nft-accounts/track",
         "nft-accounts/transact"
       ]
-    }, 
+    },
     {
       "group": "Smart Accounts",
-      "pages": [
-        "smart-accounts/overview"
-      ]
+      "pages": ["smart-accounts/overview"]
     },
     {
       "group": "Extensions",
@@ -192,7 +186,6 @@
             "use-cases/player-inventory/XP",
             "use-cases/player-inventory/track",
             "use-cases/player-inventory/transact"
-            
           ]
         }
       ]
@@ -225,6 +218,7 @@
       "pages": [
         "api-reference/v1/erc20/post/mint",
         "api-reference/v1/erc20/post/permit",
+        "api-reference/v1/erc20/permit/get/batch",
         "api-reference/v1/erc20/get/owners"
       ]
     },
