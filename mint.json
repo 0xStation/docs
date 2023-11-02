@@ -202,7 +202,8 @@
       "group": "Cloud Keys",
       "pages": [
         "api-reference/v1/key/post/create",
-        "api-reference/v1/key/get/keys"
+        "api-reference/v1/key/get/keys",
+        "api-reference/v1/key/post/sign"
       ]
     },
     {
