@@ -157,6 +157,18 @@
           ]
         },
         {
+          "group": "Playable Characters",
+          "pages": [
+            "use-cases/playable-characters/overview",
+            "use-cases/playable-characters/characters",
+            "use-cases/playable-characters/items",
+            "use-cases/playable-characters/currencies",
+            "use-cases/playable-characters/XP",
+            "use-cases/playable-characters/track",
+            "use-cases/playable-characters/transact"
+          ]
+        },
+        {
           "group": "Gas Pass",
           "pages": [
             "use-cases/gas-pass/overview",
@@ -174,18 +186,6 @@
             "use-cases/governance/points",
             "use-cases/governance/badges",
             "use-cases/governance/snapshot"
-          ]
-        },
-        {
-          "group": "Player Inventory",
-          "pages": [
-            "use-cases/player-inventory/overview",
-            "use-cases/player-inventory/inventory",
-            "use-cases/player-inventory/items",
-            "use-cases/player-inventory/currencies",
-            "use-cases/player-inventory/XP",
-            "use-cases/player-inventory/track",
-            "use-cases/player-inventory/transact"
           ]
         }
       ]
