@@ -46,14 +46,14 @@ Once you have a ERC-20 Token smart contract, you can mint any number of tokens t
 <RequestExample>
 
 ```bash Example Request
-curl --location --request POST 'https://groupos.xyz/api/v1/erc1155/mint' \
+curl --location --request POST 'https://groupos.xyz/api/v1/erc20/mint' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <token>' \
 --data-raw '{
     "chainId": 137,
     "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
     "recipientAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
-    "amount": "420",
+    "amount": "420"
 }'
 ```
 
