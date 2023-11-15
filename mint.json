@@ -104,6 +104,7 @@
         {
           "group": "Tokens",
           "pages": [
+            "extensions/tokens/why-tokens",
             {
               "group": "ERC-20",
               "pages": [
