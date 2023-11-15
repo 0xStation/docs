@@ -1,0 +1,70 @@
+---
+title: "Query NFT Account"
+sidebarTitle: "Query Account"
+api: "GET https://groupos.xyz/api/v1/erc6551/account"
+---
+
+Query an individual account for a specific NFT.
+
+### Query Params
+
+<ParamField query="tokenChainId" type="number" required>
+  The chain id of the bound NFT.
+</ParamField>
+
+<ParamField query="tokenContractAddress" type="string" required>
+  The contract address of the bound NFT.
+</ParamField>
+
+<ParamField query="tokenId" type="string" required>
+  The id of the bound NFT.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+
+<ResponseField name="account" type="object">
+  NFT Account object.
+
+  <Expandable title="object">
+
+      <ResponseField name="contractAddress" type="string">
+        Address of the Account.
+      </ResponseField>
+
+  </Expandable>
+
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://groupos.xyz/api/v1/erc6551/account' \
+--request GET \
+-d 'tokenChainId=1' \
+-d 'tokenContractAddress=0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB' \
+-d 'tokenId=6529' \
+--header 'Content-Type: application/json'
+```
+
+</RequestExample>
+
+<ResponseExample>
+  ```json Success
+  {
+    "success": true,
+    "account": {
+        "contractAddress": "0x14aCc9C74795C777074DCeA6876237d5b6CdF039"
+    }
+}
+  ```
+  ```json Failure
+  {
+    "success": false,
+    "error": "[message]"
+  }
+  ```
+</ResponseExample>

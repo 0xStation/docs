@@ -211,7 +211,8 @@
       "pages": [
         "api-reference/v1/erc6551/post/create",
         "api-reference/v1/erc6551/post/executeCall",
-        "api-reference/v1/erc6551/get/accounts"
+        "api-reference/v1/erc6551/get/accounts",
+        "api-reference/v1/erc6551/get/account"
       ]
     },
     {
