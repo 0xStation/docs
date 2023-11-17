@@ -6,14 +6,14 @@ api: "POST https://groupos.xyz/api/v1/account/batchCalls"
 
 ### How to batch-execute calls from an Account
 
-Once you have an Account smart contract, you can execute any arbitrary batch of calls atomically. 
+Once you have an Account smart contract, you can execute any arbitrary batch of calls atomically.
 Batching calls is helpful for making multiple state changes in one transaction for cost savings and guarantees
 that either all calls will successfully complete, or none of them will.
 A call is defined by three parameters, the address you are calling, how much network token (e.g. ETH) to send,
 and the data that is an ABI-encoded function and arguments.
 
 Transactions are submitted through our ERC-4337 bundler system which abstracts away the need for your accounts
-or your users to provide gas. Depending on your billing settings, the cost will be rolled up monthly to your 
+or your users to provide gas. Depending on your billing settings, the cost will be rolled up monthly to your
 developer account.
 
 ### Body
@@ -41,7 +41,6 @@ developer account.
   </Expandable>
 </ParamField>
 
-
 ### Response
 
 <ResponseField name="success" type="boolean">
@@ -63,7 +62,7 @@ developer account.
   --header 'Content-Type: application/json' \
   --header 'Authorization: Bearer <token>' \
   --data-raw '{
-      "chainId": 137,
+      "chainId": 5
       "accountAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
       "calls": [
         {
@@ -84,7 +83,7 @@ developer account.
   {
     "success": true,
     "transactionHash": "0x58c789b7a59312ec0a659e165700db54af896d3e8b46e4aeecb33b32b88157c9",
-    "transactionUrl": "https://polygonscan.com/tx/0x58c789b7a59312ec0a659e165700db54af896d3e8b46e4aeecb33b32b88157c9"
+    "transactionUrl": "https://goerli.etherscan.io/tx/0xef737091d8c3451b42659688abd86b51516a6b43ee7dbdbda53c9005d86167db"
   }
   ```
   ```json Failure

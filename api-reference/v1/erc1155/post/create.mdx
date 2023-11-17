@@ -1,43 +1,64 @@
 ---
-title: "Create a new Badge NFT Collection"
-sidebarTitle: "Create a Badge Collection"
+title: "Create ERC-1155 NFTs"
+sidebarTitle: "Create NFTs"
 api: "POST https://groupos.xyz/api/v1/erc1155/create"
 ---
 
-### How NFT creation works
+### How to create ERC-1155 NFTs
 
-NFTs are represented on the blockchain through a smart contract that manages the accounting of who owns which NFT.
-To create a new NFT collection, we create a new smart contract designed to manage it and then are able to populate it with the actual tokens.
-The smart contract is analogous to a spreadsheet, it is the home that defines the structure and content of the records.
+Once you have a ERC-1155 NFT smart contract, you can create any number of tokens. Each ERC-1155 token
+has a unique `tokenId` to identify it within the collection and all items of this `tokenId` share the same
+metadata. Many people can own the same token and multiple of each token.
 
-This API route will take in parameters for creating a new NFT collection and return an address where this new smart contract is deployed.
-This contract address uniquely identifies your NFT collection and will be used in other API routes.
+After creating an ERC-1155 NFT, you can start distributing NFTs with the [Mint ERC-1155 NFTs API](/api-reference/v1/erc1155/post/mint).
 
-### Differences with Memberships (ERC-721)
+### Differences with ERC-721 NFTs
 
-In a Membership NFT collection, there only exists one of each specific NFT, making it unique. In a Badge NFT
-collection, there can be many of each specific NFT, enabling multiple people to own the same item simultaneously.
-This also enables people to own more than one copy of a Badge, supporting use cases like split ownership of
-an NFT where the number of copies someone holds corresponds to capital contribution to purchase the NFT.
+While minting ERC-721 NFTs, the unique `tokenId` associated with each NFT will auto-increment for you, but
+minting ERC-1155 NFTs requires an explicit argument for `tokenId` to indicate which NFT should be minted. For
+example, one may define NFT `1` as marking a donor, `2` for participating in last season, and `3` for
+being a attendee at the most recent event.
 
-Signals that your use case may be better fit with a Badge versus a Membership NFT:
+### Updating ERC-1155 NFT Metadata
 
-- **You expect many people to own NFTs with the same metadata.**
-- **You want onchain differentiation of NFTs by their metadata.**
-- **The NFT resembles categorical more than unique information.**
+If you need to update the metadata for a particular ERC-1155 token, use the [Update NFT Metadata API](/api-reference/v1/nft/put/tokenMetadata).
 
 ### Body
 
 <ParamField body="chainId" type="number" required>
   The id of the chain supporting the NFT. This cannot be changed after creation.
 </ParamField>
-
-<ParamField body="name" type="string" required>
-  The name of the collection. This cannot be changed after creation.
+<ParamField body="contractAddress" type="string" required>
+  The NFT smart contract address to mint with.
 </ParamField>
-
-<ParamField body="symbol" type="string" required>
-  The symbol of the collection. This cannot be changed after creation.
+<ParamField body="metadata" type="object" required>
+  Metadata to associate with this NFT, which overrides any defaults set at the
+  collection-level.
+  <Expandable title="object">
+    <ParamField body="name" type="string" optional>
+      Name for the NFT.
+    </ParamField>
+    <ParamField body="description" type="string" optional>
+      Description for the NFT.
+    </ParamField>
+    <ParamField body="mediaUrl" type="string" optional>
+      Url for the media content associated with the NFT.
+    </ParamField>
+    <ParamField body="externalUrl" type="string" optional>
+      Url for the external link associated with the NFT.
+    </ParamField>
+    <ParamField body="traits" type="[]object" optional>
+      Array of trait objects.
+      <Expandable title="object">
+        <ParamField body="name" type="string" required>
+          Name for the trait.
+        </ParamField>
+        <ParamField body="value" type="string" required>
+          Value for the trait.
+        </ParamField>
+      </Expandable>
+    </ParamField>
+  </Expandable>
 </ParamField>
 
 ### Response
@@ -45,59 +66,38 @@ Signals that your use case may be better fit with a Badge versus a Membership NF
 <ResponseField name="success" type="boolean">
   Indicates whether the call was successful.
 </ResponseField>
-
-<ResponseField name="transactionHash" type="string">
-  Transaction hash for the newly created token collection.
-</ResponseField>
-
-<ResponseField name="transactionUrl" type="string">
-  Wraps `transactionHash` with the appropriate network-specific URL for
-  convenience.
-</ResponseField>
-
-<ResponseField name="token" type="object">
-  The newly created token smart contract.
-  <Expandable title="Token">
-    <ResponseField name="contractAddress" type="string">
-      The Ethereum address this token collection contract was deployed to.
-    </ResponseField>
-    <ResponseField name="name" type="string">
-      The name of the token collection. This cannot be changed after creation.
-    </ResponseField>
-    <ResponseField name="symbol" type="string">
-      The symbol of the token collection. This cannot be changed after creation.
-    </ResponseField>
-  </Expandable>
+<ResponseField name="tokenId" type="string">
+  The unique id for the NFT within the collection.
 </ResponseField>
 
 <RequestExample>
-
-```bash Example Request
-curl --location --request POST 'https://groupos.xyz/api/v1/erc1155/create' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer <token>' \
---data-raw '{
-    "chainId": 137,
-    "name": "Frog Mafia Badge",
-    "symbol": "RIBBIT.badge"
-}'
-```
-
+  ```bash Example Request
+  curl 'https://groupos.xyz/api/v1/erc1155/create' \
+  --request POST \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer <token>' \
+  --data-raw '{
+    "chainId": 5,
+    "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
+    "metadata": {
+      "name": "Participation Badge",
+      "description": "You did great even if you didnt do well!"
+    }
+  }'
+  ```
 </RequestExample>
 
 <ResponseExample>
-
-```json Response
-{
-  "success": true,
-  "transactionHash": "0x58c789b7a59312ec0a659e165700db54af896d3e8b46e4aeecb33b32b88157c9",
-  "transactionUrl": "https://polygonscan.com/tx/0x58c789b7a59312ec0a659e165700db54af896d3e8b46e4aeecb33b32b88157c9",
-  "token": {
-    "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
-    "name": "Frog Mafia Badge",
-    "symbol": "RIBBIT.badge"
+  ```json Success
+  {
+    "success": true,
+    "tokenId": "1",
   }
-}
-```
-
+  ```
+  ```json Failure
+  {
+    "success": false,
+    "error": "[message]"
+  }
+  ```
 </ResponseExample>

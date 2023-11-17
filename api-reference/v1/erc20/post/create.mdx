@@ -18,7 +18,8 @@ used in other API routes.
 ### Body
 
 <ParamField body="chainId" type="number" required>
-  The id of the chain supporting the token. This cannot be changed after creation.
+  The id of the chain supporting the token. This cannot be changed after
+  creation.
 </ParamField>
 
 <ParamField body="name" type="string" required>
@@ -66,7 +67,7 @@ curl --location --request POST 'https://groupos.xyz/api/points/collection/create
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <token>' \
 --data-raw '{
-    "chainId": 137,
+    "chainId": 5
     "name": "Racing XP",
     "symbol": "ZED.XP"
 }'

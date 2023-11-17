@@ -12,7 +12,7 @@ onchain modules.
 The security of these cloud-wallets is paramount which is why we’ve partnered with [Turnkey](https://turnkey.io/)
 to manage the private keys behind the scenes. Through Turnkey’s secure enclaves, Station’s offchain
 infrastrucuture is able to request signing of arbitrary bytes data. Station exposes this functionality
-to groups via a [Token API](/api/v1/intro) that standardizes the
+to groups via a [Token API](/api-reference/v1/intro) that standardizes the
 common needs of controlling token behavior from offchain events.
 
 The most popular patterns for API-control are in the production of new tokens, which can be done
@@ -44,7 +44,7 @@ curl 'https://groupos.xyz/api/v1/erc721/mint' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <token>' \
 --data-raw '{
-    "chainId": 137,
+    "chainId": 5
     "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
     "recipientAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
 }'
@@ -90,7 +90,7 @@ curl 'https://groupos.xyz/api/v1/erc721/permit' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <token>' \
 --data-raw '{
-    "chainId": 137,
+    "chainId": 5
     "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
     "recipientAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
 }'

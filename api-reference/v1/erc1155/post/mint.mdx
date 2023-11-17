@@ -6,9 +6,9 @@ api: "POST https://groupos.xyz/api/v1/erc1155/mint"
 
 ### How to mint ERC-1155 NFTs
 
-Once you have a ERC-1155 NFT smart contract, you can mint any number of tokens to any address. Each ERC-1155 NFT
-has a unique `tokenId` to identify it within the collection and all items of this `tokenId` share the same
-metadata.
+Once you have created ERC-1155 tokens, you can mint any number of a token to any address. You can check
+which tokens you have already created for your ERC-1155 collection with the [Query ERC-1155 NFTs API](/api-reference/v1/erc1155/get/tokens).
+If you have not yet created any tokens, first do so with the [Create ERC-1155 NFTs API](/api-reference/v1/erc1155/post/create).
 
 ### Differences with ERC-721 NFTs
 
@@ -34,7 +34,7 @@ being a attendee at the most recent event.
 </ParamField>
 <ParamField body="amount" type="string" required>
   The amount of tokens to mint to recipient. Type `string` is used to natively
-  support large numbers.
+  support large numbers. Only integer-like strings allowed.
 </ParamField>
 
 ### Response
@@ -57,11 +57,11 @@ being a attendee at the most recent event.
   --header 'Content-Type: application/json' \
   --header 'Authorization: Bearer <token>' \
   --data-raw '{
-      "chainId": 137,
+      "chainId": 5
       "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
       "recipientAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
-      "tokenId": "69",
-      "amount": "5"
+      "tokenId": "1",
+      "amount": "1"
   }'
   ```
 </RequestExample>
@@ -71,7 +71,13 @@ being a attendee at the most recent event.
   {
     "success": true,
     "transactionHash": "0x58c789b7a59312ec0a659e165700db54af896d3e8b46e4aeecb33b32b88157c9",
-    "transactionUrl": "https://polygonscan.com/tx/0x58c789b7a59312ec0a659e165700db54af896d3e8b46e4aeecb33b32b88157c9"
+    "transactionUrl": "https://goerli.etherscan.io/tx/0xef737091d8c3451b42659688abd86b51516a6b43ee7dbdbda53c9005d86167db"
+  }
+  ```
+  ```json Token does not exist
+  {
+    "success": false,
+    "error": "Token does not exist. Please create a new token with /api/v1/erc1155/tokens/create to start minting."
   }
   ```
   ```json Failure
