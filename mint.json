@@ -76,18 +76,20 @@
       "group": "NFT Accounts",
       "pages": [
         "nft-accounts/overview",
-        "nft-accounts/new-collection",
+        "nft-accounts/getting-started",
         {
-          "group": "Distribute NFT Accounts",
-          "pages": ["nft-accounts/claim-portal", "nft-accounts/api"]
+          "group": "Distribute Accounts",
+          "pages": [
+            "nft-accounts/api",
+            "nft-accounts/claim-page"
+          ]
         },
+        "nft-accounts/distribute-tokens",
         "nft-accounts/gas-policies",
         {
-          "group": "Automate",
+          "group": "Automate Transactions",
           "pages": [
-            "nft-accounts/update-metadata",
-            "nft-accounts/token-distribution",
-            "nft-accounts/custom-execution"
+            "nft-accounts/execute-call"
           ]
         },
         "nft-accounts/track",
@@ -212,8 +214,7 @@
       "pages": [
         "api-reference/v1/erc6551/post/create",
         "api-reference/v1/erc6551/post/executeCall",
-        "api-reference/v1/erc6551/get/accounts",
-        "api-reference/v1/erc6551/get/account"
+        "api-reference/v1/erc6551/get/accounts"
       ]
     },
     {
@@ -237,7 +238,6 @@
     {
       "group": "ERC-1155 NFTs",
       "pages": [
-        "api-reference/v1/erc1155/post/create",
         "api-reference/v1/erc1155/post/mint",
         "api-reference/v1/erc1155/post/permit",
         "api-reference/v1/erc1155/get/owners",
@@ -292,10 +292,6 @@
   "api": {
     "playground": {
       "mode": "simple"
-    },
-    "baseUrl": "https://groupos.xyz/api",
-    "auth": {
-      "method": "bearer"
     }
   },
   "analytics": {

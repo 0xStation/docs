@@ -1,0 +1,101 @@
+---
+title: "Getting Started"
+---
+
+Equip Smart Accounts to your NFTs in a few minutes.
+
+### Select an NFT collection
+
+Select an NFT collection to equip Smart Accounts.
+
+If you don't have an NFT collection, learn how to create a new NFT collection [here](/tokens/erc-721/new-collection).
+
+1. In your Dashboard, go to **Accounts** tab.
+2. Click **'+ New Accounts'**.
+3. Select **'Equip Smart Accounts to NFTs'**.
+![Equip](https://station-images.nyc3.digitaloceanspaces.com/ec78225c-9668-4d8e-8c28-5ba86c9210bb.png)
+
+4. Select a network where your NFT is deployed on.
+5. Select an option that best represents your NFT collection.
+    - **'NFT Collection created on third-party platform'**: Paste the contract address.
+    - **'NFT Collection created on GroupOS'**: Select a collection from the dropdown.
+6. Click **'Done'**
+
+<Info>At this stage, the Account address has been assigned to each NFT in the selected collection.</Info>
+
+
+### Distribute NFT Accounts
+
+Select your method of distribution.
+
+- **NFT collection created on GroupOS**
+    <CardGroup cols={2}>
+        <Card
+            title="Integrate Accounts in your application"
+            icon="terminal"
+            iconType="solid"
+            href="/nft-accounts/api"
+        >
+        <div style={{ paddingTop: "8px", fontSize: "14px" }}>
+            Programmatically create and customize Accounts for your users.
+        </div>
+        </Card>
+        <Card
+            title="Distribute Accounts via a Claim Page"
+            icon="image"
+            iconType="solid"
+            href="/tokens/erc721/claim-page"
+        >
+        <div style={{ paddingTop: "8px", fontSize: "14px" }}>
+            Design and customize the Claim Page to match with your brand and collect members’ information.
+        </div>
+        </Card>
+    </CardGroup>
+
+- **NFT collection created on third-party platform**: You can distribute Accounts like how you would distribute the NFTs e.g. mint page on Zora. Every NFT will come with an Account address.
+
+
+### Distribute Tokens to Accounts
+
+Create new Tokens or send existing Tokens to the Accounts.
+
+- **Direct transfer**: You can directly transfer tokens into the Accounts from your wallets.
+    - In your Dashboard, go to **Accounts** tab.
+    - Find the Account and copy the Account address.
+    ![Directory](https://station-images.nyc3.digitaloceanspaces.com/4ea34fb1-0724-4b19-a3e3-3f75441b50ea.png)
+    - Use the Account address as a recipient address in the wallet app of your choice.
+
+
+- **New Token collections**
+    <CardGroup cols={3}>
+        <Card
+        title="ERC-1155"
+        icon="badge"
+        iconType="solid"
+        href="/tokens/erc1155/new-collection"
+        >
+        <div style={{ paddingTop: "8px", fontSize: "14px" }}>
+            ERC-1155 tokens are non-fungible tokens that are best for categorical value attribution.
+        </div>
+        </Card>
+        <Card
+        title="ERC-20"
+        icon="coin"
+        iconType="solid"
+        href="/tokens/erc20/new-collection"
+        >
+        <div style={{ paddingTop: "8px", fontSize: "14px" }}>
+        ERC-20 tokens are used to reward your users in numeric values over time.  
+        </div>
+        </Card>
+        <Card
+        title="ERC-721"
+        icon="image"
+        iconType="solid"
+        href="/tokens/erc721/new-collection"
+        >
+        <div style={{ paddingTop: "8px", fontSize: "14px" }}>
+        ERC-721 tokens are non-fungible tokens that are best for attributing value uniquely.  
+        </div>
+        </Card>
+    </CardGroup>
