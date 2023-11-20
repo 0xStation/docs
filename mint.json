@@ -291,7 +291,7 @@
   },
   "api": {
     "playground": {
-      "mode": "simple"
+      "mode": "show"
     },
     "baseUrl": "https://groupos.xyz/api",
     "auth": {
