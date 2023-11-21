@@ -1,0 +1,237 @@
+---
+title: "ERC-20 Tokens"
+---
+
+ERC-20 tokens are used to reward your users in numeric values over time. Learn more [here](/tokens/erc20/overview)
+
+This example guides you to create and allow users to claim ERC-20 to their NFT Account. For example, permit number of tokens based on an in-game score they've accrued and claim the tokens to record them onchain.
+
+## Pre-requisite
+
+- You've integrated NFT Accounts into your applications. Follow [this tutorial](/nft-accounts/getting-started) to get started.
+- You've [set up your API key](/introduction/quickstart).
+
+## Create an ERC-20 NFT collection
+
+1. In the Dashboard, go to the **Tokens** tab.
+2. Click **'+ New Tokens'** and select **'ERC-20'** option
+3. Fill out the token details and click **'Next'**.
+4. Review the details and click **'Done'**.
+5. Find and copy the collection contract address.
+
+## Create token permits for Accounts
+
+### Query the user's NFT Account
+
+**If the user is transacting as their EoA that owns the NFT Account:**
+
+**1. Query NFT ID**
+    
+First, you need to query the token IDs of the NFT Accounts that the EoA owns using the [/api/v1/erc721/tokens](/api-reference/v1/erc721/get/tokens) route.
+
+In JavaScript, calling the API would look like the following:
+
+```typescript
+const nft = {
+  chainId: 5, // goerli testnet
+  contractAddress: "0x...",
+  ownerAddress: "0x...", // address of the connected EoA
+};
+
+const response = await fetch(
+  "https://groupos.xyz/api/v1/erc6551/account" +
+    new URLSearchParams({
+      tokenChainId: nft.chainId,
+      tokenContractAddress: nft.contractAddress,
+      ownerAddress: nft.ownerAddress,
+    }),
+  {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+    },
+  }
+)
+
+const allTokens = await response.json().tokens;
+```
+
+This returns an array of token IDs of the NFT Accounts that the EoA owns. Here, you may want to let the user pick which NFT Account they would like to mint the ERC-1155 NFT into.
+
+**2. Query an Account address**
+
+Assuming that you know the token ID, you then need to query the associated Account address using the [/api/v1/erc6551/account](/api-reference/v1/erc6551/get/account) route.
+
+In JavaScript, calling the API would look like the following:
+
+```typescript
+const nft = {
+  chainId: 5, // goerli testnet
+  contractAddress: "0x...",
+  id: 1, // token ID
+};
+
+const response = await fetch(
+  "https://groupos.xyz/api/v1/erc6551/account" +
+    new URLSearchParams({
+      tokenChainId: nft.chainId,
+      tokenContractAddress: nft.contractAddress,
+      tokenId: nft.Id,
+    }),
+  {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+    },
+  }
+)
+
+const accountAddress = await response.json().account.contractAddress;
+```
+
+**3. Mint NFT and send to Account**
+
+With the Account address, you can mint the NFT to the Account using [/api/v1/erc1155/mint](/api-reference/v1/erc1155/post/mint) route.
+
+In JavaScript, calling the API would look like the following:
+
+```typescript
+const nft = {
+  chainId: 5, // goerli testnet
+  contractAddress: "0x...",
+  recipientAddress: "0x...", // account address
+  tokenId: 1, // ERC-1155 variant 
+  amount: 1, 
+};
+
+const response = await fetch("https://groupos.xyz/api/v1/erc1155/mint", {
+  method: "POST",
+  headers: {
+    Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+  },
+  body: {
+    chainId: nft.chainId,
+    contractAddress: nft.contractAddress,
+    recipientAddress: nft.recipientAddress,
+    tokenId: nft.tokenId,
+    amount: nft.amount,
+  },
+})
+
+const transactionHash = await response.json().transactionHash;
+```
+
+**If the user is transacting as their NFT Account:**
+
+With the Account address, you can mint the NFT to the Account using [/api/v1/erc1155/mint](/api-reference/v1/erc1155/post/mint) route.
+
+In JavaScript, calling the API would look like the following:
+
+```typescript
+const nft = {
+  chainId: 5, // goerli testnet
+  contractAddress: "0x...",
+  recipientAddress: "0x...", // account address
+  tokenId: 1, // ERC-1155 variant 
+  amount: 1, 
+};
+
+const response = await fetch("https://groupos.xyz/api/v1/erc1155/mint", {
+  method: "POST",
+  headers: {
+    Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+  },
+  body: {
+    chainId: nft.chainId,
+    contractAddress: nft.contractAddress,
+    recipientAddress: nft.recipientAddress,
+    tokenId: nft.tokenId,
+    amount: nft.amount,
+  },
+})
+
+const transactionHash = await response.json().transactionHash;
+```
+
+### Create a new permit for the Account
+
+Using the [/api/v1/erc20/permit](/api-reference/v1/erc20/post/permit) route, you can permit the address to mint tokens on their own time and does not itself produce a blockchain transaction.
+
+In JavaScript, calling the API would look like the following:
+
+```typescript
+const response = await fetch('https://groupos.xyz/api/v1/erc20/permit', {
+	method: "POST",
+	headers: {
+		"Authorization": "Bearer [API-TOKEN]"
+	},
+	body: {
+		chainId: 5, // Goerli testnet
+		contractAddress: "", // the token contract address
+		recipientAddress: [insert address here], // the recipient of the tokens
+		amount: [insert amount here], // amount of tokens to permit
+		expiration: "" // optional
+	}
+})
+
+const {
+	success: true,
+	permitId: 0000-0000-0000,
+	signature: "0x...",
+	rawTransaction: {
+		to: "0x...",
+		value: 0,
+		data: "0x..."
+	}
+} = await response.json()
+```
+
+**Batching the permit**
+
+```typescript
+// note that we pass query params instead of body params
+const response = await fetch('https://groupos.xyz/api/v1/erc20/permit/batch?chainId=5&contractAddress=0xabc&recipientAddress=0x123', {
+	method: "GET",
+	headers: {
+		"Authorization": "Bearer [API-TOKEN]"
+	}
+})
+
+const {
+	success: true,
+	rawTransaction: {
+		to: "0x...",
+		value: 0,
+		data: "0x..."
+	}
+} = await response.json()
+```
+
+### Using the permit
+
+In order to use a permit (e.g. allowing user to claim tokens), the details from the API call must be saved. The most straightforward method is to call a raw transaction using the details returned under the `rawTransaction` object. This response is a standard `to`, `value`, `data` that can be used to initialize a new transaction. Behind the scenes, this transaction is using the permit to authorize a recipient to mint themselves a given amount of ERC-20 tokens.
+
+Using Viem, a popular javascript crypto library, here is how you could make the transaction.
+
+import { account, walletClient } from './config'
+ 
+```typescript
+// the raw transaction object returned from /api/v1/erc20/permit 
+const rawTransaction = {
+	to: "0x...",
+	value: 0,
+	data: "0x..."
+}
+
+const request = await walletClient.prepareTransactionRequest({
+  account,
+  to: rawTransaction.to,
+  value: rawTransaction.value,
+	data: rawTransaction.data
+})
+
+const signature = await walletClient.signTransaction(request)
+const hash = await walletClient.sendRawTransaction(signature)
+```
+
+You can find other API routes to perform other ERC-20 token operations [here](http://localhost:3001/api-reference/v1/erc20/post/mint).

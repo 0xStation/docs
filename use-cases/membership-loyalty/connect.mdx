@@ -1,14 +1,14 @@
 ---
-title: "Transact with Membership ID"
+title: "Connect"
 ---
 
-Enable your members to connect and transact on applications with their Membership Cards.
+Enable your users to connect and transact on your application with their NFT Accounts.
 
-You can find the list of compatible applications and request to be added [here](https://0xstation.notion.site/6556761d47604c96910c6a08cee3f1ef?v=cea6cb3a2f634d928e5aa3899701c45e&pvs=4). 
+## Pre-requisite
 
-### Implementation checklist
+Your users can transact with NFT Accounts on applications that support signing and transacting with smart contract wallets.  
 
-Share this checklist with partnered applications.
+## Implementation checklist
 
 Use our **[sandbox](https://codesandbox.io/p/sandbox/connect-as-nft-dapp-tm7q7m)** to get started.
 
@@ -36,18 +36,18 @@ Use our **[sandbox](https://codesandbox.io/p/sandbox/connect-as-nft-dapp-tm7q7m)
   <Accordion title="Events">
     - Network suggestion (NFT’s network) sent to dApps using `chainChanged` event
     - Account switching adjusts WalletConnect session and informs the dApp via `accountsChanged` event
-    - WalletConnect session termination from a dApp automatically resets Portal state by reacting to `session_delete` event
+    - WalletConnect session termination from a dApp automatically resets Connect as NFT state by reacting to `session_delete` event
   </Accordion>
   
 </AccordionGroup>
 
-### Run your test
+## Run your test
 
 1. Go to your application. Navigate to WalletConnect.
 
-2. Copy the WalletConnect string. Go to [Portal](https://groupos.xyz/wc) and paste the string.
+2. Copy the WalletConnect string. Go to [Connect Portal](https://groupos.xyz/wc) and paste the string.
 
 3. Select an NFT Account to connect. Check if the connected wallet in the application matches that of the Account.
-<Warning>Do not close the Connect Portal tab as transaction confirmation will happen in this tab.</Warning>
+  <Warning>Do not close the Connect Portal tab as transaction confirmation will happen in this tab.</Warning>
 
 4. Perform transactions. 

@@ -76,66 +76,66 @@
       "group": "NFT Accounts",
       "pages": [
         "nft-accounts/overview",
-        "nft-accounts/getting-started",
+        "nft-accounts/get-started",
         {
           "group": "Distribute Accounts",
           "pages": [
-            "nft-accounts/api",
+            "nft-accounts/embedded",
             "nft-accounts/claim-page"
           ]
         },
-        "nft-accounts/distribute-tokens",
-        "nft-accounts/gas-policies",
         {
-          "group": "Automate Transactions",
+          "group": "Distribute Tokens to Accounts",
           "pages": [
-            "nft-accounts/execute-call"
+            "nft-accounts/distribute-tokens/overview",
+            "nft-accounts/distribute-tokens/erc1155",
+            "nft-accounts/distribute-tokens/erc20",
+            "nft-accounts/distribute-tokens/erc721"
           ]
         },
+        "nft-accounts/dynamic-traits",
+        "nft-accounts/gas-policies",
+        "nft-accounts/execute-call",
         "nft-accounts/track",
-        "nft-accounts/transact"
+        "nft-accounts/connect"
       ]
     },
     {
-      "group": "Smart Accounts",
-      "pages": ["smart-accounts/overview"]
+      "group": "Tokens",
+      "pages": [
+        "tokens/overview",
+        {
+          "group": "ERC-20",
+          "pages": [
+            "tokens/erc20/overview",
+            "tokens/erc20/new-collection",
+            "tokens/erc20/distribute",
+            "tokens/erc20/track"
+          ]
+        },
+        {
+          "group": "ERC-1155",
+          "pages": [
+            "tokens/erc1155/overview",
+            "tokens/erc1155/new-collection",
+            "tokens/erc1155/distribute",
+            "tokens/erc1155/track"
+          ]
+        },
+        {
+          "group": "ERC-721",
+          "pages": [
+            "tokens/erc721/overview",
+            "tokens/erc721/new-collection",
+            "tokens/erc721/distribute",
+            "tokens/erc721/track"
+          ]
+        }
+      ]
     },
     {
       "group": "Extensions",
-      "pages": [
-        {
-          "group": "Tokens",
-          "pages": [
-            "extensions/tokens/why-tokens",
-            {
-              "group": "ERC-20",
-              "pages": [
-                "extensions/tokens/erc20/overview",
-                "extensions/tokens/erc20/new-collection",
-                "extensions/tokens/erc20/distribute",
-                "extensions/tokens/erc20/track"
-              ]
-            },
-            {
-              "group": "ERC-1155",
-              "pages": [
-                "extensions/tokens/erc1155/overview",
-                "extensions/tokens/erc1155/new-collection",
-                "extensions/tokens/erc1155/distribute",
-                "extensions/tokens/erc1155/track"
-              ]
-            },
-            {
-              "group": "ERC-721",
-              "pages": [
-                "extensions/tokens/erc721/overview",
-                "extensions/tokens/erc721/new-collection",
-                "extensions/tokens/erc721/distribute",
-                "extensions/tokens/erc721/track"
-              ]
-            }
-          ]
-        },
+      "pages": [  
         {
           "group": "Portal",
           "pages": [
@@ -152,11 +152,11 @@
           "group": "Membership & Loyalty",
           "pages": [
             "use-cases/membership-loyalty/overview",
-            "use-cases/membership-loyalty/id",
+            "use-cases/membership-loyalty/pass",
             "use-cases/membership-loyalty/points",
             "use-cases/membership-loyalty/badges",
             "use-cases/membership-loyalty/track",
-            "use-cases/membership-loyalty/transact"
+            "use-cases/membership-loyalty/connect"
           ]
         },
         {
@@ -168,7 +168,7 @@
             "use-cases/playable-characters/currencies",
             "use-cases/playable-characters/XP",
             "use-cases/playable-characters/track",
-            "use-cases/playable-characters/transact"
+            "use-cases/playable-characters/connect"
           ]
         },
         {
@@ -178,17 +178,7 @@
             "use-cases/gas-pass/create",
             "use-cases/gas-pass/gas-policies",
             "use-cases/gas-pass/track",
-            "use-cases/gas-pass/transact"
-          ]
-        },
-        {
-          "group": "Governance",
-          "pages": [
-            "use-cases/governance/overview",
-            "use-cases/governance/id",
-            "use-cases/governance/points",
-            "use-cases/governance/badges",
-            "use-cases/governance/snapshot"
+            "use-cases/gas-pass/connect"
           ]
         }
       ]

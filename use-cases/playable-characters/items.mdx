@@ -4,32 +4,31 @@ title: "Items"
 
 Items are ERC-1155-compatible NFTs for in-game items like weapons, equipments, and collectibles.
 
-### Create an Items Collection
+## Create an ERC-1155 Items collection
 
-1. Go to the ‘Tokens’ tab in the Dashboard.
-2. Click ‘+ New Token’. Select ‘ERC-1155’.
-3. Fill out the details and configure transferability. Click ‘Done’.
-
-![ERC-1155.png](https://station-images.nyc3.digitaloceanspaces.com/8a4cc1d6-8ef6-429b-85ae-a8f7c479c805.png)
-
+1. In the Dashboard, go to the 'Tokens' tab.
+2. Click **'+ New Tokens'** and select **'ERC-1155'** option
+3. Fill out the token details and click **'Next'**.
+4. Review the details and click **'Done'**.
+5. Find and copy the collection contract address.
 
 ### Distribute Items
 
-After [setting up your API Keys](/introduction/setting-up) and creating the Items Collection, you can start distributing Badges to your members.
+After [setting up your API Keys](/introduction/setting-up) and creating the Items Collection, you can start distributing Items to your members.
 
 <CardGroup cols={2}>
 <Card
-    title="Mint API"
+    title="Mint"
     icon="terminal"
     iconType="solid"
-    href="/api-reference/v1/erc1155/post/mint"
+    href="/nft-accounts/distribute-tokens/erc1155"
   >
     <div style={{ paddingTop: "8px", fontSize: "14px" }}>
       Automatically mint Items based on offchain actions with Token APIs.  
     </div>
   </Card>
   <Card
-    title="Permit API"
+    title="Permit"
     icon="terminal"
     iconType="solid"
     href="/api-reference/v1/erc1155/post/permit"

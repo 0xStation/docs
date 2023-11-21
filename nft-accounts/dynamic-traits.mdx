@@ -1,0 +1,60 @@
+---
+title: "Dynamic Traits"
+---
+
+<Info>This feature is available to ERC-721 collections created on GroupOS.</Info>
+
+Programmatically update the traits of the NFT Accounts based on user's activities and token ownership. This metadata will be automatically reflected on GroupOS, your application, and third-party platforms that support ERC-721 standards e.g. OpenSea and Zora. 
+
+**Examples**
+- Player's EXP (ERC-20 token balance)
+- User's Points (ERC-20 token balance)
+- User's active status (ERC-1155 badge)
+
+## Trait value types
+
+<AccordionGroup>
+  <Accordion title="ERC-20 balance">
+    Render the current balance of the ERC-20 token owned by the NFT Account.
+  </Accordion>
+  <Accordion title="ERC-1155 balance">
+    Render the total quantity of the ERC-1155 token owned by the NFT Account. You can render the total quantity of a specific token ID by specifying token ID in **Token ID** field.
+  </Accordion>
+  <Accordion title="ERC-721 balance">
+    Render the total quantity of the ERC-1155 token owned by the NFT Account.
+   </Accordion>
+  <Accordion title="ERC-1155 ownership">
+    Render **'True'** if the NFT Account currently owns the specific token ID of the ERC-1155 token. Render **'False'** otherwise.
+  </Accordion>
+  <Accordion title="ERC-721 ownership">
+    Render **'True'** if the NFT Account currently owns the specific token ID of the ERC-721 token. Render **'False'** otherwise.
+  </Accordion>
+   <Accordion title="ERC-1155 token names">
+    Render the name of the specific token IDs the NFT Account owns.
+  </Accordion>
+    <Accordion title="Highest-ranked ERC-1155 variance">
+    Render the name of the highest ranked ERC-1155 ID (specify in the flow). If Alice owns both token ID #1 (“Rookie”) and #3 (“Expert”) and #3 is higher in ranked, only display the name of the token ID #3 (“Expert”).
+  </Accordion>
+     <Accordion title="Custom valus defined by minimum ERC-20 balance">
+    Render the custom value based on the NFT Account's current ERC-20 balance. e.g. If Alice owns at least 20 tokens, display “Rookie” as the trait value. If Alice owns at least 100 tokens, display “Expert” as the trait value.
+  </Accordion>
+</AccordionGroup>
+
+## Set traits logic
+
+When you [create a new NFT collection](/tokens/erc721/new-collection) for your NFT Accounts, you'll be able to set the logic in the **Traits** step. 
+1. In each trait box, click **'Advanced'** for trait value. 
+2. Set your logic and click **'Next'**.
+3. Review your changes and click **'Done'**
+
+Go to Account Directory or the Token Directory to view your changes.
+
+## Edit traits logic
+1. In your Dashboard, Go to **Tokens** tab.
+2. Find and select the ERC-721 collection that your Accounts are bound to.
+3. Go to **Settings**.
+4. In **General**, go to **Traits**. In each trait box, click **'Advanced'** for trait value.
+5. Edit your logic and click **'Save'**.
+
+Go to Account Directory or the Token Directory to view your changes.
+
