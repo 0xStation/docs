@@ -6,11 +6,6 @@ api: "POST https://groupos.xyz/api/v1/account/executeCall"
 
 ### How to execute calls from an NFT Account
 
-<Info>
-  Executing calls via this API requires you configure this permission on your
-  Account Group settings.
-</Info>
-
 Once you have an NFT Account smart contract, you can execute any arbitrary call to another address.
 A call is defined by the chain you are executing on, the address you are calling, how much network token (e.g. ETH) to send,
 and the data to call with which is an ABI-encoded function with arguments.

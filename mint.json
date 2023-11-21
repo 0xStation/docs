@@ -79,10 +79,7 @@
         "nft-accounts/get-started",
         {
           "group": "Distribute Accounts",
-          "pages": [
-            "nft-accounts/embedded",
-            "nft-accounts/claim-page"
-          ]
+          "pages": ["nft-accounts/embedded", "nft-accounts/claim-page"]
         },
         {
           "group": "Distribute Tokens to Accounts",
@@ -135,7 +132,7 @@
     },
     {
       "group": "Extensions",
-      "pages": [  
+      "pages": [
         {
           "group": "Portal",
           "pages": [
@@ -204,7 +201,8 @@
       "pages": [
         "api-reference/v1/erc6551/post/create",
         "api-reference/v1/erc6551/post/executeCall",
-        "api-reference/v1/erc6551/get/accounts"
+        "api-reference/v1/erc6551/get/accounts",
+        "api-reference/v1/erc6551/get/account"
       ]
     },
     {
@@ -228,6 +226,7 @@
     {
       "group": "ERC-1155 NFTs",
       "pages": [
+        "api-reference/v1/erc1155/post/create",
         "api-reference/v1/erc1155/post/mint",
         "api-reference/v1/erc1155/post/permit",
         "api-reference/v1/erc1155/get/owners",

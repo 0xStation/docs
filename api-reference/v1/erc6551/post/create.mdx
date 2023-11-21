@@ -6,15 +6,11 @@ api: "POST https://groupos.xyz/api/v1/erc6551/create"
 
 ### How to create an NFT Account
 
-Once you have an Account Group, you can create any number of accounts bound to any NFTs.
-Account Groups let you define settings that apply to your Accounts such as eligible NFT contracts and
-initial state configurations (eg. enabling our API to have access to trigger executions).
+You can add smart accounts to any NFTs on [supported EVM chains](/api-reference/v1/getting-started/supported-networks).
+This route will deploy a smart contract account to the provided NFT and return the new account's address.
+You can query the address of this account prior to creation by using the [Query Account API](/api-reference/v1/erc6551/get/account).
 
 ### Body
-
-<ParamField body="accountGroupId" type="string" required>
-  The Accounts Group id to create with.
-</ParamField>
 
 <ParamField body="nft" type="object" required>
   The NFT to bound the new Account to.
@@ -62,7 +58,7 @@ curl --location --request POST 'https://groupos.xyz/api/v1/erc6551/create' \
 --header 'Authorization: Bearer <token>' \
 --data-raw '{
     "nft": {
-      "chainId": 5
+      "chainId": 5,
       "contractAddress": "0xDb46d1Dc155634FbC732f92E853b10B288AD5a1d",
       "tokenId": "12692"
     }
