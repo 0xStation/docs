@@ -4,14 +4,13 @@ title: "Badges"
 
 Badges are digital symbols that represent achievements, qualifications, or status.
 
-### Create a Badges Collection
+## Create an ERC-1155 NFT collection
 
-1. Go to the ‘Tokens’ tab in the Dashboard.
-2. Click ‘+ New Token’. Select ‘ERC-1155’.
-3. Fill out the details and configure transferability. Click ‘Done’.
-
-![ERC-1155.png](https://station-images.nyc3.digitaloceanspaces.com/8a4cc1d6-8ef6-429b-85ae-a8f7c479c805.png)
-
+1. In the Dashboard, go to the 'Tokens' tab.
+2. Click **'+ New Tokens'** and select **'ERC-1155'** option
+3. Fill out the token details and click **'Next'**.
+4. Review the details and click **'Done'**.
+5. Find and copy the collection contract address.
 
 ### Distribute Badges
 
@@ -19,17 +18,17 @@ After [setting up your API Keys](/introduction/setting-up) and creating the Badg
 
 <CardGroup cols={2}>
 <Card
-    title="Mint API"
+    title="Mint"
     icon="terminal"
     iconType="solid"
-    href="/api-reference/v1/erc1155/post/mint"
+    href="/nft-accounts/distribute-tokens/erc1155"
   >
     <div style={{ paddingTop: "8px", fontSize: "14px" }}>
       Automatically mint Badges based on offchain actions with Token APIs.  
     </div>
   </Card>
   <Card
-    title="Permit API"
+    title="Permit"
     icon="terminal"
     iconType="solid"
     href="/api-reference/v1/erc1155/post/permit"

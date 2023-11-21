@@ -1,0 +1,142 @@
+---
+title: "Embedded Distribution"
+sidebarTitle: "Embedded Distribution"
+---
+
+<Info>This quickstart demo best serves for server-side use cases given the exposure of your API key.
+When building a client-side application, it is recommended to keep these API calls in your own
+internal backend implementation that your frontend calls instead with your own custom authentication.</Info>
+
+Automatically mint, update NFT metadata, and batch execute transactions based on offchain events. 
+
+## Pre-requisite
+
+- You've equipped Accounts to NFTs. Follow [this tutorial](/nft-accounts/getting-started) to get started.
+- You've [set up your API key](/introduction/quickstart).
+
+In this example, we guide you to mint the NFT Account with custom metadata for each new NFT. 
+
+The most common application of this is dynamic onchain membership & loyalty.
+
+The main API route you need is
+[/api/v1/erc721/mint](/api-reference/v1/erc721/post/mint) which allows us to set the metadata of a new token in the same request as minting via
+the `metadata` field. Starting with the image of the NFT, you first need to store the intended file in the cloud if you have not yet already.
+
+## Upload NFT media (Optional)
+
+<Info>This is not required if you already have the url of your media.</Info>
+
+For convenience, the ability to upload NFT media is provided out of the box.
+Using the [/api/v1/nft/uploadMedia](/api-reference/v1/nft/post/uploadMedia) route, you can provide our file and receive back
+a `mediaUrl`. 
+
+```typescript
+const formData = new FormData();
+formData.append("media", "./path/image");
+
+const response = await fetch("https://groupos.xyz/api/v1/nft/uploadMedia", {
+  method: "POST",
+  headers: {
+    Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+  },
+  body: formData,
+})
+
+const imageUrl = await response.json().mediaUrl;
+```
+
+## Mint NFT with metadata
+
+Now that you've stored our image in the cloud, you can mint the NFT.
+Using the [/api/v1/erc721/mint](/api-reference/v1/erc721/post/mint) route, you can submit our NFT contract and desired
+recipient address (e.g. user's address) and receive back a transaction hash for the pending mint. Depending on your NFT's network, confirmation
+can take seconds or minutes.
+
+In JavaScript, calling the API would look like the following:
+
+```typescript
+const nft = {
+  chainId: 5, // goerli testnet
+  contractAddress: "0x...",
+  recipientAddress: "0x...", // account address
+  tokenId: 1, // ERC-721 ID
+};
+
+const response = await fetch("https://groupos.xyz/api/v1/erc721/mint", {
+  method: "POST",
+  headers: {
+    Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+  },
+  body: {
+    chainId: nft.chainId,
+    contractAddress: nft.contractAddress,
+    recipientAddress: nft.recipientAddress,
+    tokenId: nft.tokenId,
+  },
+})
+
+const transactionHash = await response.json().transactionHash;
+```
+
+## Confirm 
+
+You can query the minted tokens for confirmation.
+Using the [/api/v1/erc721/tokens](/api-reference/v1/erc721/get/tokens) route, you can query the
+list of all owners and also tokens for just the latest recipient.
+
+**Query minted NFTs**
+
+```typescript
+const nft = {
+  chainId: 5, // goerli testnet
+  contractAddress: "0x...",
+  ownerAddress: "0x...", // account address
+};
+
+const response = await fetch(
+  "https://groupos.xyz/api/v1/erc721/tokens" +
+    new URLSearchParams({
+      chainId: nft.chainId,
+      contractAddress: nft.contractAddress,
+      ownerAddress:nft.ownerAddress,
+    }),
+  {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+    },
+  }
+)
+
+const allTokens = await response.json().tokens;
+```
+
+**Query an Account address**
+
+Assuming that you know the token ID, you then need to query the associated Account address.
+
+```typescript
+const nft = {
+  chainId: 5, // goerli testnet
+  contractAddress: "0x...",
+  id: 1, // token ID
+};
+
+const response = await fetch(
+  "https://groupos.xyz/api/v1/erc6551/account" +
+    new URLSearchParams({
+      tokenChainId: nft.chainId,
+      tokenContractAddress: nft.contractAddress,
+      tokenId: nft.Id,
+    }),
+  {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+    },
+  }
+)
+
+const accountAddress = await response.json().account.contractAddress;
+```
+

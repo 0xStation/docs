@@ -1,0 +1,183 @@
+---
+title: "ERC-721 NFTs"
+---
+
+ERC-721 tokens are non-fungible tokens that are best for attributing value uniquely. Learn more [here](/tokens/erc721/overview).
+
+This example guides you to create and mint ERC-721 NFT to their NFT Account. For example, mint 1-of-1 item to a player once they hit a certain level in game.
+
+## Pre-requisite
+
+- You've integrated Accounts into your Applications. Follow [this tutorial](/nft-accounts/getting-started) to get started.
+- You've [set up your API key](/introduction/quickstart).
+
+## Create an ERC-721 NFT collection
+
+1. In the Dashboard, go to the **Tokens** tab.
+2. Click **'+ New Tokens'** and select **'ERC-721'** option
+3. Fill out the token details and click **'Next'**.
+4. Review the details and click **'Done'**.
+5. Find and copy the collection contract address.
+
+## Mint an NFT to Accounts
+
+**If the user is transacting as their EoA that owns the NFT Account:**
+
+**1. Query NFT ID**
+    
+First, you need to query the token IDs of the NFT Accounts that the EoA owns using the [/api/v1/erc721/tokens](/api-reference/v1/erc721/get/tokens) route.
+
+In JavaScript, calling the API would look like the following:
+
+```typescript
+const nft = {
+  chainId: 5, // goerli testnet
+  contractAddress: "0x...",
+  ownerAddress: "0x...", // address of the connected EoA
+};
+
+const response = await fetch(
+  "https://groupos.xyz/api/v1/erc6551/account" +
+    new URLSearchParams({
+      tokenChainId: nft.chainId,
+      tokenContractAddress: nft.contractAddress,
+      ownerAddress: nft.ownerAddress,
+    }),
+  {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+    },
+  }
+)
+
+const allTokens = await response.json().tokens;
+```
+
+This returns an array of token IDs of the NFT Accounts that the EoA owns. Here, you may want to let the user pick which NFT Account they would like to mint the ERC-1155 NFT into.
+
+**2. Query an Account address**
+
+Assuming that you know the token ID, you then need to query the associated Account address using the [/api/v1/erc6551/account](/api-reference/v1/erc6551/get/account) route.
+
+In JavaScript, calling the API would look like the following:
+
+```typescript
+const nft = {
+  chainId: 5, // goerli testnet
+  contractAddress: "0x...",
+  id: 1, // token ID
+};
+
+const response = await fetch(
+  "https://groupos.xyz/api/v1/erc6551/account" +
+    new URLSearchParams({
+      tokenChainId: nft.chainId,
+      tokenContractAddress: nft.contractAddress,
+      tokenId: nft.Id,
+    }),
+  {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+    },
+  }
+)
+
+const accountAddress = await response.json().account.contractAddress;
+```
+
+**3. Mint NFT and send to Account**
+
+With the Account address, you can mint the NFT to the Account using [/api/v1/erc721/mint](/api-reference/v1/erc721/post/mint) route.
+
+In JavaScript, calling the API would look like the following:
+
+```typescript
+const nft = {
+  chainId: 5, // goerli testnet
+  contractAddress: "0x...",
+  recipientAddress: "0x...", // account address
+  tokenId: 1, // ERC-721 token ID
+};
+
+const response = await fetch("https://groupos.xyz/api/v1/erc721/mint", {
+  method: "POST",
+  headers: {
+    Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+  },
+  body: {
+    chainId: nft.chainId,
+    contractAddress: nft.contractAddress,
+    recipientAddress: nft.recipientAddress,
+    tokenId: nft.tokenId,
+  },
+})
+
+const transactionHash = await response.json().transactionHash;
+```
+
+**If the user is transacting as their NFT Account:**
+
+With the Account address, you can mint the NFT to the Account using [/api/v1/erc721/mint](/api-reference/v1/erc721/post/mint) route.
+
+In JavaScript, calling the API would look like the following:
+
+```typescript
+const nft = {
+  chainId: 5, // goerli testnet
+  contractAddress: "0x...",
+  recipientAddress: "0x...", // account address
+  tokenId: 1, // ERC-721 ID
+};
+
+const response = await fetch("https://groupos.xyz/api/v1/erc721/mint", {
+  method: "POST",
+  headers: {
+    Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+  },
+  body: {
+    chainId: nft.chainId,
+    contractAddress: nft.contractAddress,
+    recipientAddress: nft.recipientAddress,
+    tokenId: nft.tokenId,
+  },
+})
+
+const transactionHash = await response.json().transactionHash;
+```
+
+## Confirm 
+
+You can query the minted NFTs for confirmation.
+Using the [/api/v1/erc1155/tokens](/api-reference/v1/erc721/get/tokens) route, you can query the
+list of all owners and also tokens for just the latest recipient.
+
+In JavaScript, calling the API would look like the following:
+
+```typescript
+const nft = {
+  chainId: 5, // goerli testnet
+  contractAddress: "0x...",
+  ownerAddress: "0x...", // account address
+};
+
+const response = await fetch(
+  "https://groupos.xyz/api/v1/erc721/tokens" +
+    new URLSearchParams({
+      chainId: nft.chainId,
+      contractAddress: nft.contractAddress,
+      ownerAddress:nft.ownerAddress,
+    }),
+  {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
+    },
+  }
+)
+
+const allTokens = await response.json().tokens;
+```
+
+You can find other API routes to perform other ERC-721 NFT operations [here](http://localhost:3001/api-reference/v1/erc721/post/mint).

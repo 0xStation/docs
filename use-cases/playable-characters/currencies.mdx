@@ -6,19 +6,19 @@ Currencies are tradable ERC-20 tokens for your thriving game economy.
 
 ### Create a Currencies Collection
 
-1. Go to the ‘Tokens’ tab in the Dashboard.
-2. Click ‘+ New Token’. Select ‘ERC-20’.
-3. Fill out the details and configure transferability. Click ‘Done’.
-
-![ERC-20.png](https://station-images.nyc3.digitaloceanspaces.com/c42ffaa9-1d72-405d-9d5f-9ab0fee0fd7c.png)
+1. In the Dashboard, go to the **Tokens** tab.
+2. Click **'+ New Tokens'** and select **'ERC-20'** option
+3. Fill out the token details and click **'Next'**.
+4. Review the details and click **'Done'**.
+5. Find and copy the collection contract address.
 
 ### Distribute Currencies
 
-After [setting up your API Keys](/introduction/quickstart) and creating the Currencies Collection, you can start distributing Currencies to your members.
+After [setting up your API Keys](/introduction/quickstart) and creating the XP Collection, you can start distributing Currencies to your members.
 
 <CardGroup cols={2}>
 <Card
-    title="Mint API"
+    title="Mint"
     icon="terminal"
     iconType="solid"
     href="/api-reference/v1/erc20/post/mint"
@@ -28,10 +28,10 @@ After [setting up your API Keys](/introduction/quickstart) and creating the Curr
     </div>
   </Card>
   <Card
-    title="Permit API"
+    title="Permit"
     icon="terminal"
     iconType="solid"
-    href="/api-reference/v1/erc20/post/permit"
+    href="/nft-accounts/distribute-tokens/erc20"
   >
     <div style={{ paddingTop: "8px", fontSize: "14px" }}>
       Permit an address to mint Currencies on their own time and does not itself produce a blockchain transaction.  
