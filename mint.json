@@ -108,7 +108,8 @@
             "tokens/erc20/overview",
             "tokens/erc20/new-collection",
             "tokens/erc20/distribute",
-            "tokens/erc20/track"
+            "tokens/erc20/track",
+            "tokens/erc20/publish-directory"
           ]
         },
         {
@@ -117,7 +118,8 @@
             "tokens/erc1155/overview",
             "tokens/erc1155/new-collection",
             "tokens/erc1155/distribute",
-            "tokens/erc1155/track"
+            "tokens/erc1155/track",
+            "tokens/erc1155/publish-directory"
           ]
         },
         {
@@ -126,7 +128,8 @@
             "tokens/erc721/overview",
             "tokens/erc721/new-collection",
             "tokens/erc721/distribute",
-            "tokens/erc721/track"
+            "tokens/erc721/track",
+            "tokens/erc721/publish-directory"
           ]
         }
       ]
