@@ -10,15 +10,15 @@ If a particular user has earned a large amount of permits, it may be easier to b
 
 ### Body
 
-<ParamField body="chainId" type="number" required>
+<ParamField query="chainId" type="number" required>
   The id of the chain supporting the token.
 </ParamField>
 
-<ParamField body="contractAddress" type="string" required>
+<ParamField query="contractAddress" type="string" required>
   The token smart contract address of the permits to batch.
 </ParamField>
 
-<ParamField body="recipientAddress" type="string" required>
+<ParamField query="recipientAddress" type="string" required>
   The address to recipient owning the permits to batch.
 </ParamField>
 
@@ -54,13 +54,11 @@ If a particular user has earned a large amount of permits, it may be easier to b
   ```bash Example Request
   curl 'https://groupos.xyz/api/v1/erc20/permit/batch' \
   --request GET \
+  -d 'chainId=1' \
+  -d 'contractAddress=0x67F4732266C7300cca593C814d46bee72e40659F' \
+  -d 'ownerAddress=0xc517c83f417b73dA98647dad0FCB80af9f3b9531' \
   --header 'Content-Type: application/json' \
   --header 'Authorization: Bearer <token>' \
-  --data-raw '{
-      "chainId": 5,
-      "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
-      "recipientAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531"
-  }'
   ```
 </RequestExample>
 
