@@ -193,7 +193,7 @@
       ]
     },
     {
-      "group": "Cloud Wallet",
+      "group": "Cloud Wallets",
       "pages": [
         "api-reference/v1/key/post/create",
         "api-reference/v1/key/get/keys",
