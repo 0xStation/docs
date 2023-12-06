@@ -51,14 +51,14 @@ await fetch("https://groupos.xyz/api/v1/erc721/mint", {
   headers: {
     Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
   },
-  body: {
+  body: JSON.stringify({
     chainId: nft.chainId,
     contractAddress: nft.contractAddress,
     recipientAddress: userAddress,
     metadata: {
       mediaUrl: imageUrl,
     },
-  },
+  }),
 }).then((data) => {
   nftMintTransactionHash = data.transactionHash;
 });

@@ -107,13 +107,13 @@ const response = await fetch("https://groupos.xyz/api/v1/erc1155/mint", {
   headers: {
     Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
   },
-  body: {
+  body: JSON.stringify({
     chainId: nft.chainId,
     contractAddress: nft.contractAddress,
     recipientAddress: nft.recipientAddress,
     tokenId: nft.tokenId,
     amount: nft.amount,
-  },
+  }),
 })
 
 const transactionHash = await response.json().transactionHash;
@@ -139,13 +139,13 @@ const response = await fetch("https://groupos.xyz/api/v1/erc1155/mint", {
   headers: {
     Authorization: `Bearer ${process.env.GROUPOS_API_KEY}`,
   },
-  body: {
+  body: JSON.stringify({
     chainId: nft.chainId,
     contractAddress: nft.contractAddress,
     recipientAddress: nft.recipientAddress,
     tokenId: nft.tokenId,
     amount: nft.amount,
-  },
+  }),
 })
 
 const transactionHash = await response.json().transactionHash;
