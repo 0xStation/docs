@@ -49,6 +49,10 @@ api: "GET https://groupos.xyz/api/v1/erc721/tokens"
         Address of the current owner (lower-cased).
       </ResponseField>
 
+      <ResponseField name="tbaAddress" type="string">
+        Address of the associated token-bound account (lower-cased).
+      </ResponseField>
+
       <ResponseField name="metadata" type="object">
         Metadata of the NFT.
 
@@ -109,6 +113,7 @@ curl --location 'https://groupos.xyz/api/v1/erc721/tokens' \
       {
         "tokenId": "69",
         "ownerAddress": "0xc517c83f417b73da98647dad0fcb80af9f3b9531",
+        "tbaAddress": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
         "metadata": {
           "name": "...",
           "description": "...",
@@ -130,6 +135,7 @@ curl --location 'https://groupos.xyz/api/v1/erc721/tokens' \
       {
         "tokenId": "420",
         "ownerAddress": "0xc517c83f417b73da98647dad0fcb80af9f3b9531",
+        "tbaAddress": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
         "metadata": {
           "name": "...",
           "description": "...",
