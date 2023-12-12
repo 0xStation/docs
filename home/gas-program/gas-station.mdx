@@ -3,10 +3,17 @@ title: "Gas Station"
 sidebarTitle: "Gas Station"
 ---
 
-Gas Station looks to solve the above problems by creating a network that aligns incentives for gas credit issuers (L2s), dApps, and gas consumers to increase the adoption of smart accounts at scale. 
+[Gas Station](https://github.com/0xStation/gas-credits) looks to solve the above problems by creating a network that aligns incentives for gas credit issuers (L2s), dApps, and gas consumers to increase the adoption of smart accounts at scale. 
 
 ### Overview 
 The fast growth of L2 usage and capabilities has allowed developers and consumers to experiment and provide efficient, high-quality experiences to end-consumers. Gasless experiences have become the new standard, thanks to the increasing popularity of major providers and account abstraction infrastructure. However, many challenges are associated with creating an effective gas incentive program. Station Labs has partnered with Linea, one of the largest L2s created by Consensys, to refine solutions and develop the most incentive-aligned solutions for L2s, application developers, and end-consumers.
+
+### Implementation overview:
+- One immutable contract, GasCredits.sol: ERC-20 token and ERC-4337 paymaster in one
+- When minting $GAS, deposited ETH is deposited to the Entrypoint
+- Users spend their own credits by passing empty paymaster data in the UserOp
+- Sponsors sign permits to spend credits on specific UserOps
+- Sponsors delegate permitting authority to another account
 
 ### Problems
 - Existing wallet onboarding solutions make it easier for users to onboard without a wallet. However, there are still challenges when it comes to bridging, gas, and auto-funding when onboarding users to a new L2. 
@@ -16,7 +23,7 @@ The fast growth of L2 usage and capabilities has allowed developers and consumer
 - Lack of communication between applications and AA infrastructure (bundlers + paymasters) results in a lack of visibility into the effectiveness and ROI of the program.
 - L2 platforms need assistance implementing bridging, gas, and auto-funding programs without being susceptible to Sybil attacks. There is no straightforward method to implement reputation-based gas incentives.
 
-### Gas Station
+### Value propositions
 
 #### For L2s
 - Reward dApps and users that drive the most usage to the platform and align incentives by covering gas and future fees. 
