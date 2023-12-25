@@ -14,8 +14,9 @@ api: "GET https://groupos.xyz/api/v1/erc721/tokens"
   The NFT smart contract address.
 </ParamField>
 
-<ParamField query="tokenIds" type="string[]" optional>
-  A list of NFT token IDs to filter on.
+<ParamField query="tokenIds" type="string" optional>
+  A list of NFT token IDs to filter on. Structure as comma-separated values with
+  no brackets, e.g. `'1,3,5'`.
 </ParamField>
 
 <ParamField query="ownerAddress" type="string" optional>
@@ -98,6 +99,7 @@ curl --location 'https://groupos.xyz/api/v1/erc721/tokens' \
 --request GET \
 -d 'chainId=1' \
 -d 'contractAddress=0x67F4732266C7300cca593C814d46bee72e40659F' \
+-d 'tokenIds=69,420' \
 -d 'ownerAddress=0xc517c83f417b73dA98647dad0FCB80af9f3b9531' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <token>'
