@@ -262,20 +262,8 @@
       ]
     },
     {
-      "group": "Tokens",
-      "pages": [
-        "contract-architecture/tokens/erc721",
-        "contract-architecture/tokens/erc1155",
-        "contract-architecture/tokens/erc20"
-      ]
-    },
-    {
-      "group": "Accounts",
-      "pages": [
-        "contract-architecture/accounts/member",
-        "contract-architecture/accounts/group",
-        "contract-architecture/accounts/bot"
-      ]
+      "group": "Guides",
+      "pages": ["contract-architecture/guides/transferability"]
     }
   ],
   "footerSocials": {

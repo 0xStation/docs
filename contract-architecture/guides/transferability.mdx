@@ -1,0 +1,52 @@
+---
+title: "Customize Token Transferability"
+sidebarTitle: "Token Transferability"
+---
+
+<Info>
+  This guide will show you how to customize token transferability logic on
+  Etherscan or similar block explorers.
+</Info>
+
+Transfering a token is one "operation" you can take on a token contract, both through the `transfer` and `transferFrom` functions.
+
+As of `v0.4.0` of [0xRails](https://github.com/0xStation/0xrails), all tokens come with a Guard system that enables
+adding custom logic to only allow operations under certain conditions. Each guard setting is stored as a `mapping(bytes8 => address)`
+which connects an operation key to the Guard contract to use when that operation is triggered.
+
+To read the current values, call `guardOf(bytes8)` to get the Guard of a specific operation or `getAllGuards()` to get all Guards set.
+
+You can do this from Etherscan by navigating to your contract's page and opening the `Contract` tab.
+If you do not see your contracts function, you will need to click "Is this a proxy?" and complete the flow to pull the contract interface.
+Afterwards, you should be able to call view functions under the "Read as Proxy" sectino and write data under the "Write as Proxy" section.
+
+To mutate a Guard value, call the `setGuard(bytes8, address)` function on your token contract from an address with the `ADMIN` permission.
+You can view token admins in the settings page on the GroupOS app and the token owner also has this permission by defualt.
+
+For the `operation` input, paste `0x5cc15eb80ba37777` for indicating transfer, calculated by taking the first 8 bytes of `keccack256("TRANSFER")`.
+The `implementation` input will be the Guard contract that should be called when a transfer is attempted.
+
+### Transferable
+
+Transferable tokens have no additional constraints applied to regulate when transfers are allowed.
+All tokens are transferable by default, but can be set explicitly to transferable by using the zero address, `0x0000000000000000000000000000000000000000`.
+
+### Strictly Non-Transferable
+
+Strictly non-transferable tokens reject all transfer attempts, no matter what. Unanimous rejection behavior can
+use the max address, `0xffffffffffffffffffffffffffffffffffffffff`, as a special value. This special value can be used
+for any operation to always prevent it.
+
+<img
+  height="200"
+  src="https://station-images.nyc3.digitaloceanspaces.com/f1332738-e22d-43a5-89b1-0da26b41a920"
+/>
+
+### Partially Transferable
+
+Partially transferable tokens reject some transfer attempts and allow others. This logic is implemented by the
+Guard contract and must implement the [`IGuard.sol` interface](https://github.com/0xStation/0xrails/blob/main/src/guard/interface/IGuard.sol) with the `bytes calldata data` parameter encoded according to the token type:
+
+- ERC20: `abi.encode(address operator, address from, address to, uint256 value)`
+- ERC721: `abi.encode(address operator, address from, address to, uint256 startTokenId, uint256 quantity)`
+- ERC1155: `abi.encode(address operator, address from, address to, uint256[] tokenIds, uint256 values)`
