@@ -1,0 +1,28 @@
+---
+title: "8-Byte Keys (Operations/Roles)"
+---
+
+| 8-byte Key           | Operation / Role  |
+| -------------------- | ----------------- |
+| `0x38381131ea27ecba` | `MINT`            |
+| `0xf951edb3fd4a16a3` | `BURN`            |
+| `0x5cc15eb80ba37777` | `TRANSFER`        |
+| `0x706a455ca44ffc9f` | `CALL`            |
+| `0x38381131ea27ecba` | `ADMIN`           |
+| `0x0b6c53f325d325d3` | `MINT_PERMIT`     |
+| `0x6801400fea7cd7c7` | `BURN_PERMIT`     |
+| `0xa994951607abf93b` | `TRANSFER_PERMIT` |
+
+<Info>
+  The admin permission inherits all other permissions. This is a high severity
+  power and should only be granted to trusted parties. Its intended use is for
+  manageement convenience for small-scale collaborations.
+</Info>
+
+<Info>
+  Permits permissions enable an address to guide an operation, but only via
+  signatures to be consumed by another contract that has the complete
+  permission. For example, `MINT_PERMIT` enables an address to approve new
+  members to mint, but the mint logic is carried out by a smart contract with
+  `MINT` permission to enforce payment to join.
+</Info>

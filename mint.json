@@ -263,7 +263,10 @@
     },
     {
       "group": "Guides",
-      "pages": ["contract-architecture/guides/transferability"]
+      "pages": [
+        "contract-architecture/guides/operations",
+        "contract-architecture/guides/transferability"
+      ]
     }
   ],
   "footerSocials": {
