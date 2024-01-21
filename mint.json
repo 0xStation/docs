@@ -148,6 +148,12 @@
       ]
     },
     {
+      "group": "Gas Policies",
+      "pages": [
+        "gas-policies/overview"
+      ]
+    },
+    {
       "group": "Portal",
       "pages": [
         "extensions/portal/overview",
