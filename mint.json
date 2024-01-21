@@ -107,6 +107,14 @@
             "accounts/nft-accounts/execute-call",
             "accounts/nft-accounts/track"
           ]
+        },
+        {
+          "group": "Smart Accounts",
+          "pages": [
+            "accounts/smart-accounts/overview",
+            "accounts/smart-accounts/trusted-executor",
+            "accounts/smart-accounts/gas-policies"
+          ]
         }
       ]
     },
