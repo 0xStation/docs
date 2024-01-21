@@ -73,6 +73,12 @@
       ]
     },
     {
+      "group": "Cloud Wallets",
+      "pages": [
+        "cloud-wallets/get-started"
+      ]
+    },
+    {
       "group": "Tokens",
       "pages": [
         "tokens/why-tokens",
@@ -131,23 +137,11 @@
         "nft-accounts/gas-policies",
         "nft-accounts/execute-call",
         "nft-accounts/track",
-        "nft-accounts/connect"
-      ]
-    },
-    {
-      "group": "Cloud Wallets",
-      "pages": [
-        "cloud-wallets/overview"
-      ]
-    },
-    {
-      "group": "Extensions",
-      "pages": [
         {
           "group": "Portal",
           "pages": [
-            "extensions/portal/overview",
-            "extensions/portal/wallet-connect"
+            "nft-accounts/portal/overview",
+            "nft-accounts/portal/wallet-connect"
           ]
         }
       ]

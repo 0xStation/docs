@@ -1,0 +1,41 @@
+---
+title: "Get Started"
+---
+
+Our key-based cloud wallets offers versatile use cases catering to various needs. Below are some of the key applications:
+
+- **Walletless Onboarding**: Seamless onboarding by integrating with Single Sign-On (SSO) solutions or other authentication systems. This simplifies the process for users, enabling easy access with existing credentials.
+- **Passkey Onboarding**: Users utilize their device to produce a signature with their passkey, resulting in a signed request forwarded to your app’s backend for authentication.
+- **Automations**: Sign transactions and automate executions on behalf of your users. Examples include automated staking, swapping, and other recurring transactions.
+
+[Try it out](https://groupos-email-onboarding.vercel.app/) or [view on Github](https://github.com/0xStation/groupos-email-onboarding)
+
+## Pre-requisite
+- You’ve set up your API key. Follow [this tutorial](/introduction/quickstart) to get started.
+
+## Create Cloud Wallets
+
+Using the [/api/v1/key/post/create](/api-reference/v1/key/post/create) route, you can embed wallet creation at any point in your application e.g. at sign up.
+
+```typescript
+const key = "YOUR_API_KEY";
+
+const body = {
+  customRef: "user@email.com"
+};
+
+try {
+  const response = await fetch("https://groupos.xyz/api/v1/key/create", {
+    method: "POST",
+    headers: {
+	  "Content-Type": "application/json",
+	  Authorization: `Bearer ${key} `
+    },
+    body: JSON.stringify(body)
+  });
+} catch (e) {
+  // catch errors
+}
+```
+
+[View demo](https://groupos-email-onboarding.vercel.app/) or [fork the repo](https://github.com/0xStation/groupos-email-onboarding) to get started.
