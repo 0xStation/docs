@@ -115,6 +115,17 @@
       "pages": [
         "tokens/why-tokens",
         {
+          "group": "ERC-721",
+          "pages": [
+            "tokens/erc721/overview",
+            "tokens/erc721/new-collection",
+            "tokens/erc721/distribute",
+            "tokens/erc721/track",
+            "tokens/erc721/publish-directory",
+            "tokens/erc721/nft-accounts"
+          ]
+        },
+        {
           "group": "ERC-20",
           "pages": [
             "tokens/erc20/overview",
@@ -132,16 +143,6 @@
             "tokens/erc1155/distribute",
             "tokens/erc1155/track",
             "tokens/erc1155/publish-directory"
-          ]
-        },
-        {
-          "group": "ERC-721",
-          "pages": [
-            "tokens/erc721/overview",
-            "tokens/erc721/new-collection",
-            "tokens/erc721/distribute",
-            "tokens/erc721/track",
-            "tokens/erc721/publish-directory"
           ]
         }
       ]
