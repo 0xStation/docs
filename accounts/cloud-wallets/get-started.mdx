@@ -1,0 +1,33 @@
+---
+title: "Get Started"
+---
+
+## Pre-requisite
+- You’ve set up your API key. Follow [this tutorial](/introduction/quickstart) to get started.
+
+## Create Cloud Wallets
+
+Using the [/api/v1/key/post/create](/api-reference/v1/key/post/create) route, you can embed wallet creation at any point in your application e.g. at sign up.
+
+```typescript
+const key = "YOUR_API_KEY";
+
+const body = {
+  customRef: "user@email.com"
+};
+
+try {
+  const response = await fetch("https://groupos.xyz/api/v1/key/create", {
+    method: "POST",
+    headers: {
+	  "Content-Type": "application/json",
+	  Authorization: `Bearer ${key} `
+    },
+    body: JSON.stringify(body)
+  });
+} catch (e) {
+  // catch errors
+}
+```
+
+[View demo](https://groupos-email-onboarding.vercel.app/) or [fork the repo](https://github.com/0xStation/groupos-email-onboarding).
