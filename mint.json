@@ -91,7 +91,10 @@
             "accounts/nft-accounts/get-started",
             {
               "group": "Distribute Accounts",
-              "pages": ["accounts/nft-accounts/embedded", "accounts/nft-accounts/claim-page"]
+              "pages": [
+                "accounts/nft-accounts/embedded",
+                "accounts/nft-accounts/claim-page"
+              ]
             },
             {
               "group": "Distribute Tokens to Accounts",
@@ -157,9 +160,7 @@
     },
     {
       "group": "Gas Policies",
-      "pages": [
-        "gas-policies/overview"
-      ]
+      "pages": ["gas-policies/overview"]
     },
     {
       "group": "Portal",
@@ -253,6 +254,7 @@
       "pages": [
         "api-reference/v1/erc1155/post/create",
         "api-reference/v1/erc1155/post/mint",
+        "api-reference/v1/erc1155/post/batchMint",
         "api-reference/v1/erc1155/post/permit",
         "api-reference/v1/erc1155/get/owners",
         "api-reference/v1/erc1155/get/tokens"
