@@ -1,0 +1,89 @@
+---
+title: "Batch Mint ERC-1155 NFTs"
+sidebarTitle: "Batch Mint NFTs"
+api: "POST https://groupos.xyz/api/v1/erc1155/batchMint"
+---
+
+### Body
+
+<ParamField body="chainId" type="number" required>
+  The id of the chain supporting the NFT. This cannot be changed after creation.
+</ParamField>
+<ParamField body="contractAddress" type="string" required>
+  The NFT smart contract address to mint with.
+</ParamField>
+<ParamField body="mints" type="object[]" required>
+  <Expandable title="object">
+    <ParamField body="recipientAddress" type="string" required>
+      The address to mint an NFT to.
+    </ParamField>
+    <ParamField body="tokenId" type="string" required>
+      The unique id for the NFT within the collection. Type `string` is used to
+      natively support large numbers.
+    </ParamField>
+    <ParamField body="amount" type="string" required>
+      The amount of tokens to mint to recipient. Type `string` is used to
+      natively support large numbers. Only integer-like strings allowed.
+    </ParamField>
+  </Expandable>
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the call was successful.
+</ResponseField>
+<ResponseField name="transactionHash" type="string">
+  Transaction hash for the newly created token.
+</ResponseField>
+<ResponseField name="transactionUrl" type="string">
+  Wraps `transactionHash` with the appropriate network-specific URL for
+  convenience.
+</ResponseField>
+
+<RequestExample>
+  ```bash Example Request
+  curl 'https://groupos.xyz/api/v1/erc1155/batchMint' \
+  --request POST \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer <token>' \
+  --data-raw '{
+      "chainId": 5,
+      "contractAddress": "0x67F4732266C7300cca593C814d46bee72e40659F",
+      "mints": [
+        {
+            "recipientAddress": "0xc517c83f417b73dA98647dad0FCB80af9f3b9531",
+            "tokenId": "1",
+            "amount": "1"
+        },
+        {
+            "recipientAddress": "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
+            "tokenId": "1",
+            "amount": "1"
+        },
+      ]
+  }'
+  ```
+</RequestExample>
+
+<ResponseExample>
+  ```json Success
+  {
+    "success": true,
+    "transactionHash": "0x58c789b7a59312ec0a659e165700db54af896d3e8b46e4aeecb33b32b88157c9",
+    "transactionUrl": "https://goerli.etherscan.io/tx/0xef737091d8c3451b42659688abd86b51516a6b43ee7dbdbda53c9005d86167db"
+  }
+  ```
+  ```json Token does not exist
+  {
+    "success": false,
+    "error": "Token does not exist. Please create a new token with /api/v1/erc1155/tokens/create to start minting."
+  }
+  ```
+  ```json Failure
+  {
+    "success": false,
+    "error": "[message]"
+  }
+  ```
+</ResponseExample>

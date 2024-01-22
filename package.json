@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@img/sharp-darwin-arm64": "^0.33.1",
-    "sharp": "^0.33.1"
+    "@img/sharp-darwin-arm64": "^0.33.2",
+    "sharp": "^0.33.2"
   }
 }
