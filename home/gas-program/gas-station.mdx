@@ -18,7 +18,7 @@ The fast growth of L2 usage and capabilities has allowed developers and consumer
 - Existing wallet onboarding solutions make it easier for users to onboard without a wallet. However, there are still challenges when it comes to bridging, gas, and auto-funding when onboarding users to a new L2. 
 - Developers who haven't planned how to monetize their applications are hesitant to spend upfront customer acquisition fees on gas incentives.
 - L2 platforms want to encourage users to use their applications by offering gas sponsorship incentives. However, they face limitations when committing to a single bundler, which affects fair market dynamics. If they have their own Bundler (like Base), they must constantly coordinate with different applications to update gas incentive logic.
-- Tracking gas expenditure across multiple dApps is difficult. The current design of Paymasters restricts the optimization of gas incentives, as it is currently impossible to withdraw the committed gas balance, leading to capital inefficiency.
+- Typical Bundler-managed Paymasters allow one address to approve new sponsorships. This address is a cloud wallet managed by their API and connected with their developer account system that enables smart contract account providers to sponsor User Operations.
 - Lack of communication between applications and AA infrastructure (bundlers + paymasters) results in a lack of visibility into the effectiveness and ROI of the program.
 - L2 platforms need assistance implementing bridging, gas, and auto-funding programs without being susceptible to Sybil attacks. There is no straightforward method to implement reputation-based gas incentives.
 
