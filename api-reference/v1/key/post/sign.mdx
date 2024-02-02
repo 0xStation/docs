@@ -6,7 +6,7 @@ api: "POST https://groupos.xyz/api/v1/key/sign"
 
 ### Sign Message
 
-Sign a raw payload with a Private Key stored in the cloud.
+Sign a raw payload with a Private Key stored in the cloud. Supports plaintext strings and hexadecimal bytes.
 
 ### Body
 
@@ -24,7 +24,7 @@ Sign a raw payload with a Private Key stored in the cloud.
   Indicates whether the call was successful.
 </ResponseField>
 
-<ResponseField name="message" type="string">
+<ResponseField name="signature" type="string">
   The signed message.
 </ResponseField>
 
