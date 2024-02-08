@@ -84,7 +84,7 @@
               "group": "Get Started",
               "pages": [
                 "accounts/smart-accounts/get-started/auth-modal",
-                "accounts/smart-accounts/get-started/wrapper"
+                "accounts/smart-accounts/get-started/smart-wrapper"
               ]
             }
           ]
