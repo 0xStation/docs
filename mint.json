@@ -80,7 +80,13 @@
           "pages": [
             "accounts/smart-accounts/overview",
             "accounts/smart-accounts/why-smart-accounts",
-            "accounts/smart-accounts/get-started"
+            {
+              "group": "Get Started",
+              "pages": [
+                "accounts/smart-accounts/get-started/auth-modal",
+                "accounts/smart-accounts/get-started/wrapper"
+              ]
+            }
           ]
         },
         {
