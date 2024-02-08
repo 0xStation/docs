@@ -2,12 +2,11 @@
 title: "Get Started"
 ---
 
-
-`@groupos/react-auth` is a package for onboarding new users to an app by giving them a smart account. `@groupos/react-auth` wraps wagmi so you can use the same wagmi functions you know and love but utilizing a smart account for your users.
-
+`@groupos/react-auth` is a package for onboarding new users to an app by giving them a smart account. The package wraps [wagmi](https://wagmi.sh/) so you can use the same functions you know and love but utilizing a smart account for your users.
 
 ## Pre-requisite
-- In the **Dashboard**, Go to Settings > General, and copy your 'groupId'. 
+
+- In the **Dashboard**, Go to Settings > General, and copy your 'groupId'.
 - Next go to **Allowed Domains** and add the domain of your project to the allowlist.
 
 ## Install the package
@@ -20,13 +19,16 @@ npm install @groupos/react-auth
 
 ## Import the component
 
-Next, import the component and use it wherever you see fit. The component takes one prop, which is the `groupId` you should have copied from step 1. 
+Next, import the component and use it wherever you see fit. The component takes one prop, which is the `groupId` you should have copied from step 1.
 
-<Info>Make sure you are using wagmi and that the component is a child of the wagmi provider.</Info>
+<Info>
+  Make sure you are using wagmi and that the component is a child of the wagmi
+  provider.
+</Info>
 
 ```typescript
 import { SmartAccountModal } from "@groupos/react-auth";
-<SmartAccountModal groupId="d2cfd720-93c5-43b3-9d3b-2f7529a79424" />
+<SmartAccountModal groupId="STATION_GROUP_ID" />;
 ```
 
 The component lets users login with regular connectors that you have configured in your wagmi config (Coinbase wallet, metamask, etc) or your users can login with email. If they choose to login with email, they will be sent a one time password. When they confirm the one time password, a cloud wallet will be created for them behind the scenes, and wagmi will connect to this account.
@@ -34,27 +36,42 @@ The component lets users login with regular connectors that you have configured 
 The suggested way to use the component is as a “login” component. If wagmi does not find an account, you should render the component. Otherwise, if wagmi does find an account, you can render the rest of your app. See the following as an example.
 
 ```typescript
-import { Inter } from "next/font/google";
-import { useAccount } from "wagmi"
+import { WagmiConfig, createConfig, useAccount } from "wagmi";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SmartAccountModal } from "@groupos/react-auth";
-const inter = Inter({ subsets: ["latin"] });
 
+const config = createConfig(
+  getDefaultConfig({
+    alchemyId: "ALCHEMY_ID",
+    walletConnectProjectId: "WALLETCONNECT_PROJECT_ID",
+    appName: "Your App Name",
+  })
+);
+
+const queryClient = new QueryClient();
 
 export default function App() {
-	const {address} = useAccount()
+  const account = useAccount();
+
   return (
-		<WagmiProvider>
-        <main
-          className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-        >
-					{
-						account.address 
-						? <div>This is the rest of the app!</div>
-		        : <SmartAccountModal groupId={"aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"} />
-					}
-        </main>
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        <Auth />
       </QueryClientProvider>
     </WagmiProvider>
+  );
+}
+
+function Auth() {
+  const account = useAccount();
+  return (
+    <main>
+      {!account?.address ? (
+        <SmartAccountModal groupId="STATION_GROUP_ID" />
+      ) : (
+        <div>This is the rest of the app!</div>
+      )}
+    </main>
   );
 }
 ```
