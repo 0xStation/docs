@@ -36,17 +36,17 @@ The component lets users login with regular connectors that you have configured 
 The suggested way to use the component is as a “login” component. If wagmi does not find an account, you should render the component. Otherwise, if wagmi does find an account, you can render the rest of your app. See the following as an example.
 
 ```typescript
-import { WagmiConfig, createConfig, useAccount } from "wagmi";
+import { WagmiConfig, createConfig, useAccount, http } from "wagmi";
+import { mainnet } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SmartAccountModal } from "@groupos/react-auth";
 
-const config = createConfig(
-  getDefaultConfig({
-    alchemyId: "ALCHEMY_ID",
-    walletConnectProjectId: "WALLETCONNECT_PROJECT_ID",
-    appName: "Your App Name",
-  })
-);
+const config = createConfig({
+  chains: [mainnet],
+  transports: {
+    [mainnet.id]: http("https://mainnet.example.com"),
+  },
+});
 
 const queryClient = new QueryClient();
 
