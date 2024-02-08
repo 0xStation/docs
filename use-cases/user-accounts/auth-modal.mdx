@@ -1,0 +1,79 @@
+---
+title: "Get Started with Auth Modal"
+sidebarTitle: "Auth Modal"
+description: "User authentication with social login and embedded wallet support."
+---
+
+`@groupos/react-auth` is a package for onboarding new users to an app by giving them a smart account. The package wraps [wagmi](https://wagmi.sh/) so you can use the same functions you know and love but utilizing a smart account for your users.
+
+## Pre-requisite
+
+- In the **Dashboard**, Go to Settings > General, and copy your 'groupId'.
+- Next go to **Allowed Domains** and add the domain of your project to the allowlist.
+
+## Install the package
+
+From the root of the project that is consuming the package type the following to install the package.
+
+```typescript
+npm install @groupos/react-auth
+```
+
+## Import the component
+
+Next, import the component and use it wherever you see fit. The component takes one prop, which is the `groupId` you should have copied from step 1.
+
+<Info>
+  Make sure you are using wagmi and that the component is a child of the wagmi
+  provider.
+</Info>
+
+```typescript
+import { SmartAccountModal } from "@groupos/react-auth";
+<SmartAccountModal groupId="STATION_GROUP_ID" />;
+```
+
+The component lets users login with regular connectors that you have configured in your wagmi config (Coinbase wallet, metamask, etc) or your users can login with email. If they choose to login with email, they will be sent a one time password. When they confirm the one time password, a cloud wallet will be created for them behind the scenes, and wagmi will connect to this account.
+
+The suggested way to use the component is as a “login” component. If wagmi does not find an account, you should render the component. Otherwise, if wagmi does find an account, you can render the rest of your app. See the following as an example.
+
+```typescript
+import { WagmiConfig, createConfig, useAccount, http } from "wagmi";
+import { mainnet } from "wagmi/chains";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { SmartAccountModal } from "@groupos/react-auth";
+
+const config = createConfig({
+  chains: [mainnet],
+  transports: {
+    [mainnet.id]: http("https://mainnet.example.com"),
+  },
+});
+
+const queryClient = new QueryClient();
+
+export default function App() {
+  const account = useAccount();
+
+  return (
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        <Auth />
+      </QueryClientProvider>
+    </WagmiProvider>
+  );
+}
+
+function Auth() {
+  const account = useAccount();
+  return (
+    <main>
+      {!account?.address ? (
+        <SmartAccountModal groupId="STATION_GROUP_ID" />
+      ) : (
+        <div>This is the rest of the app!</div>
+      )}
+    </main>
+  );
+}
+```
