@@ -179,6 +179,14 @@
       "group": "Use Cases",
       "pages": [
         {
+          "group": "User Accounts",
+          "pages": [
+            "use-cases/user-accounts/overview",
+            "use-cases/user-accounts/auth-modal",
+            "use-cases/user-accounts/smart-wrapper"
+          ]
+        },
+        {
           "group": "Membership & Loyalty",
           "pages": [
             "use-cases/membership-loyalty/overview",
