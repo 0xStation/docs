@@ -76,6 +76,14 @@
       "group": "Accounts",
       "pages": [
         {
+          "group": "Smart Accounts",
+          "pages": [
+            "accounts/smart-accounts/overview",
+            "accounts/smart-accounts/why-smart-accounts",
+            "accounts/smart-accounts/get-started"
+          ]
+        },
+        {
           "group": "Cloud Wallets",
           "pages": [
             "accounts/cloud-wallets/overview",
@@ -109,14 +117,6 @@
             "accounts/nft-accounts/gas-policies",
             "accounts/nft-accounts/execute-call",
             "accounts/nft-accounts/track"
-          ]
-        },
-        {
-          "group": "Smart Accounts",
-          "pages": [
-            "accounts/smart-accounts/overview",
-            "accounts/smart-accounts/trusted-executor",
-            "accounts/smart-accounts/gas-policies"
           ]
         }
       ]

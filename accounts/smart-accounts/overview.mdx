@@ -7,36 +7,40 @@ Accounts make up networks — players of games, members of DAOs, and users of pr
 
 GroupOS's Smart Accounts are ERC-4337 compliant smart accounts, offering full flexibility, programmability and extensibility.
 
-We provide out-of-the-box toolkit groups need to gaslessly onboard and activate accounts to games, applications, and/or protocols. The toolkit includes:
+We provide out-of-the-box toolkit groups need to gaslessly onboard and activate accounts to games, applications, and/or protocols. 
 
-<CardGroup cols={1}>
-  <Card title="Gasless Member Experience" icon="square-1" color="#ad72ff">
-    GroupOS's Gas Policies solution allows groups to launch applications and
-    communities where they can benefit from the interoperable nature of onchain
-    data without experiencing the frustrations from having to sign and pay fees
-    for every action they take.
-  </Card>
-  <Card title="Brandable Claim Page" icon="square-2" color="#ad72ff">
-    Design and customize the Claim Page ("Claim your onchain profile") to match
-    with your brand and collect members' information. Claim Page comes with the
-    ability to configure access list and offchain information you look to
-    collect from your members.
-  </Card>
-  <Card title="Dynamic Directory" icon="square-3" color="#ad72ff">
-    Each Accounts collection comes with a dynamic directory (also known as
-    'Web3-native CRM') where admins can view accounts' onchain and offchain data
-    in one view.
-  </Card>
-  <Card title="Automation via API" icon="square-4" color="#ad72ff">
-    Automatically mint, update NFT metadata, and batch execute transactions
-    based on offchain events with our Account API.
-  </Card>
-  <Card title="Connect as NFT" icon="square-5" color="#ad72ff">
-    Members with NFT Accounts can connect their them to any third-party site
-    using GroupOS Wallet Connect integration. We also work with selected
-    partners to implement embeddable "Log in with NFT" experience on their
-    sites.
-  </Card>
-</CardGroup>
+## Core
+
+<AccordionGroup>
+  <Accordion title="Gas Credits">
+    Our toolkit provides app developers with several ways to offer gasless user experiences: directly sponsor users and retroactively bill them as a part of the service, directly sponsor users with ERC20 gas credits, and partner with L2s to sponsor users.
+  </Accordion>
+  <Accordion title="Batch Transactions">
+    With smart accounts, dApps can batch multiple transactions into one to streamline user experience and save gas fees.
+  </Accordion>
+  <Accordion title="Delegated Signers">
+    App developers can allow users to add Passkey or additional EoAs as signers to increase security and convenience.
+  </Accordion>
+  <Accordion title="Directory">
+    Track accounts, rewards they earn, and assets they hold.
+  </Accordion>
+  <Accordion title="Analytics">
+    Measure your user growth and monitor the gas spend to inform your growth
+    strategy.
+  </Accordion>
+</AccordionGroup>
+
+## Extensions
+
+<AccordionGroup>
+  <Accordion title="Points">
+    Reward members with onchain points and optionally unlock new market dynamics.
+    with tradable Points (ERC-20).
+  </Accordion>
+  <Accordion title="Badges">
+    Segment and reward members based on usage and participation with Badges.
+    (ERC-1155).
+  </Accordion>
+</AccordionGroup>
 
 Gas Policies is currently in private beta. [Contact us](https://twitter.com/0xstation) to get access.
