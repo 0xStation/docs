@@ -86,7 +86,8 @@
                 "smart-accounts/authkit",
                 "smart-accounts/smart-wrapper"
               ]
-            }
+            },
+            "smart-accounts/gas-policies"
           ]
         },
         {
