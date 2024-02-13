@@ -78,13 +78,13 @@
         {
           "group": "Smart Accounts",
           "pages": [
-            "accounts/smart-accounts/overview",
-            "accounts/smart-accounts/why-smart-accounts",
+            "smart-accounts/overview",
+            "smart-accounts/why-smart-accounts",
             {
               "group": "Get Started",
               "pages": [
-                "accounts/smart-accounts/get-started/auth-modal",
-                "accounts/smart-accounts/get-started/smart-wrapper"
+                "smart-accounts/auth-modal",
+                "smart-accounts/smart-wrapper"
               ]
             }
           ]
@@ -92,37 +92,37 @@
         {
           "group": "Cloud Wallets",
           "pages": [
-            "accounts/cloud-wallets/overview",
-            "accounts/cloud-wallets/get-started",
-            "accounts/cloud-wallets/track"
+            "cloud-wallets/overview",
+            "cloud-wallets/get-started",
+            "cloud-wallets/track"
           ]
         },
         {
           "group": "NFT Accounts",
           "pages": [
-            "accounts/nft-accounts/overview",
-            "accounts/nft-accounts/why-smart-accounts",
-            "accounts/nft-accounts/get-started",
+            "nft-accounts/overview",
+            "nft-accounts/why-smart-accounts",
+            "nft-accounts/get-started",
             {
               "group": "Distribute Accounts",
               "pages": [
-                "accounts/nft-accounts/embedded",
-                "accounts/nft-accounts/claim-page"
+                "nft-accounts/embedded",
+                "nft-accounts/claim-page"
               ]
             },
             {
               "group": "Distribute Tokens to Accounts",
               "pages": [
-                "accounts/nft-accounts/distribute-tokens/overview",
-                "accounts/nft-accounts/distribute-tokens/erc1155",
-                "accounts/nft-accounts/distribute-tokens/erc20",
-                "accounts/nft-accounts/distribute-tokens/erc721"
+                "nft-accounts/distribute-tokens/overview",
+                "nft-accounts/distribute-tokens/erc1155",
+                "nft-accounts/distribute-tokens/erc20",
+                "nft-accounts/distribute-tokens/erc721"
               ]
             },
-            "accounts/nft-accounts/dynamic-traits",
-            "accounts/nft-accounts/gas-policies",
-            "accounts/nft-accounts/execute-call",
-            "accounts/nft-accounts/track"
+            "nft-accounts/dynamic-traits",
+            "nft-accounts/gas-policies",
+            "nft-accounts/execute-call",
+            "nft-accounts/track"
           ]
         }
       ]
