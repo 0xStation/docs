@@ -83,7 +83,7 @@
             {
               "group": "Get Started",
               "pages": [
-                "smart-accounts/authkit",
+                "smart-accounts/smart-modal",
                 "smart-accounts/smart-wrapper"
               ]
             },
