@@ -140,7 +140,7 @@
             "tokens/erc721/distribute",
             "tokens/erc721/track",
             "tokens/erc721/publish-directory",
-            "tokens/erc721/nft-accounts"
+            "tokens/erc721/nft-wallets"
           ]
         },
         {
