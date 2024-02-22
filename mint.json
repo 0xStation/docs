@@ -76,18 +76,18 @@
       "group": "Wallets",
       "pages": [
         {
-          "group": "Smart Accounts",
+          "group": "Smart Wallets",
           "pages": [
-            "smart-accounts/overview",
-            "smart-accounts/why-smart-accounts",
+            "smart-wallets/overview",
+            "smart-wallets/why-smart-wallets",
             {
               "group": "Get Started",
               "pages": [
-                "smart-accounts/smart-modal",
-                "smart-accounts/smart-wrapper"
+                "smart-wallets/smart-modal",
+                "smart-wallets/smart-wrapper"
               ]
             },
-            "smart-accounts/gas-policies"
+            "smart-wallets/gas-policies"
           ]
         },
         {

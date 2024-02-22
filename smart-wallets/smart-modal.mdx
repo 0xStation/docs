@@ -8,7 +8,7 @@ description: "User authentication with social login and embedded wallet support.
 
 ![auth-modal](https://station-images.nyc3.digitaloceanspaces.com/203dd13d-853d-4863-b230-61bfc2276527.png)
 
-`@groupos/react-auth` is a package for onboarding new users to an app by giving them a smart account. The package wraps [wagmi](https://wagmi.sh/) so you can use the same functions you know and love but utilizing a smart account for your users.
+`@groupos/react-auth` is a package for onboarding new users to an app by giving them a smart wallet. The package wraps [wagmi](https://wagmi.sh/) so you can use the same functions you know and love but utilizing a smart account for your users.
 
 ## Pre-requisite
 
@@ -39,7 +39,7 @@ import { SmartAccountModal } from "@groupos/react-auth";
 
 The component lets users login with regular connectors that you have configured in your wagmi config (Coinbase wallet, metamask, etc) or your users can login with email. If they choose to login with email, they will be sent a one time password. When they confirm the one time password, a cloud wallet will be created for them behind the scenes, and wagmi will connect to this account.
 
-The suggested way to use the component is as a “login” component. If wagmi does not find an account, you should render the component. Otherwise, if wagmi does find an account, you can render the rest of your app. See the following as an example.
+The suggested way to use the component is as a “login” component. If wagmi does not find a wallet, you should render the component. Otherwise, if wagmi does find an account, you can render the rest of your app. See the following as an example.
 
 ```typescript
 import { WagmiConfig, createConfig, useAccount, http } from "wagmi";
