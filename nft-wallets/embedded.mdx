@@ -11,10 +11,10 @@ Automatically mint, update NFT metadata, and batch execute transactions based on
 
 ## Pre-requisite
 
-- You've equipped Accounts to NFTs. Follow [this tutorial](/nft-accounts/getting-started) to get started.
+- You've equipped wallets to NFTs. Follow [this tutorial](/nft-accounts/getting-started) to get started.
 - You've [set up your API key](/introduction/quickstart).
 
-In this example, we guide you to mint the NFT Account with custom metadata for each new NFT. 
+In this example, we guide you to mint the NFT Wallets with custom metadata for each new NFT. 
 
 The most common application of this is dynamic onchain membership & loyalty.
 
@@ -111,7 +111,7 @@ const response = await fetch(
 const allTokens = await response.json().tokens;
 ```
 
-**Query an Account address**
+**Query an wallet address**
 
 Assuming that you know the token ID, you then need to query the associated Account address.
 

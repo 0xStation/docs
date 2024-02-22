@@ -2,11 +2,11 @@
 title: "Connect"
 ---
 
-Enable your users to connect and transact on your application with their NFT Accounts.
+Enable your users to connect and transact on your application with their NFT Wallets.
 
 ## Pre-requisite
 
-Your users can transact with NFT Accounts on applications that support signing and transacting with smart contract wallets.  
+Your users can transact with NFT Wallets on applications that support signing and transacting with smart contract wallets.  
 
 ## Implementation checklist
 
@@ -24,7 +24,7 @@ Use our **[sandbox](https://codesandbox.io/p/sandbox/connect-as-nft-dapp-tm7q7m)
   </Accordion>
 
   <Accordion title="Networks">
-    Connection is established with Mainnet + selected NFT account chain.
+    Connection is established with Mainnet + selected NFT wallet chain.
   </Accordion>
 
   <Accordion title="Methods">
@@ -35,7 +35,7 @@ Use our **[sandbox](https://codesandbox.io/p/sandbox/connect-as-nft-dapp-tm7q7m)
 
   <Accordion title="Events">
     - Network suggestion (NFT’s network) sent to dApps using `chainChanged` event
-    - Account switching adjusts WalletConnect session and informs the dApp via `accountsChanged` event
+    - Wallet switching adjusts WalletConnect session and informs the dApp via `accountsChanged` event
     - WalletConnect session termination from a dApp automatically resets Connect as NFT state by reacting to `session_delete` event
   </Accordion>
   
@@ -47,7 +47,7 @@ Use our **[sandbox](https://codesandbox.io/p/sandbox/connect-as-nft-dapp-tm7q7m)
 
 2. Copy the WalletConnect string. Go to [Connect Portal](https://groupos.xyz/wc) and paste the string.
 
-3. Select an NFT Account to connect. Check if the connected wallet in the application matches that of the Account.
+3. Select an NFT Wallet to connect. Check if the connected wallet in the application matches that of the Wallet.
   <Warning>Do not close the Connect Portal tab as transaction confirmation will happen in this tab.</Warning>
 
 4. Perform transactions. 

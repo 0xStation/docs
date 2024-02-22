@@ -73,7 +73,7 @@
       ]
     },
     {
-      "group": "Accounts",
+      "group": "Wallets",
       "pages": [
         {
           "group": "Smart Accounts",
@@ -99,31 +99,31 @@
           ]
         },
         {
-          "group": "NFT Accounts",
+          "group": "NFT Wallets",
           "pages": [
-            "nft-accounts/overview",
-            "nft-accounts/why-smart-accounts",
-            "nft-accounts/get-started",
+            "nft-wallets/overview",
+            "nft-wallets/why-smart-wallets",
+            "nft-wallets/get-started",
             {
-              "group": "Distribute Accounts",
+              "group": "Distribute Wallets",
               "pages": [
-                "nft-accounts/embedded",
-                "nft-accounts/claim-page"
+                "nft-wallets/embedded",
+                "nft-wallets/claim-page"
               ]
             },
             {
-              "group": "Distribute Tokens to Accounts",
+              "group": "Distribute Tokens to Wallets",
               "pages": [
-                "nft-accounts/distribute-tokens/overview",
-                "nft-accounts/distribute-tokens/erc1155",
-                "nft-accounts/distribute-tokens/erc20",
-                "nft-accounts/distribute-tokens/erc721"
+                "nft-wallets/distribute-tokens/overview",
+                "nft-wallets/distribute-tokens/erc1155",
+                "nft-wallets/distribute-tokens/erc20",
+                "nft-wallets/distribute-tokens/erc721"
               ]
             },
-            "nft-accounts/dynamic-traits",
-            "nft-accounts/gas-policies",
-            "nft-accounts/execute-call",
-            "nft-accounts/track"
+            "nft-wallets/dynamic-traits",
+            "nft-wallets/gas-policies",
+            "nft-wallets/execute-call",
+            "nft-wallets/track"
           ]
         }
       ]
