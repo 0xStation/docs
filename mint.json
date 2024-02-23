@@ -82,10 +82,7 @@
             "smart-wallets/why-smart-wallets",
             {
               "group": "Get Started",
-              "pages": [
-                "smart-wallets/smart-modal",
-                "smart-wallets/smart-wrapper"
-              ]
+              "pages": ["smart-wallets/walletkit"]
             },
             "smart-wallets/gas-policies"
           ]
@@ -106,10 +103,7 @@
             "nft-wallets/get-started",
             {
               "group": "Distribute Wallets",
-              "pages": [
-                "nft-wallets/embedded",
-                "nft-wallets/claim-page"
-              ]
+              "pages": ["nft-wallets/embedded", "nft-wallets/claim-page"]
             },
             {
               "group": "Distribute Tokens to Wallets",

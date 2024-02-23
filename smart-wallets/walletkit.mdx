@@ -1,0 +1,52 @@
+---
+title: "Get Started with WalletKit"
+sidebarTitle: "WalletKit"
+description: "User authentication with social login and embedded wallet support."
+---
+
+[Try the demo!](https://demo.groupos.xyz/walletkit)
+
+`@groupos/walletkit` is a package for adding and utilizing smart accounts in decentralized applications (dApps).
+It comes with customization options that meet your needs to offer a seamless user experience — social onboarding, gas sponsorship, and batch transactions.
+
+Unlike existing smart account packages, **WalletKit lets developers retain access to the same core [wagmi](https://wagmi.sh/react) hooks for signing and transacting**.
+We accomplish this by connecting all smart accounts as native account objects instead of creating a new smart account object that needs explicit calling.
+
+## Quickstart
+
+### Pre-requisite
+
+- In the **Dashboard**, Go to Settings > General, and copy your `groupId`.
+- Next go to **Allowed Domains** and add the domain of your app to the allowlist.
+
+### Install the package
+
+From the root of the project that is consuming the package type the following to install the package.
+
+```typescript
+npm install @groupos/walletkit wagmi@2.x
+```
+
+### Import the component
+
+Next, import the component and use it wherever you see fit. The component takes one prop, which is the `groupId` you should have copied from step 1.
+
+```ts
+import { useAccount } from "wagmi";
+import { SmartAuthBox } from "@groupos/walletkit";
+
+function Page() {
+  const { address } = useAccount();
+
+  return !address ? (
+    <SmartAuthBox groupId="STATION_GROUP_ID" />
+  ) : (
+    {
+      /** ... */
+    }
+  );
+}
+```
+
+All connected accounts, even EOAs, will get wrapped with a smart account, empowering them to support features
+like batch transactions and gas sponsorship. You can access this account with wagmi-native `useAccount` and interact with it via the same core wagmi react hooks.
