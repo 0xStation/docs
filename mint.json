@@ -82,7 +82,10 @@
             "smart-wallets/why-smart-wallets",
             {
               "group": "Get Started",
-              "pages": ["smart-wallets/walletkit"]
+              "pages": [
+                "smart-wallets/walletkit",
+                "smart-wallets/batch-transactions"
+              ]
             },
             "smart-wallets/gas-policies"
           ]

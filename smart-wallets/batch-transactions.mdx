@@ -1,0 +1,54 @@
+---
+title: "Send Batch Transactions with WalletKit"
+sidebarTitle: "Batch Transactions"
+---
+
+[Try the demo!](https://demo.groupos.xyz/walletkit)
+
+After getting started with WalletKit in your project, you can send batch transactions from connected smart accounts.
+Batching transactions can improve UX and reduce cost by turning multiple transactions into a single one.
+
+## Quickstart
+
+Following convention from wagmi's hook, WalletKit provides `useSendTransactions`.
+
+```ts
+import { encodeFunctionData, erc20Abi, maxUint256 } from "viem";
+import { useSendTransactions } from "@groupos/walletkit";
+
+function Page() {
+  const { sendTransactionsAsync } = useSendTransactions();
+
+  return (
+    <button
+      onClick={async () => {
+        const transactionHash = await sendTransactionsAsync({
+          transactions: [
+            // first example is approving spend on an ERC-20 token
+            {
+              to: erc20Address,
+              data: encodeFunctionData({
+                abi: erc20Abi,
+                functionName: "approve",
+                args: [contractAddress, maxUint256],
+              }),
+            },
+            // second example is depositing tokens
+            {
+              to: contractAddress,
+              data: encodeFunctionData({
+                abi: contractAbi,
+                functionName: "deposit",
+                args: [amount],
+              }),
+            },
+          ],
+        });
+        console.log("transaction submitted", transactionHash);
+      }}
+    >
+      Send
+    </button>
+  );
+}
+```
