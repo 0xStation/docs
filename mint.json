@@ -80,9 +80,18 @@
           "pages": [
             "smart-wallets/overview",
             "smart-wallets/why-smart-wallets",
-            "smart-wallets/walletkit",
+            "smart-wallets/get-started",
+            "smart-wallets/gas-policies",
             "smart-wallets/batch-transactions",
-            "smart-wallets/gas-policies"
+            {
+              "group": "Apps",
+              "pages": [
+                "smart-wallets/apps",
+                "smart-wallets/staking",
+                "smart-wallets/rewards",
+                "smart-wallets/reputation"
+              ]
+            }
           ]
         },
         {
@@ -158,7 +167,7 @@
       ]
     },
     {
-      "group": "Gas Policies",
+      "group": "Gas Station",
       "pages": ["gas-policies/overview"]
     },
     {
