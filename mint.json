@@ -83,6 +83,8 @@
             "smart-wallets/get-started",
             "smart-wallets/gas-policies",
             "smart-wallets/batch-transactions",
+            "smart-wallets/2fa",
+            "smart-wallets/session-keys",
             {
               "group": "Apps",
               "pages": [

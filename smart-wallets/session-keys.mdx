@@ -1,0 +1,33 @@
+---
+title: "Automate Signing with Session Keys"
+sidebarTitle: "Session Keys"
+---
+
+After getting started with WalletKit in your project, you can add session keys to your users' smart accounts.
+Session keys enable you to ask once for scoped permission to sign on behalf of the wallet for the remainder
+of the user's session.
+
+If a session key is available for a user, it is automatically used in existing signature and transaction hooks,
+leaving your developer experience untouched.
+
+## Quickstart
+
+Prompt users to approve a session key with the `useSessionKeys` hook.
+
+```ts
+import { useSessionKeys } from "@groupos/walletkit";
+
+function Page() {
+  const { requestSessionKey } = useSessionKeys();
+
+  return (
+    <div>
+        <div>Enable 1-click trading</div>
+        <button
+            onClick={() => requestSessionKey({ scope: { contract: "0x..." } })}
+        >
+            Add Device
+        </button>
+    </div>
+}
+```

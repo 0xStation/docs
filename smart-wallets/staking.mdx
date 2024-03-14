@@ -4,5 +4,34 @@ title: "Staking"
 
 Enable users to earn yield from their surplus funds in your app by bringing [Lido Finance](https://lido.fi/) staking capabilities into your app with one hook.
 
-Coming soon.
+```typescript
+import { useState } from "react"
+import { parseEther } from "viem"
+import { useLidoStaking } from "@groupos/walletkit/apps"
+
+const [stakeValue, setStakeValue] = useState<string>()
+const { stake, totalDeposited, totalRewarded } = useLidoStaking()
+
+return (
+    <div>
+        <div>Total deposited</div>
+        <div>{totalDeposited}</div>
+        <div>Total rewarded</div>
+        <div>{totalRewarded}</div>
+        <input
+            type="number"
+            value={stakeValue}
+            onChange={(e) => setStakeValue(e.target.value)}
+            placeholder="0"
+            decimals={18}
+        />
+        <button 
+            disabled={!stakeValue}
+            onClick={() => stakeAsync({value: parseEther(stakeValue)})}
+        >
+            Stake
+        </button>
+    </div>
+)
+```
 

@@ -1,0 +1,37 @@
+---
+title: "Add Two-Factor Authentication Protection"
+sidebarTitle: "2FA Protection"
+---
+
+After getting started with WalletKit in your project, you can offer two-factor authentication (2FA) for
+your users' smart accounts. The second factor added is a Passkey that is stored locally on your users
+device and multiple Passkeys can be added to enable a user to act across many devices.
+
+If 2FA is enabled for a user, the second factor is automatically prompted in existing signature and
+transaction hooks, leaving your developer experience untouched.
+
+## Quickstart
+
+Prompt users to activate 2FA with the `use2fa` hook.
+
+```ts
+import { use2fa } from "@groupos/walletkit";
+
+function Page() {
+  const { devices, addDevice, removeDevice } = use2fa();
+
+  return (
+    <div>
+      <div>
+        {devices.map((device, i) => (
+          <div key={`device-${i}`}>
+            <div>{device.name}</div>
+            <button onClick={() => removeDevice(device)}>Remove</button>
+          </div>
+        ))}
+      </div>
+      <button onClick={() => addDevice()}>Add Device</button>
+    </div>
+  );
+}
+```

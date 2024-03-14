@@ -12,14 +12,40 @@ Acknowledge user engagement by minting non-transferable badges for milestone ach
 
 ### Integrate into your application
 
-You can skip 1-4 section if you've already set up in the API keys.
+You can skip the following requirements if you've already configured your group's developer settings.
 
-1. In the Dashboard, go to the 'Settings' tab. 
+1. In the Dashboard, go to the 'Settings' tab.
 2. Go to the 'API keys' and click 'Add' to generate a new key.
-![API.png](https://station-images.nyc3.digitaloceanspaces.com/8e6e553e-1da4-4501-ac64-52094d9c1a0d.png)
-3. Name your API key and click 'Generate'. 
-<Warning>Copy and save the key in a secured location. We don’t store or retrieve your API keys.</Warning>
-4. Follow the [API reference](/api-reference/v1) of the chosen token standard to integrate into your app.
+   ![API.png](https://station-images.nyc3.digitaloceanspaces.com/8e6e553e-1da4-4501-ac64-52094d9c1a0d.png)
+3. Name your API key and click 'Generate'.
+   <Warning>
+     Copy and save the key in a secured location. We don’t store or retrieve
+     your API keys.
+   </Warning>
+4. Go to the 'Allowed domains' tab and add your app's domain
 
+Next, add a code snipped to distribute rewards for your users to claim:
 
+```typescript
+import { useClaimTokens } from "@groupos/walletkit/apps"
 
+const { claimTokens, loading } = useClaimTokens({chainId: 1, contractAddress: "0x..."})
+const { claimNfts, loading } = useClaimNfts({chainId: 1, contractAddress: "0x..."})
+
+return (
+    // ERC-20
+    <button
+        disabled={loading}
+        onClick={() => claimTokens({claimRef: "voting-shares"})}
+    >
+        {loading ? "Claiming..." : "Claim Voting Shares"}
+    </button>
+    // ERC-1155
+    <button
+        disabled={loading}
+        onClick={() => claimNfts({tokenId: 1, claimRef: "verified-badge"})}
+    >
+        {loading ? "Claiming..." : "Claim Verified Badge"}
+    </button>
+)
+```
